@@ -4,7 +4,9 @@ import {useEffect, useState} from "react"
 import {Link, useNavigate} from "react-router-dom"
 
 import Home from './Admin/Home';
-import { AllRoutes } from './Pages/AllRoutes';
+import AllRoutes from './frontend/Pages/AllRoutes';
+import { Navbar } from './frontend/Navbar/Navbar';
+
 
 
 function App() {
@@ -19,9 +21,9 @@ let param = url.includes("admin");
   return (
     <div className="App">
 
-   {!param&& <h1>Home page</h1>}
+   {!param&& <Navbar/>}
     
-     <AllRoutes/>
+   <AllRoutes/>
      {!param&&<button onClick={handleClick}>Clickme</button>}
      
 
