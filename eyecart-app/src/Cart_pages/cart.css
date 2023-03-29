@@ -1,0 +1,81 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+ 
+.first_box{
+border:1px solid red;
+height:400px;
+width:60%
+}
+.logo{
+    height: 100%;
+    width: 200px;
+    
+}
+.second_box{
+    border:1px solid rgb(56, 199, 16);
+    height:400px;
+    width:40%;
+    color:black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+}
+.cart_card{
+    display: flex;
+    justify-content: space-around;
+    text-align: start;
+    color: black;
+    align-items: center;
+    padding: 10px;
+    font-size: 14px;
+   
+
+
+}
+.cart_card:nth-child(1){
+    height: 160px;
+    border-radius: 10px;
+    background: white;
+    width: 100%;
+    margin: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+}
+
+.box1{
+   
+    height: 140px;
+    width: 80%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+.box2{
+    
+    height: 240px;
+    text-align: start;
+    padding: 10px;
+ 
+    width: 80%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+.box3{
+   
+    height: 140px;
+    width: 80%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+.box4{
+   
+    height: 40px;
+    width: 200px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+.checkout_butt:hover{
+background-color: #03deab;
+}
