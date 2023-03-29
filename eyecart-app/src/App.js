@@ -2,8 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import {useEffect, useState} from "react"
 import {Link, useNavigate} from "react-router-dom"
-import AdminHome from './Admin/Home';
-import AllRoutes from './frontend/Components/AllRoutes';
+
+import Home from './Admin/Home';
+import { AllRoutes } from './Pages/AllRoutes';
+
 
 function App() {
 function handleClick(){
@@ -16,11 +18,13 @@ let param = url.includes("admin");
 
   return (
     <div className="App">
+
    {!param&& <h1>Home page</h1>}
     
      <AllRoutes/>
      {!param&&<button onClick={handleClick}>Clickme</button>}
      
+
     </div>
   );
 }

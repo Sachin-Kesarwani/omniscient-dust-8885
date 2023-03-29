@@ -11,6 +11,7 @@ import ContextProvider from './Admin/Context/Context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
+
   <ContextProvider>
      <Provider store={store}>
 <ChakraProvider>
@@ -18,8 +19,8 @@ root.render(
   
   <App />
 
-</BrowserRouter>
-  </ChakraProvider>
+      </BrowserRouter>
+    </ChakraProvider>
 
   </Provider>
   
