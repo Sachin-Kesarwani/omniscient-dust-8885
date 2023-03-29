@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import AdminHome from '../../Admin/Home'
+import AdminHome from '../../Admin/dashboard'
 import { Navbar } from '../Navbar/Navbar'
 
 const AllRoutes = () => {
