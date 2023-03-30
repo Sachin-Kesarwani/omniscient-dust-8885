@@ -1,6 +1,6 @@
 import { Box, Image, Text } from '@chakra-ui/react'
 import React from 'react'
-import '../Cart_pages/cart.css'
+import '../fw22_0314_pages/cart.css'
 const Cart_pro_card = () => {
   return (
     <Box>

@@ -58,7 +58,7 @@ import {
   FiUser,
   FiBox
 } from 'react-icons/fi';
-import { IconType } from 'react-icons';
+// import { IconType } from 'react-icons';
 import { ReactText } from 'react';
 import { AuthContext } from './Context/Context';
 import logo from "./logo.jpg"

@@ -1,20 +1,20 @@
 import { Box, Button, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 import logo from '../assets/logo.jpg'
-import ButtonComp from '../Cart_components/ButtonComp'
-import Cart_pro_card from '../Cart_components/Cart_Pro_Card'
+// import ButtonComp from '../../Cart_components/ButtonComp'
+import Cart_pro_card from '../fw22_0314_Components/Cart_Pro_Card'
 import './cart.css'
 const Cart = () => {
   return (
     <Box style={{fontFamily: 'Poppins'}} bgColor={"#f8f8f8"} width={"100%"} height={"100vh"}>
 <Box border={"1px solid red"} height={"100px"} width={"100%"} color={"black"}  bgColor={"white"}>
     <Box height={"100%"} width={"80%"} display={"flex"} justifyContent={"space-between"} margin={"auto"} border={"1px solid green"}>
-    <img  className={"logo"} src={"https://static.lenskart.com/media/desktop/img/site-images/main_logo.svg"} alt="" />
+    <img  className='logo'  src={logo} alt="" />
         
     <span>
     <span>
-        <img width={"20px"} src="https://static1.lenskart.com/media/desktop/img/DesignStudioIcons/Shield.svg" alt="" />
-        100% safe and secure
+        {/* <img width={"20px"} src="https://static1.lenskart.com/media/desktop/img/DesignStudioIcons/Shield.svg" alt="" /> */}
+        🛡️ 100% safe and secure
         </span>
         
     </span>
