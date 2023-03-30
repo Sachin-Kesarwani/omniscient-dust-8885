@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import AdminHome from '../../Admin/Home'
+import AdminHome from '../../Admin/dashboard'
 import Cart from '../fw22_0314_pages/Cart'
 import Payments from '../fw22_0314_pages/Payment'
 import Shipping_page from '../fw22_0314_pages/Shipping_page'
@@ -16,6 +16,7 @@ const AllRoutes = () => {
         <Route path='/shipping' element={<Shipping_page/>} />
         <Route path='/payments' element={<Payments/>} />
       </Routes>
+  
     </div>
   )
 }
