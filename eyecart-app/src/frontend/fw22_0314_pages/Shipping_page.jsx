@@ -6,10 +6,10 @@ const Shipping_page = () => {
 
   return (
     <Box color={"black"} bgColor={"#ffffff"} fontSize={"14px"}>
-<Box className={"shipping_cont"}  margin={"auto"} display={"flex"} gap={"40px"} width={"60%"} fontSize={"14px"}>
+<Box className={"shipping_cont"}   margin={"auto"} flexDirection={{base:'column',sm:"column",md:"column",xl:"row"}} display={"flex"} gap={"40px"} width={"60%"} fontSize={"14px"}>
     
-<Box className={"shipping_add"} width={"70%"} height={"auto"} padding={"10px"} fontSize={"12px"} >
-<Box display={'flex'} justifyContent={"space-between"} width={"90%"} margin={"auto"} mb={"10px"} fontSize={"14px"} >
+<Box className={"shipping_add"} minW={{base:"135%",sm:"100%",md:"100%",xl:"70%"}} width={"70%"} height={"auto"} padding={"10px"} fontSize={"12px"} >
+<Box display={'flex'} justifyContent={"space-between"} margin={"auto"} mb={"10px"} fontSize={"14px"} gap={"20px"} flexWrap={"wrap"} >
 <Box fontSize={"14px"} border={"1px solid grey"} bgColor={"grey"} color={"white"} padding={"5px 15px 5px 10px"} borderRadius={"20px"}>  <span style={{fontWeight:"500",marginRight:"5px"}} className='steps'>1</span>Mobile</Box>
 <Box  fontSize={"14px"}border={"1px solid grey"} bgColor={"black"}  color={"white"} padding={"5px 15px 5px 10px"} borderRadius={"20px"}>  <span style={{fontWeight:"500",marginRight:"5px"}} className='steps'>2</span>Shipping Address</Box>
 <Box fontSize={"14px"} border={"1px solid grey"} bgColor={"grey"}  color={"white"} padding={"5px 15px 5px 10px"} borderRadius={"20px"}>
@@ -28,7 +28,7 @@ const Shipping_page = () => {
     
     </Box>
 </Box>
-<Box className={"shipping_det"} height={"300px"} fontSize={"15px"} width={"40%"}  color={"black"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} padding={"10px"}>
+<Box className={"shipping_det"}  minW={{base:"100%",sm:"70%",md:"70%",xl:"40%"}} height={"300px"} fontSize={"15px"} width={"40%"}  color={"black"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} padding={"10px"}>
     <Heading>Summary</Heading>
     <hr  style={{color:"grey",border: "2px dotted",borderStyle: "none none dotted"}} />
     <Box display={'flex'} justifyContent={"space-between"} mb={"8px"} mt={"5px"}>

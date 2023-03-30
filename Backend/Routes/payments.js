@@ -10,8 +10,8 @@ amt=+amt
     try {
         
         const instance = new Razorpay({
-            key_id:'rzp_test_3LDKbnCBXc067o',
-            key_secret: "NWd3gClPm5hJCqtoWAQMJ8Rg",
+            key_id:'',
+            key_secret: "",
         });
 
      const options={
@@ -34,7 +34,7 @@ amt=+amt
 
 })
 
-// mongoURL=mongodb+srv://charchit:charchit@cluster0.wkxql.mongodb.net/lenskart?retryWrites=true&w=majority
+// mongoURL=
 paymentrouter.post("/success", async (req, res) => {
     try {
         // getting the details back from our font-end
@@ -76,5 +76,3 @@ module.exports={
     paymentrouter
 }
 
-// RAZORPAY_SECRET=rzp_test_3
-// RAZORPAY_KEY_ID=NWd3gClPm5hJCqtoWAQMJ8Rg

@@ -51,7 +51,7 @@ const [amt,setamt]=useState("")
     const { amount, id: order_id, currency } = result.data;
   let logo ="https://static.lenskart.com/media/desktop/img/site-images/main_logo.svg"
     const options = {
-        key: "rzp_test_3LDKbnCBXc067o", // Enter the Key ID generated from the Dashboard
+        key: "", // Enter the Key ID generated from the Dashboard
         amount: amount.toString(),
         currency: currency,
         name: "eyekart Corp.",
