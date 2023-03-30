@@ -33,7 +33,7 @@ paymentrouter.post("/order",async (req,res)=>{
 
 })
 
-// mongoURL=mongodb+srv://charchit:charchit@cluster0.wkxql.mongodb.net/lenskart?retryWrites=true&w=majority
+
 paymentrouter.post("/success", async (req, res) => {
     try {
         // getting the details back from our font-end

@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 app.use("/users", userRouter);
 
 app.use("/products", productRoute);
-app.use("/payment",paymentrouter)
+app.use("/payments",paymentrouter)
 
 
 app.listen(7500, async () => {
