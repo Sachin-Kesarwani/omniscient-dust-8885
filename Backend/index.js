@@ -3,11 +3,15 @@ const cors = require("cors");
 const { connection } = require("./Config/db");
 const { userRouter } = require("./Routes/User.Route");
 const { productRoute } = require("./Routes/Product.Route");
+
 const { AdminRouter } = require("./Routes/Admin.Route");
+
+const {paymentrouter} =require("./Routes/payments")
+
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json({ extended: false }));
 app.use(cors());
 app.get("/", (req, res) => {
   res.send("Home Page");
@@ -17,7 +21,7 @@ app.use("/admin",AdminRouter);
 app.use("/users", userRouter);
 
 app.use("/products", productRoute);
-
+app.use("/payments",paymentrouter)
 
 
 app.listen(7500, async () => {

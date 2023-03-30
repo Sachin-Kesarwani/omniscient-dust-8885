@@ -1,131 +1,75 @@
-import React, { ReactNode } from 'react';
+import React from 'react'
 import {
-  IconButton,
-  Avatar,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
   Box,
-  CloseButton,
-  Flex,
-  HStack,
-  VStack,
-  Icon,
-  useColorModeValue,
-  Link,
-  Drawer,
-  DrawerContent,
+  Button,
   Text,
-  useDisclosure,
-  BoxProps,
-  FlexProps,
-  Menu,
-  MenuButton,
-  MenuDivider,
-  MenuItem,
-  MenuList,
-} from '@chakra-ui/react';
-import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
-  FiMenu,
-  FiBell,
-  FiChevronDown,
-} from 'react-icons/fi';
-import { IconType } from 'react-icons';
-import { ReactText } from 'react';
+} from '@chakra-ui/react'
+import { useToast } from '@chakra-ui/react'
+import Pay_btn from './Pay_btn'
+import { useNavigate } from 'react-router-dom'
+const Paymentsfun= () => {
+const navigate = useNavigate()
+const toast = useToast()
+const handledelivery=()=>{
 
 
-const LinkItems = [
-  { name: 'Credit/Debit Card'},
-  { name: 'BHIM UPI/Phone pe'},
-  { name: 'Net Banking' },
-  { name: 'UPI QR Code'},
-  { name: 'Paytm'},
-  { name: 'Google Pay'},
-];
+  toast({
+    title: `Order Successfully Placed`,
+    position: 'top-right',
+    status:"success",
+    isClosable: true
+  })
+navigate("/")
 
-export default function SidebarWithHeader({children}){ 
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  return (
-    <Box height={"auto"}   bg={useColorModeValue('white')} >
-      <SidebarContent
-        onClose={() => onClose}
-        display={{ base: 'none', md: 'block' }}
-      />
-      <Drawer
-        autoFocus={false}
-        isOpen={isOpen}
-        placement="left"
-        onClose={onClose}
-        returnFocusOnClose={false}
-        onOverlayClick={onClose}
-        size="full">
-        <DrawerContent>
-          <SidebarContent onClose={onClose} />
-        </DrawerContent>
-      </Drawer>
-      {/* mobilenav */}
-      {/* <MobileNav onOpen={onOpen} /> */}
-      <Box ml={{ base: 0, md: 60 }} p="4">
-        {children}
-      </Box>
-    </Box>
-  );
 }
 
-
-
-const SidebarContent = ({ onClose, ...rest }) => {
   return (
-    <Box
-      transition="3s ease"
-      bg={useColorModeValue('white')}
-      borderRight="1px"
-      borderRightColor={useColorModeValue('gray.200', 'gray.700')}
-    //   w={{ base: 'full', md: 60 }}
-      pos="fixed"
-    height={"auto"}
-      {...rest}>
-      {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
-        </NavItem>
-      ))}
-    </Box>
-  );
-};
+    <Accordion allowToggle>
+      <Box>
+        <img src="https://static5.lenskart.com/images/cust_mailer/Mar-03/CheckoutStrip.png" alt="" />
+      </Box>
+    <AccordionItem>
+      <h2>
+        <AccordionButton>
+          <Box as="span" flex='1' textAlign='left'>
+           Cash on Delivery
+          </Box>
+          <AccordionIcon />
+        </AccordionButton>
+      </h2>
+      <AccordionPanel pb={4}>
+      <Text mb={"10px"}>Pay on delivery</Text>
+       <button style={{backgroundColor:"#00bbc6",color:"black",padding:"7px",fontSize:"18px",borderRadius:"10px"}} onClick={handledelivery}>
+   Place Order
+</button>
+      </AccordionPanel>
+    </AccordionItem>
+  
+    <AccordionItem>
+      <h2>
+        <AccordionButton>
+          <Box as="span" flex='1' textAlign='left'>
+            
+           Pay with Razorpay
+          </Box>
+          <AccordionIcon />
+        </AccordionButton>
+      </h2>
+      <AccordionPanel pb={4}>
+      <Text mb={"10px"}>You will be redirect to Payment gateway upon placing the order</Text>
 
+      <Pay_btn />
+      </AccordionPanel>
+    </AccordionItem>
+  </Accordion>
+  )
+}
 
-const NavItem = ({ icon, children, ...rest }) => {
-  return (
-    <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
-      <Flex
-        align="center"
-        p="4"
-        mx="4"
-        borderRadius="lg"
-        role="group"
-        cursor="pointer"
-        _hover={{
-          bg: 'cyan.400',
-          color: 'white',
-        }}
-        {...rest}>
-        {icon && (
-          <Icon
-            mr="4"
-            fontSize="16"
-            _groupHover={{
-              color: 'white',
-            }}
-            as={icon}
-          />
-        )}
-        {children}
-      </Flex>
-    </Link>
-  );
-};
+export default Paymentsfun
 
 
