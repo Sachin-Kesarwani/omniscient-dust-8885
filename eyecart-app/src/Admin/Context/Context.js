@@ -1,13 +1,18 @@
 
-import { createContext, useState } from "react";
-
+import { createContext, useEffect, useState } from "react";
+import { useDisclosure } from "@chakra-ui/react";
 export const AuthContext=createContext()
 
 
 
 const ContextProvider=({children})=>{
-    let [active,setActive]=useState(0)
-  return <AuthContext.Provider value={{active,setActive}}>
+  const { isOpen, onOpen, onClose } = useDisclosure();
+    let [active,setActive]=useState(1)
+    function closeSomething(onClose){
+   onClose()
+    }
+   
+  return <AuthContext.Provider value={{active,setActive,closeSomething}}>
     {
         children
     }
