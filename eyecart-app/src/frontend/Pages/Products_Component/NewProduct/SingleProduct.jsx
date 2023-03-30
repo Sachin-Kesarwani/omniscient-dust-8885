@@ -4,8 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/CartPage/action";
 import { addToWishlist } from "../../redux/wishlist/wishlist.actions";
-import Navbar from "../../Components/Navbar/Navbar";
-import Footer from "../../Components/Footer/Footer";
+
 import { useSelector } from "react-redux";
 import axios from "axios";
 import {
@@ -58,7 +57,7 @@ const SingleProduct = () => {
 
   return (
     <>
-      <Navbar />
+      
       <Grid
         m={5}
         gap={5}
@@ -279,7 +278,7 @@ const SingleProduct = () => {
           <Image src={data.imageTsrc} />
         </GridItem>
       </Grid>
-      <Footer />
+      
     </>
   );
 };

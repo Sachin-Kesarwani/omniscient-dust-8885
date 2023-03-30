@@ -1,8 +1,6 @@
 import { TbArrowsUpDown } from "react-icons/tb";
 import React, { useEffect, useState } from "react";
-import Loading from "./Loading";
-
-
+import Loader from "../NewProduct/Loading";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import {
@@ -16,6 +14,8 @@ import {
   VStack,
   Image
 } from "@chakra-ui/react";
+import Pagination from "../Pagination";
+
 
 const NewProduct = () => {
   const [products, setProducts] = useState([]);
@@ -382,7 +382,7 @@ const NewProduct = () => {
                 Showing {products.length} of 50 Results
               </Text>
             )}
-
+{/* .Loading. */}
             {isLoding && (
               <Grid
                 m="20px 10px"
@@ -391,7 +391,7 @@ const NewProduct = () => {
                 gap={6}
               >
                 {loader.map((ele) => (
-                  <Loading key={ele} />
+                  <Loader key={ele}/>
                 ))}
               </Grid>
             )}
@@ -414,6 +414,7 @@ const NewProduct = () => {
               height="100vh"
               gap={6}
             >
+      {/* Mapping the products */}
               {products.map((ele) => (
                 <GridItem key ={ele.id}>
                   <Link to={`/newproducts/${ele._id}`}>
@@ -538,7 +539,7 @@ const NewProduct = () => {
             </Grid>
           </Box>
         </Flex>
-        {/* <Pagination current={page} onChange={(value) => setPage(value)} /> */}
+        <Pagination current={page} onChange={(value) => setPage(value)} /> 
       </Box>
       {/* <Footer /> */}
     </>

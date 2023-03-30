@@ -1,7 +1,7 @@
 import { GridItem, Skeleton } from "@chakra-ui/react";
 import React from "react";
 
-const Loading = () => {
+const Loader = () => {
   return (
     <GridItem>
       <Skeleton width="100%" height="100%"></Skeleton>
@@ -9,4 +9,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default Loader;
