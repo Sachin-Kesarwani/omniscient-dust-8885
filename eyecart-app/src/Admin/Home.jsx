@@ -1,9 +1,10 @@
 import { Button, Heading, Image } from '@chakra-ui/react'
-import React, { useState } from 'react'
 import { Loading } from '../frontend/Components/Loading'
-import EmailSender from './Test'
 
-const Home = () => {
+import { ReactText, useState } from 'react';
+
+
+ const Home = () => {
     let [loading,setLoading]=useState(false)
     function closegif(){
         setLoading(false)
@@ -16,6 +17,9 @@ const Home = () => {
   {/* <EmailSender/> */}
     </div>
   )
-}
+  }
 
 export default Home
+
+
+
