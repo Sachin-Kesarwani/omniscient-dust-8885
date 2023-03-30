@@ -225,7 +225,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
         fontWeight="bold">
         Logo
       </Text>
-
+      {/* <Image src={logo}/> */}
       <HStack spacing={{ base: '0', md: '6' }}>
         <IconButton
           size="lg"
