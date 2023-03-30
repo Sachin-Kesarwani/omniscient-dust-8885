@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const { authentication } = require("../Middleware/admin.authentication");
 const { ProductModel } = require("../Model/Product.Model");
 
 const productRoute = Router();
@@ -118,7 +119,7 @@ productRoute.get("/:id",async (req, res) => {
     }
 })
 
-productRoute.post("/create", async (req, res) => {
+productRoute.post("/create", authentication,async (req, res) => {
   try {
     await ProductModel.insertMany(req.body);
     res.status(201).send({ msg: "Product has been added" });
@@ -127,7 +128,7 @@ productRoute.post("/create", async (req, res) => {
   }
 });
 
-productRoute.patch("/update/:id",async (req, res) => {
+productRoute.patch("/update/:id",authentication,async (req, res) => {
   const ID = req.params.id;
   const payload = req.body;
   try {
@@ -138,7 +139,7 @@ productRoute.patch("/update/:id",async (req, res) => {
   }
 });
 
-productRoute.delete("/delete/:id", async (req, res) => {
+productRoute.delete("/delete/:id",authentication, async (req, res) => {
   const ID = req.params.id;
   try {
     await ProductModel.findByIdAndDelete({ _id: ID });

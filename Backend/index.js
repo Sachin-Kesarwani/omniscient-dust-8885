@@ -3,7 +3,7 @@ const cors = require("cors");
 const { connection } = require("./Config/db");
 const { userRouter } = require("./Routes/User.Route");
 const { productRoute } = require("./Routes/Product.Route");
-
+const { AdminRouter } = require("./Routes/Admin.Route");
 
 const app = express();
 
@@ -13,6 +13,7 @@ app.get("/", (req, res) => {
   res.send("Home Page");
 });
 
+app.use("/admin",AdminRouter);
 app.use("/users", userRouter);
 
 app.use("/products", productRoute);
