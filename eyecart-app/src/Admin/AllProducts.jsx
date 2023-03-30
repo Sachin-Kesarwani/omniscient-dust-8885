@@ -23,6 +23,11 @@ let [loading,setLoading]=useState(false)
   return loading?<Loading message={"Loading..."} open={loading} close={closegif}/>:(
     <div>
       <Heading>All Products</Heading>
+      {
+        data?.map((e)=>{
+          return <h2>{e.title}</h2>
+        })
+      }
     </div>
   )
 }
