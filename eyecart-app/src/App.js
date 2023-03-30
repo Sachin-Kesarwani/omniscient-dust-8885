@@ -25,7 +25,7 @@ let param = url.includes("admin");
     <div className="App">
 
 
-   {!param&& <Navbar/>}
+   {/* {!param&& <Navbar/>} */}
     
    <AllRoutes/>
      {!param&&<button onClick={handleClick}>Clickme</button>}
