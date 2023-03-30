@@ -46,8 +46,8 @@ const handlenavigate=()=>{
   return (
     <Box style={{fontFamily: 'Poppins'}} bgColor={"#f8f8f8"} width={"100%"} height={"100vh"}>
 
-   <Box className="cart_container" style={{display:"flex",width:"70%",margin:"auto",marginTop:"50px"}}>
-  <Box className="first_box" maxH={"450px"} overflowY={"auto"}>
+   <Box className="cart_container"  flexDirection={{base:'column',sm:"column",md:"column",xl:"row"}} gap={"50px"}  style={{display:"flex",width:"70%",margin:"auto",marginTop:"50px"}} >
+  <Box className="first_box" maxH={"400px"} overflowY={"auto"} overflowX={"hidden"} minW={{base:"170%",sm:"100%",md:"70%",xl:"70%"}} >
   <Text color={"black"} textAlign={"center"} mb={"10px"}>
 Cart({arr.length} items)
 
@@ -61,27 +61,27 @@ Cart({arr.length} items)
 
     })}
   </Box>
-<Box className="second_box">
+<Box className="second_box" width={{base:"170%",sm:"100%",md:"70%",xl:"100%"}}>
 <h4>
 Bill Details
 </h4>
 
 
-<Box className="box1" padding={"10px"}>
-    <Box display={"flex"} justifyContent={"space-between"} width={"100%"}>
+<Box className="box1" padding={"10px"} minW={"100%"}>
+    <Box display={"flex"} justifyContent={"space-between"} >
         <Text>Total Price</Text>
         <Text>₹{total}</Text>
     </Box>
-    <Box display={"flex"} justifyContent={"space-between"} width={"100%"}>
+    <Box display={"flex"} justifyContent={"space-between"}>
         <Text>Tax</Text>
         <Text>₹{159}</Text>
     </Box>
-    <Box display={"flex"} justifyContent={"space-between"} width={"100%"}>
+    <Box display={"flex"} justifyContent={"space-between"} >
         <Text>Total Payable</Text>
         <Text>₹{total+159}</Text>
     </Box>
 </Box>
-<Box className="box2" bgColor={"rgb(255, 243, 199)"}  box-shadow1={"rgb(20px 80px 40px 20px #0ff)"} border={"1px solid #e0c67c"}>
+<Box className="box2" minW={"100%"} bgColor={"rgb(255, 243, 199)"}  box-shadow1={"rgb(20px 80px 40px 20px #0ff)"} border={"1px solid #e0c67c"}>
 
    <Text>
      Add Gold Membership and get
@@ -93,7 +93,7 @@ Bill Details
     </Text>
 
 <hr  style={{color:"grey",border: "2px dotted",borderStyle: "none none dotted"}} />
-<Box display={"flex"} justifyContent={"space-between"}>
+<Box display={"flex"} justifyContent={"space-between"} minW={"100%"}>
 <Text mt={"10px"}>
      Add Gold & Choose second pair
     </Text>
@@ -101,7 +101,7 @@ Bill Details
 
 </Box>
 </Box>
-<Box className="box3">
+<Box className="box3" minW={"100%"}>
    
 
     <Box padding={"10px"} display={"flex"} justifyContent={"space-between"}>
