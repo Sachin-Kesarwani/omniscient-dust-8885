@@ -1,6 +1,7 @@
 import { Box, Button, Heading, Text } from '@chakra-ui/react'
 import React, { useRef } from 'react'
 import Form1 from '../fw22_0314_Components/Formfun2'
+import Paymentsfun from '../fw22_0314_Components/Payments.comp'
 import SidebarWithHeader from '../fw22_0314_Components/Payments.comp'
 import Pay_btn from '../fw22_0314_Components/Pay_btn'
 import './shipping.css'
@@ -13,9 +14,9 @@ const Payments = () => {
     
 <Box className={"shipping_add"} width={"70%"} height={"auto"} padding={"10px"} fontSize={"12px"} >
 <Box display={'flex'} justifyContent={"space-between"} width={"90%"} margin={"auto"} mb={"10px"} fontSize={"14px"} >
-<Box fontSize={"14px"} border={"1px solid grey"} bgColor={"grey"} color={"white"} padding={"5px 15px 5px 10px"} borderRadius={"20px"}>  <span style={{fontWeight:"500",marginRight:"5px"}} className='steps'>1</span>Mobile</Box>
-<Box  fontSize={"14px"}border={"1px solid grey"} bgColor={"grey"}  color={"white"} padding={"5px 15px 5px 10px"} borderRadius={"20px"}>  <span style={{fontWeight:"500",marginRight:"5px"}} className='steps'>2</span>Shipping Address</Box>
-<Box fontSize={"14px"} border={"1px solid grey"} bgColor={"black"}  color={"white"} padding={"5px 15px 5px 10px"} borderRadius={"20px"}>
+<Box fontSize={"14px"} border={"1px solid grey"} bgColor={"grey"} color={"white"} padding={"5px"} borderRadius={"20px"}>  <span style={{fontWeight:"500",marginRight:"5px"}} className='steps'>1</span>Mobile</Box>
+<Box  fontSize={"14px"}border={"1px solid grey"} bgColor={"grey"}  color={"white"} padding={"5px"} borderRadius={"20px"}>  <span style={{fontWeight:"500",marginRight:"5px"}} className='steps'>2</span>Shipping Address</Box>
+<Box fontSize={"14px"} border={"1px solid grey"} bgColor={"black"}  color={"white"} padding={"5px"} borderRadius={"20px"}>
     <span style={{fontWeight:"500",marginRight:"5px"}} className='steps'>3</span>
     Payment & Discounts </Box>
 
@@ -24,10 +25,19 @@ const Payments = () => {
     <Box fontSize={"12px"} mb={"10px"} border= {"2px dotted grey"} display={"flex"} justifyContent={"start"} padding={"15px"} bgColor={"#00bbc6"}>PROMOTIONAL DISCOUNT
          </Box>
     <Box  fontSize={"15px"} padding={"8px"} mb={"30px"} display={"flex"} justifyContent={"start"} border={"1px solid green"} width={"100%"} height={"50px"} alignItems={"center"} bgColor={"#329c92"} color={"white"}> PAYMENTS & OPTIONS</Box>
-    <Box fontSize={"12px"} mb={"30px"} border={"1px solid grey"}  height={"350px"} width={"100%"} borderRadius={"10px"} margin={"auto"} padding={"20px"} boxShadow={ 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'}> 
-   <SidebarWithHeader />
-  <Pay_btn />
+    <Box fontSize={"12px"} mb={"30px"} border={"1px solid grey"}  height={"auto"} width={"100%"} borderRadius={"10px"} margin={"auto"} padding={"20px"} boxShadow={ 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'}> 
+   {/* <SidebarWithHeader /> */}
+   <Paymentsfun />
+  {/* <Pay_btn /> */}
     
+    </Box>
+    <Text textAlign={'end'} m={'10px'}>By placing the order, I have read and agreed to lenskart.com</Text>
+    <Box display={'flex'} justifyContent={"space-between"} m={'10px'}>
+        <Text>LensCart Assurance</Text>
+        <Text><a href=""> Cancelation Policy</a></Text>
+    </Box>
+    <Box>
+        <img src="https://static1.lenskart.com/media/desktop/img/all-assurance-offering.png" alt="" />
     </Box>
 </Box>
 <Box className={"shipping_det"} height={"300px"} fontSize={"15px"} width={"40%"}  color={"black"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} padding={"10px"}>

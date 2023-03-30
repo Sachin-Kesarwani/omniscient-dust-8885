@@ -20,13 +20,14 @@ import {
 } from '@chakra-ui/react';
 import { Radio, RadioGroup,Stack } from '@chakra-ui/react'
 import { useToast } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 // import { MdArrowDropDown} from '@chakra-ui/icons'
 const Form1 = () => {
     const [value, setValue] = React.useState('')
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
-
-
+const navigate=useNavigate()
+  const toast = useToast()
   const dref=useRef({})
   const handlesubmit=()=>{
     console.log(value)
@@ -41,12 +42,29 @@ const Form1 = () => {
     let state_province=dref.current['state-province'].value
     let address_line_1=dref.current['address-line-1'].value
     let address_line_2=dref.current['address-line-2'].value
+if(first_name && last_name && email && gender && mob && city && postalcode && country && state_province && address_line_1 && address_line_2 ){
+  toast({
+    title: "Address Added Successfully", 
+    position: "top-right",
+    status:"success",
+    isClosable: true
+  })
+  let obj={
+    first_name,last_name,email,gender,mob,city,postalcode,country,state_province,address_line_1,address_line_2
+}
 
-    let obj={
-        first_name,last_name,email,gender,mob,city,postalcode,country,state_province,address_line_1,address_line_2
-    }
 console.log(obj)
+navigate("/payments")
 
+}else{
+  toast({
+    title: "Please fill all the details", 
+    position: "top-right",
+    status:"error",
+    isClosable: true
+  })
+}
+   
   }
 
 

@@ -4,15 +4,9 @@ import Form1 from '../fw22_0314_Components/Formfun2'
 import './shipping.css'
 const Shipping_page = () => {
 
-
-
-
-
-
-
   return (
     <Box color={"black"} bgColor={"#ffffff"} fontSize={"14px"}>
-<Box className={"shipping_cont"} margin={"auto"} display={"flex"} gap={"40px"} width={"60%"} fontSize={"14px"}>
+<Box className={"shipping_cont"}  margin={"auto"} display={"flex"} gap={"40px"} width={"60%"} fontSize={"14px"}>
     
 <Box className={"shipping_add"} width={"70%"} height={"auto"} padding={"10px"} fontSize={"12px"} >
 <Box display={'flex'} justifyContent={"space-between"} width={"90%"} margin={"auto"} mb={"10px"} fontSize={"14px"} >
