@@ -71,6 +71,7 @@ import AdminsPage from './AdminsPage';
 import Users from './Users';
 import AddProducts from './AddProducts';
 import Home from './Home';
+import { useNavigate } from 'react-router-dom';
 
 const LinkItems= [
   { id:1 ,name: 'Home', icon:FiUser },
@@ -199,6 +200,10 @@ const NavItem = ({ icon, onClose,children,id, ...rest}) => {
 const MobileNav = ({ onOpen, ...rest }) => {
   localStorage.setItem("admindata",JSON.stringify("Sachin Kesarwani"))
   let data=JSON.parse(localStorage.getItem("admindata"))
+  let navigate=useNavigate()
+  function sendtoHome(){
+     navigate("/")
+  }
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -219,11 +224,12 @@ const MobileNav = ({ onOpen, ...rest }) => {
       />
 
       <Text
+      textAlign={"center"}
         display={{ base: 'flex', md: 'none' }}
         fontSize="2xl"
         fontFamily="monospace"
         fontWeight="bold">
-        Logo
+       Admin Dashboard
       </Text>
       {/* <Image src={logo}/> */}
       <HStack spacing={{ base: '0', md: '6' }}>
@@ -264,11 +270,11 @@ const MobileNav = ({ onOpen, ...rest }) => {
             <MenuList
               bg={useColorModeValue('white', 'gray.900')}
               borderColor={useColorModeValue('gray.200', 'gray.700')}>
-              <MenuItem>Profile</MenuItem>
+              {/* <MenuItem>Profile</MenuItem>
               <MenuItem>Settings</MenuItem>
-              <MenuItem>Billing</MenuItem>
+              <MenuItem>Billing</MenuItem> */}
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem onClick={sendtoHome}>Sign out</MenuItem>
             </MenuList>
           </Menu>
         </Flex>

@@ -12,11 +12,16 @@ import {
     Input,
     FormLabel,
     Image,
-    Text
+    Text,
+    Box,
+    useToast
   } from '@chakra-ui/react'
   import {useNavigate} from "react-router-dom"
 import axios from 'axios'
+import { Icon } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
+import { CheckCircleIcon, InfoOutlineIcon } from '@chakra-ui/icons'
+import { Loading } from '../Components/Loading'
 let inidata={
     
     email:"",
@@ -32,7 +37,9 @@ function Login() {
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
     let [data,setdata]=useState(inidata)
+    let [loading,setLoading]=useState(false)
     let navigate=useNavigate()
+    let toast=useToast()
     function handleChange(e){
         setdata({...data,[e.target.name]:e.target.value})
           }
@@ -51,6 +58,8 @@ logindata()
     data:data
   }).then((res)=>{
     console.log(res.data)
+    localStorage.setItem("eyekartToken",res.data.token)
+    setdata(inidata)
    setLoading(false)
    toast({
     position: 'top-left',
@@ -77,7 +86,12 @@ logindata()
   })
   onClose()
  }
-    return (
+ function closegif(){
+  setLoading(false)
+}
+
+
+    return loading?<Loading message={"Processing..."}  open={loading} close={closegif}/>: (
       <>
         <Text onClick={onOpen}>SignIn</Text>
     

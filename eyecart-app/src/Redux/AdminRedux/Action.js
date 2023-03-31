@@ -19,13 +19,13 @@ function geterror(){
     }
 }
 
-export const GetAlldata=(dispatch)=>{
+export const GetAllproducts=(active=1)=>async(dispatch)=>{
     console.log(dispatch)
         dispatch(getloading())
-        axios.get("https://fakestoreapi.com/products")
+    return await axios.get(`https://shiny-gray-gear.cyclic.app/products/page/${active}`)
         .then((res)=>{
             dispatch(getalldata(res.data))
-           
+          
         }).catch((er)=>{
             dispatch(geterror())
         })
