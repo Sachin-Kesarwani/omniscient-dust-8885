@@ -29,7 +29,7 @@ const userSchema = mongoose.Schema({
     },
     terms_condition:{
         type:Boolean,
-        required:true
+        required:false
     }
 },{
     versionKey:false,
