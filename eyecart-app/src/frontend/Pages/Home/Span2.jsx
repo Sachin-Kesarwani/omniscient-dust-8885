@@ -3,7 +3,7 @@ import { Box, Flex, Image, Spacer } from "@chakra-ui/react";
 import Slider from "./Slider";
 //import Heading from "./Heading";
 
-const HomeSpan2 = ({ type, src }) => {
+const Span2 = ({ type, src }) => {
   return (
     <Box justifyContent="left" w="95%" m="auto" mt="6" cursor="pointer">
       <Flex mt="7">
@@ -44,4 +44,4 @@ const HomeSpan2 = ({ type, src }) => {
   );
 };
 
-export default HomeSpan2;
+export default Span2;

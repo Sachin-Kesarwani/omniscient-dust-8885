@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, Text, Image, Center } from "@chakra-ui/react";
 
-const HomeSpan = ({ type }) => {
+const Span = ({ type }) => {
   return (
     <Box mb="2" cursor="pointer" bgColor="#f5f5f5" p="4">
       <Grid
@@ -42,4 +42,4 @@ const HomeSpan = ({ type }) => {
   );
 };
 
-export default HomeSpan;
+export default Span;
