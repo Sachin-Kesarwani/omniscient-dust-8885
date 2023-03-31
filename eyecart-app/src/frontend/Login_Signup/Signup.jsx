@@ -125,7 +125,7 @@ function closegif(){
               </FormControl>
               <FormControl mt={4}>
               
-              <Input placeholder='+91 Mobile'   type={"text"}maxlength="10" id="inputfield" value={data.mobile} name="mobile" onChange={handleChange} required />
+              <Input placeholder='+91 Mobile'   type={"text"}maxLength="10" id="inputfield" value={data.mobile} name="mobile" onChange={handleChange} required />
             </FormControl>
             <FormControl mt={4}>
               

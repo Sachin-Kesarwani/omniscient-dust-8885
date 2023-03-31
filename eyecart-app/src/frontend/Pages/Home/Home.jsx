@@ -36,7 +36,7 @@ import HomeSpan7 from "./HomeSpan7";
 export const Home = () => {
   return (
     <Box>
-        <Navbar />
+        {/* <Navbar /> */}
         <HomeSpan type={HomeData} />
         <HomeSpan1 type={HomeData1} />
        

@@ -15,12 +15,14 @@ const AllRoutes = () => {
   return (
     <div>
       <Routes>
+
+      <Route path='/' element={<Home />} />
         <Route path='/admin'  element={<AdminHome/>} />
 
-        <Route path='/home' element={<Home />} />
+     
         
 
-        <Route path='/navbar' element={<Navbar/>} />
+        {/* <Route path='/navbar' element={<Navbar/>} /> */}
         <Route path='/cart' element={<Cart/>} />
         <Route path='/shipping' element={<Shipping_page/>} />
         <Route path='/payments' element={<Payments/>} />
