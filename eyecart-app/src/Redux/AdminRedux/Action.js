@@ -24,6 +24,7 @@ export const GetAllproducts=(active=1)=>async(dispatch)=>{
         dispatch(getloading())
     return await axios.get(`https://shiny-gray-gear.cyclic.app/products/page/${active}`)
         .then((res)=>{
+            console.log(res.data)
             dispatch(getalldata(res.data))
           
         }).catch((er)=>{
