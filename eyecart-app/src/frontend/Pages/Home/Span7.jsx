@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
 
-const HomeSpan7 = () => {
+const Span7 = () => {
   return (
     <Box
       w="100%"
@@ -38,4 +38,4 @@ const HomeSpan7 = () => {
   );
 };
 
-export default HomeSpan7;
+export default Span7;

@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Text, Image, Flex, Grid } from "@chakra-ui/react";
 import ReactPlayer from "react-player";
 
-export const HomeSpan5 = () => {
+export const Span5 = () => {
   return (
     <Box w="85%" m="auto">
       <Text fontSize="30px" pb="7" fontWeight="500" textAlign="center">
@@ -51,7 +51,7 @@ export const HomeSpan5 = () => {
   );
 };
 
-export const HomeSpan5a = ({ type, heading }) => {
+export const Span5a = ({ type, heading }) => {
   return (
     <Box w="85%" m="auto">
       <Text fontSize="30px" pb="7" fontWeight="500" textAlign="center">
@@ -77,7 +77,7 @@ export const HomeSpan5a = ({ type, heading }) => {
   );
 };
 
-export const HomeSpan5b = ({ type, heading }) => {
+export const Span5b = ({ type, heading }) => {
   return (
     <Box w="95%" m="auto">
       <Text fontSize="30px" pb="7" fontWeight="500" textAlign="center">
@@ -103,7 +103,7 @@ export const HomeSpan5b = ({ type, heading }) => {
   );
 };
 
-export const HomeSpan5c = ({ type, heading }) => {
+export const Span5c = ({ type, heading }) => {
   return (
     <Box bgColor="#fff092" pb="5%" pt="2%">
       <Box w="90%" m="auto">
