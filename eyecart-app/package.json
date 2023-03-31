@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^2.5.4",
+    "@emailjs/browser": "^3.10.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@testing-library/jest-dom": "^5.16.5",
@@ -15,11 +17,14 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-player": "^2.12.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
+    "react-slideshow-image": "^4.2.1",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
+    "swiper": "^9.1.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -31,7 +31,8 @@ require("dotenv").config()
             else{
                 const user = new UserModel({first_name,last_name,email, password:hash,gender,mobile,city})
                 await user.save()
-                res.send ({"msg":"New Users has been register"})
+                let regdata=await UserModel.findOne({email:email})
+                res.send ({"msg":"New Users has been register",data:regdata})
             }
          })
     } catch (err) {
@@ -81,5 +82,24 @@ require("dotenv").config()
       res.send({ msg: "Email is not registered." })
     }
   })
+
+  userRouter.delete('/delete', async (req, res) => {
+    const { email} = req.body
+    const data = await UserModel.find({ email })
+    if (data.length > 0) {
+      try {
+        
+       await UserModel.findOneAndDelete({ email })
+            res.status(201).send({ msg: "User has been deleted" })
+           
+      } catch (error) {
+        res.send({ msg: "Email is not registered.", error: error.message });
+      }
+    }
+    else {
+      res.send({ msg: "Email is not registered." })
+    }
+  })
+ 
  module.exports={userRouter}
 

@@ -36,9 +36,11 @@ import Span7 from "./Span7";
 export const Home = () => {
   return (
     <Box>
+
         <Navbar />
         <Span type={HomeData} />
         <Span1 type={HomeData1} />
+
        
         <Image 
           src='https://static1.lenskart.com/media/desktop/img/Feb23/23feb/PREMIUM%20BRANDS%20WEB.jpg'

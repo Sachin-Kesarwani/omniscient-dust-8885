@@ -26,6 +26,10 @@ const userSchema = mongoose.Schema({
     city:{
         type:String,
         required:true
+    },
+    terms_condition:{
+        type:Boolean,
+        required:false
     }
 },{
     versionKey:false,

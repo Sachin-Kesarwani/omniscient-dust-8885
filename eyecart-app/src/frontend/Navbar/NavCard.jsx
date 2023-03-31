@@ -17,6 +17,8 @@ import { CgShoppingCart } from "react-icons/cg";
 import { Link, Navigate } from "react-router-dom";
 import CategoryMenubar from "./CategoryMenubar";
 import { useNavigate } from "react-router-dom";
+import Signup from '../Login_Signup/Signup';
+import Login from '../Login_Signup/Login';
 
 const Navinfo1 = [
     {
@@ -130,8 +132,8 @@ export const NavbarCard2 = () => {
               </Button>
 
               {/* //login signup */}
-              <Box display={"flex"}>
-                 Login | Signup
+              <Box display={"flex"}>{<Signup/>} | {<Login/>}
+                 {/* Login | Signup */}
               </Box>
                {/* Wishlist button */}
               <Button

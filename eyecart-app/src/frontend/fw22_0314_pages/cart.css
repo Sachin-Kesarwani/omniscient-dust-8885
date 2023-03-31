@@ -1,17 +1,17 @@
  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
  
 .first_box{
-border:1px solid red;
+/* border:1px solid red; */
 height:400px;
 width:60%
 }
 .logo{
     height: 100%;
-    width: 200px;
+    width: 250px;
     
 }
 .second_box{
-    border:1px solid rgb(56, 199, 16);
+    /* border:1px solid rgb(56, 199, 16); */
     height:400px;
     width:40%;
     color:black;
@@ -33,6 +33,7 @@ width:60%
 
 
 }
+
 .cart_card:nth-child(1){
     height: 160px;
     border-radius: 10px;
