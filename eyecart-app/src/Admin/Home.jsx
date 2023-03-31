@@ -3,6 +3,7 @@ import { Loading } from '../frontend/Components/Loading'
 
 import { ReactText, useState } from 'react';
 import { ContactUs } from './Test';
+import EditProduct from './EditProduct';
 
 
  const Home = () => {
@@ -15,8 +16,8 @@ import { ContactUs } from './Test';
       <Heading>Home</Heading>
       <Image width="100px" margin={"auto"} src="https://i.gifer.com/87Hq.gif"/>
       <Button onClick={()=>setLoading(!loading)}>vlllll</Button>
-  {/* <EmailSender/> */}
-  <ContactUs/>
+
+ 
     </div>
   )
   }
