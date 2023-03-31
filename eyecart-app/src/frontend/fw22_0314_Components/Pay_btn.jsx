@@ -36,7 +36,7 @@ const [amt,setamt]=useState("")
     }
   
     // creating a new order
-    let amt=10000
+    let amt=50000
     let obj={
       amt
     }
