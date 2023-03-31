@@ -31,7 +31,8 @@ require("dotenv").config()
             else{
                 const user = new UserModel({first_name,last_name,email, password:hash,gender,mobile,city})
                 await user.save()
-                res.send ({"msg":"New Users has been register"})
+                let regdata=await UserModel.findOne({email:email})
+                res.send ({"msg":"New Users has been register",data:regdata})
             }
          })
     } catch (err) {
