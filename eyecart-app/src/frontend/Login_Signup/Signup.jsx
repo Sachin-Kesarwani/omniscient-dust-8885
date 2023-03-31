@@ -1,3 +1,4 @@
+import { CheckCircleIcon, InfoOutlineIcon } from '@chakra-ui/icons'
 import {
     Modal,
     ModalOverlay,
@@ -11,37 +12,94 @@ import {
     FormControl,
     Input,
     Center,
-    Text
+    Text,
+    Checkbox,
+    useToast,
+    Box
   } from '@chakra-ui/react'
+  import { Icon } from '@chakra-ui/react'
+import axios from 'axios'
 import React, { useState } from 'react'
+import { Loading } from '../Components/Loading'
 import Login from './Login'
 import logSin from "./logSin.css"
 let inidata={
     first_name:"",
     last_name:"",
     email:"",
-    mobile:"",
+    mobile:0,
     password:"",
-   
+   terms_condition:false,
     city:""
 
 }
 function Signup() {
     const { isOpen, onOpen, onClose } = useDisclosure()
+
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
   let [data,setdata]=useState(inidata)
 let [login,setLogin]=useState(false)
+let [loading,setLoading]=useState(false)
+const toast = useToast()
   function handleChange(e){
-setdata({...data,[e.target.name]:e.target.value})
-  }
-  console.log(data)
-  console.log( initialRef)
+    console.log(e.target.checked)
+   if(e.target.name=="terms_condition"){
+    setdata({...data,[e.target.name]:e.target.checked})
+    }else{
+      setdata({...data,[e.target.name]:e.target.value})
+    }
 
+  }
+ function handleSubmit(e){
+  e.preventDefault()
+  registerdata()
+ }
+
+ function registerdata(){
+  setLoading(true)
+  axios({
+    url:"https://shiny-gray-gear.cyclic.app/users/register",
+    method:"post",
+    data:data
+  }).then((res)=>{
+    console.log(res.data)
+   setLoading(false)
+   toast({
+    position: 'top-left',
+    
+    render: () => (
+      <Box color='white'borderRadius={"10px"} textAlign={"center"} p={3} bg='green.500'>
+    <Icon color={"white"} as={CheckCircleIcon} /> <b>Succesfully Signedup</b>  
+      </Box>
+    ),
+  })
+  onClose()
+  }).catch((err)=>{
+    setLoading(false)
+    toast({
+      position: 'top-left',
+      
+      render: () => (
+        <Box color='white'borderRadius={"10px"} textAlign={"center"} p={3} bg='orange.400'>
+      <Icon color={"white"} as={InfoOutlineIcon} /> <b>User Exist , Please Login</b>  
+        </Box>
+      ),
+    })
+  })
+  onClose()
+ }
   function handleLog(){
 setLogin(true)
   }
-    return  (
+
+  
+function closegif(){
+  setLoading(false)
+}
+
+
+    return loading?<Loading message={"Processing..."}  open={loading} close={closegif}/>: (
       <>
         <Text onClick={onOpen}>Signup</Text>
         
@@ -81,7 +139,10 @@ setLogin(true)
               
               <Input placeholder='Password'  type={"text"} id="inputfield" value={data.password} name="password" onChange={handleChange} required />
             </FormControl>
-            <Button color="#680ae7" bg={"#02bdae" }_hover={{bg:"#dfdfd9"}} marginTop="10px" borderRadius="20px"  w="100%">
+            <Checkbox m={3} onChange={handleChange} isChecked={data.terms_condition} name="terms_condition" colorScheme='green' defaultChecked>
+              Accept Terms & conditions
+            </Checkbox>
+            <Button onClick={handleSubmit} color="#680ae7" bg={"#02bdae" }_hover={{bg:"#dfdfd9"}} marginTop="10px" borderRadius="20px"  w="100%">
             Create an Account
             </Button>
           
