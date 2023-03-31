@@ -9,7 +9,7 @@ const { authentication } = require("../Middleware/admin.authentication");
 const AdminRouter = express.Router();
 
 
-AdminRouter.post("/register", async (req, res) => {
+AdminRouter.post("/register", authentication,async (req, res) => {
   const { name, email, password } = req.body;
   const admin = await AdminModel.find({ email });
   if (admin.length === 0) {
