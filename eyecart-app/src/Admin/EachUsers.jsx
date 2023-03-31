@@ -1,53 +1,69 @@
 import {
-    Table,
-    Thead,
-    Tbody,
-    Tfoot,
-    Tr,
-    Th,
-    Td,
-    TableCaption,
-    TableContainer,
-  } from '@chakra-ui/react'
-import { Icon } from '@chakra-ui/react'
-import {FiDelete} from "react-icons/fi";
-import React from 'react'
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+} from "@chakra-ui/react";
+import { Icon } from "@chakra-ui/react";
+import { FiDelete } from "react-icons/fi";
+import React, { useState } from "react";
+import axios from "axios";
+import { Loading } from "../frontend/Components/Loading";
 
-const EachUsers = ({data}) => {
-  return <Tr>
-  <Td>
-    
-    {/* {data.first_name} */}
-    11
-    
-    </Td>
-  <Td>
-    {/* {data.last_name} */}
-    11
-    </Td>
-  <Td>
-    {/* {data.email} */}
-    111</Td>
- 
-  <Td>
-    {/* {data.mobile} */}
-    111</Td>
-  <Td>
-    {/* {data.city} */}
-    11111</Td>
-  <Td><Icon
-            mr="4"
-            fontSize="16"
-            _groupHover={{
-              color: 'white',
-            }}
-            as={FiDelete}
-          /></Td>
-</Tr>
-}
+const EachUsers = ({ data,getAllusers }) => {
+let [loading,setLoading]=useState(false)
+    async function deleteusers(email){
+        setLoading(true)
+        console.log(email,typeof email)
+        await axios({
+            method:"delete",
+            url:"https://shiny-gray-gear.cyclic.app/users/delete",
+            data:{
+                email:email
+            }})
+        .then((res)=>{
+          console.log(res)
+          getAllusers()
+          setLoading(false)
+        }).catch((err)=>{
+          console.log(err)
+        })
+        }
+        function closegif(){
+            setLoading(false)
+          }
+          
+          
+            return  loading?<Loading message={"Deleting..."} open={loading} close={closegif}/>: (
+    <Tr>
+      <Td>{data.first_name}</Td>
+      <Td>{data.last_name}</Td>
+      <Td>{data.email}</Td>
 
-export default EachUsers
+      <Td>{data.mobile}</Td>
+      <Td>{data.city}</Td>
+      <Td>
+        <Icon
+         onClick={()=>deleteusers(data.email)}
+          mr="4"
+          cursor={"pointer"}
+          fontSize="16"
+          _groupHover={{
+            color: "white",
+          }}
+          as={FiDelete}
+        />
+      </Td>
+    </Tr>
+  );
+};
 
+export default EachUsers;
 
 // first_name:{
 //     type:String,
