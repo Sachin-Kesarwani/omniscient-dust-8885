@@ -11,7 +11,8 @@ import {
     FormControl,
     Input,
     FormLabel,
-    Image
+    Image,
+    Text
   } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 let inidata={
@@ -34,7 +35,7 @@ function Login() {
           }
     return (
       <>
-        <Button onClick={onOpen}>SignIn</Button>
+        <Text onClick={onOpen}>SignIn</Text>
     
   
         <Modal
@@ -56,7 +57,7 @@ function Login() {
   
             <FormControl mt={4}>
               
-              <Input placeholder='Password'  type={"text"} id="inputfield" value={data.password} name="password" onChange={handleChange} required />
+              <Input placeholder='Password'  type={"email"} id="inputfield" value={data.password} name="password" onChange={handleChange} required />
             </FormControl>
             <Button color="#680ae7" bg={"#02bdae" }_hover={{bg:"#dfdfd9"}} marginTop="10px" borderRadius="20px"  w="100%">
             Sign In

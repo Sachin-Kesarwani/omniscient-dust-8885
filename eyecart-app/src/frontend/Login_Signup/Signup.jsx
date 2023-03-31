@@ -10,7 +10,8 @@ import {
     Button,
     FormControl,
     Input,
-    Center
+    Center,
+    Text
   } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import Login from './Login'
@@ -42,7 +43,7 @@ setLogin(true)
   }
     return  (
       <>
-        <Button onClick={onOpen}>Signup</Button>
+        <Text onClick={onOpen}>Signup</Text>
         
         <Modal
           initialFocusRef={initialRef}
@@ -70,7 +71,7 @@ setLogin(true)
             </FormControl>
             <FormControl mt={4}>
               
-              <Input placeholder='Email'  type={"text"} id="inputfield" value={data.email} name="email" onChange={handleChange} required  />
+              <Input placeholder='Email'  type={"email"} id="inputfield" value={data.email} name="email" onChange={handleChange} required  />
             </FormControl>
             <FormControl mt={4}>
               
@@ -95,9 +96,9 @@ setLogin(true)
           </ModalContent>
         </Modal>
        
-        <a href="whatsapp://send?abid=9936752902&text=Hello%2C%20World!"> <Button>
+        {/* <a href="whatsapp://send?abid=9936752902&text=Hello%2C%20World!"> <Button>
         Ping me on WhatsApp
-            </Button></a>
+            </Button></a> */}
       </>
     )
   }

@@ -38,6 +38,8 @@ const productSchema = mongoose.Schema({
         type:String,
         required:true
     },
+    adminID: { type: String, required: true },
+    admin: { type: String, required: true },
 },{
     versionKey:false,
 })
