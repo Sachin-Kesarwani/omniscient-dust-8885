@@ -6,7 +6,8 @@ const { productRoute } = require("./Routes/Product.Route");
 
 const { AdminRouter } = require("./Routes/Admin.Route");
 
-const {paymentrouter} =require("./Routes/payments")
+const {paymentrouter} =require("./Routes/payments");
+const { cartRoute } = require("./Routes/Cart.Route");
 
 
 const app = express();
@@ -21,6 +22,7 @@ app.use("/admin",AdminRouter);
 app.use("/users", userRouter);
 
 app.use("/products", productRoute);
+app.use("/carts", cartRoute);
 app.use("/payments",paymentrouter)
 
 

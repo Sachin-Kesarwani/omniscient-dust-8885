@@ -3,7 +3,7 @@ import { Box, Image } from "@chakra-ui/react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
-const HomeSpan1 = ({ type }) => {
+const Span1 = ({ type }) => {
   return (
     <Box cursor="pointer" p="-1">
       <Box>
@@ -19,4 +19,4 @@ const HomeSpan1 = ({ type }) => {
   );
 };
 
-export default HomeSpan1;
+export default Span1;

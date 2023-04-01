@@ -37,7 +37,7 @@ amt=+amt
 
 paymentrouter.post("/success", async (req, res) => {
     try {
-        // getting the details back from our font-end
+        // getting the details back from our front-end
         const {
             orderCreationId,
             razorpayPaymentId,

@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
-const HomeSpan6 = ({ type, heading }) => {
+const Span6 = ({ type, heading }) => {
   return (
     <Box
       justifyContent="left"
@@ -70,4 +70,4 @@ const HomeSpan6 = ({ type, heading }) => {
   );
 };
 
-export default HomeSpan6;
+export default Span6;

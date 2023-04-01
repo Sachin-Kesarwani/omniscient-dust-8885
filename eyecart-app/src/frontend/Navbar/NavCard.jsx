@@ -126,7 +126,7 @@ export const NavbarCard2 = () => {
                 bg="whiteAlpha.900"
                 fontSize="15px"
                 fontWeight="400"
-                onClick={() => navigate("/orderhistory")}
+                onClick={() => navigate("/orderHistory")}
               >
                 Track Order
               </Button>

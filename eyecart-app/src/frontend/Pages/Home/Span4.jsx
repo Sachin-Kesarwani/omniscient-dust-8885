@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Text, Image } from "@chakra-ui/react";
 
-export const HomeSpan4 = ({ text, src }) => {
+export const Span4 = ({ text, src }) => {
   return (
     <Box mt="-20">
-      <Text fontSize="30px" pb="7" fontWeight="500" textAlign="center">
+      <Text fontSize="30px" pb="7" fontWeight="600" textAlign="center">
         {text}
       </Text>
       <Image src={src} alt="img" />
@@ -12,7 +12,7 @@ export const HomeSpan4 = ({ text, src }) => {
   );
 };
 
-export const HomeSpan4a = ({ text, src }) => {
+export const Span4a = ({ text, src }) => {
   return (
     <Box mt="-20">
       <Text fontSize="30px" pb="7" fontWeight="500" textAlign="center">
@@ -23,7 +23,7 @@ export const HomeSpan4a = ({ text, src }) => {
   );
 };
 
-export const HomeSpan4b = ({ text, src }) => {
+export const Span4b = ({ text, src }) => {
   return (
     <Box mt="-20">
       <Text fontSize="30px" pb="7" fontWeight="500" textAlign="center">
