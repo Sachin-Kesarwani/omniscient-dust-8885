@@ -21,6 +21,7 @@ function geterror(){
 
 export const GetAllproducts=(active=1)=>async(dispatch)=>{
     console.log(dispatch)
+    console.log(process.env.REACT_APP_url)
         dispatch(getloading())
     return await axios.get(`https://shiny-gray-gear.cyclic.app/products/page/${active}`)
         .then((res)=>{
