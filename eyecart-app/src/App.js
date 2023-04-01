@@ -1,12 +1,14 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Cart from './frontend/fw22_0314_pages/Cart'
-import {useEffect, useState} from "react"
-import {Link, useNavigate} from "react-router-dom"
+
 
 import Home from './Admin/Home';
 import AllRoutes from './frontend/Pages/AllRoutes';
 import { Navbar } from './frontend/Navbar/Navbar';
+import NewProduct from './frontend/Pages/Products_Component/NewProduct/ProductList';
+import SingleProduct from './frontend/Pages/Products_Component/NewProduct/SingleProduct';
+
+
 
 
 
@@ -27,6 +29,7 @@ let param = url.includes("admin");
    {!param && <Navbar/>}
     
    <AllRoutes/>
+   
      {!param&&<button onClick={handleClick}>Clickme</button>}
      
 
