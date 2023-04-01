@@ -14,6 +14,7 @@ import SingleProduct from './Products_Component/NewProduct/SingleProduct'
 
 import PrivateRoute from './PrivateRoute'
 import Account from '../../Account/Account'
+import NewProduct from './Products_Component/NewProduct/ProductList'
 
 
 
@@ -24,6 +25,7 @@ const AllRoutes = () => {
 
       <Route path='/' element={<Home />} />
         <Route path='/admin'  element={<AdminHome/>} />
+        <Route path='/products'  element={<NewProduct/>} />
 
         <Route path='/navbar' element={<Navbar/>} />
         <Route path="/newproducts/:id" element={<SingleProduct />} />
