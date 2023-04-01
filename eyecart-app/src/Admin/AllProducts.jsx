@@ -14,6 +14,7 @@ const toast = useToast()
 let allproducts=useSelector((store)=>store?.adminReducer?.data)
 let load=useSelector((store)=>store?.adminReducer?.loading)
 let active=useSelector((store)=>store?.adminReducer?.activepage)
+let error=useSelector((store)=>store?.adminReducer?.error)
 console.log(load,"load")
 let [loading,setLoading]=useState(load)
    
@@ -29,8 +30,8 @@ let [loading,setLoading]=useState(load)
       })
      
     },[active])
-    console.log(data)
-  return loading?<Loading message={"Loading..."} open={loading} close={closegif}/>:(
+    console.log(allproducts)
+  return loading?<Loading message={"Loading..."} open={loading} close={closegif}/>:error?<Heading>Somethin Went wrong !</Heading>:(
     <>
        <Heading>All Products</Heading>
      <Box
@@ -52,7 +53,7 @@ let [loading,setLoading]=useState(load)
     }}
      ml={{
       base:"10px",
-      sm: '100px', // 480px
+      sm: '50px', // 480px
       md: '30%', // 768px
       lg: '25%', // 992px
       xl: '22%', // 1280px

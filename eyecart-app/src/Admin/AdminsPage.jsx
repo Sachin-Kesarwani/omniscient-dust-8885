@@ -1,6 +1,7 @@
 import { Box, Heading } from '@chakra-ui/react'
 import React from 'react'
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import AddAdmin from './AddAdmin'
 const AdminsPage = () => {
   return (
     <Box w={{
@@ -26,7 +27,7 @@ const AdminsPage = () => {
       <p>one!</p>
     </TabPanel>
     <TabPanel>
-      <p>two!</p>
+     <AddAdmin/>
     </TabPanel>
   </TabPanels>
 </Tabs>
