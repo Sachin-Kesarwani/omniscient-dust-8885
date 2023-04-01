@@ -89,14 +89,15 @@ productRoute.get("/:id",async (req, res) => {
 
   productRoute.get('/page/:page',async(req,res)=>{
     const page = req.params.page ? parseInt(req.params.page) : 1;
+    // console.log(page);
     const limit = 10;
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
-  
+    const pageNo=page
     try {
       const products = await ProductModel.find().skip(startIndex).limit(limit);
       const count = await ProductModel.countDocuments();
-  
+      const Totalpage=(Math.ceil(count/limit));
       const result = {};
       if (endIndex < count) {
         result.next = {
@@ -111,13 +112,14 @@ productRoute.get("/:id",async (req, res) => {
         };
       }
       result.products = products;
-  
-      res.status(200).send(result.products);
+     
+      res.status(200).send({products,pageNo,Totalpage,limit});
   
     } catch (error) {
         res.status(500).send({ message: error.message })
     }
 })
+
 
 productRoute.post("/create", authentication,async (req, res) => {
   try {

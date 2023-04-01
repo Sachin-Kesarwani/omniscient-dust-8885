@@ -263,19 +263,19 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   </Text>
                 </VStack>
                 <Box display={{ base: 'none', md: 'flex' }}>
-                  <FiChevronDown />
+                  {/* <FiChevronDown /> */}
                 </Box>
               </HStack>
             </MenuButton>
-            <MenuList
+            {/* <MenuList
               bg={useColorModeValue('white', 'gray.900')}
               borderColor={useColorModeValue('gray.200', 'gray.700')}>
-              {/* <MenuItem>Profile</MenuItem>
+              <MenuItem>Profile</MenuItem>
               <MenuItem>Settings</MenuItem>
-              <MenuItem>Billing</MenuItem> */}
+              <MenuItem>Billing</MenuItem>
               <MenuDivider />
               <MenuItem onClick={sendtoHome}>Sign out</MenuItem>
-            </MenuList>
+            </MenuList> */}
           </Menu>
         </Flex>
       </HStack>
