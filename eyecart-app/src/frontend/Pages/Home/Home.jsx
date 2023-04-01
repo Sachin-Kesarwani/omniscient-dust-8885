@@ -37,7 +37,7 @@ export const Home = () => {
   return (
     <Box>
 
-        <Navbar />
+        {/* <Navbar /> */}
         <Span type={HomeData} />
         <Span1 type={HomeData1} />
 
