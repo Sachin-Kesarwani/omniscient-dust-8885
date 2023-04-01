@@ -73,6 +73,7 @@ import AddProducts from './AddProducts';
 import Home from './Home';
 import { useNavigate } from 'react-router-dom';
 
+
 const LinkItems= [
   { id:1 ,name: 'Home', icon:FiUser },
   { id:2,name: 'All Products', icon: FiBox },
@@ -117,7 +118,8 @@ active==1?<Home/>:active==2?<AllProducts/>:active==3?<AdminsPage/>:active==4?<Us
     
       {/* <Signup/>
       <Login/> */}
-     
+      <h1>sjshshsh</h1>
+    
     </Box>
   );
 }

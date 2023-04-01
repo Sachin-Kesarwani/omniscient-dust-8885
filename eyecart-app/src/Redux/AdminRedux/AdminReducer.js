@@ -17,7 +17,7 @@ export function reducer(state=inidata,action){
         }
         case(getdata):{
             return{
-                ...state,data:action.payload,loading:false
+                ...state,data:action.payload.products,loading:false
             }
         }
           case(error) :{

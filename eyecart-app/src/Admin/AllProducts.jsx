@@ -14,7 +14,7 @@ const toast = useToast()
 let allproducts=useSelector((store)=>store?.adminReducer?.data)
 let load=useSelector((store)=>store?.adminReducer?.loading)
 let active=useSelector((store)=>store?.adminReducer?.activepage)
-console.log(load,"load")
+// console.log(load,"load")
 let [loading,setLoading]=useState(load)
    
     function closegif(){
@@ -29,7 +29,7 @@ let [loading,setLoading]=useState(load)
       })
      
     },[active])
-    console.log(data)
+    // console.log(allproducts)
   return loading?<Loading message={"Loading..."} open={loading} close={closegif}/>:(
     <>
        <Heading>All Products</Heading>
