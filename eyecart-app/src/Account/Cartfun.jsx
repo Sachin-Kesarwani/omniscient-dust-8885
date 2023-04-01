@@ -21,11 +21,12 @@ const [data,setdata]=useState([])
     return isLoading?<Loading />:isError?<div>Error</div>:(
         <div>
 
-        {data.map((el)=>{
+        {data.length>0?data.map((el)=>{
             return <div>
-                hello
+              
             </div>
-        })}
+        }):<div style={{color:'black',display:"block",margin:"auto"}}>
+            <img height={"300px"} width={"50%"} src="https://www.clickbazar.com/Images/empty-cart.gif" alt="" /></div>}
 
 
     </div>
