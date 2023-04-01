@@ -24,12 +24,12 @@ require("dotenv").config()
 })
 
  userRouter.post("/register",async(req,res)=>{
-    const {email,password,first_name,last_name,gender,mobile,city} = req.body;
+    const {email,password,first_name,last_name,mobile,city} = req.body;
     try {
          bcrypt.hash(password,5,async(err,hash)=>{
             if(err) res.send ({"msg":"Something went wrong",error:err.message})
             else{
-                const user = new UserModel({first_name,last_name,email, password:hash,gender,mobile,city})
+                const user = new UserModel({first_name,last_name,email, password:hash,mobile,city})
                 await user.save()
                 let regdata=await UserModel.findOne({email:email})
                 res.send ({"msg":"New Users has been register",data:regdata})
@@ -62,17 +62,16 @@ require("dotenv").config()
     }
  })
 
- userRouter.patch('/forgot-password/', async (req, res) => {
-    const { email, password } = req.body
+ userRouter.patch('/updatedetails', async (req, res) => {
+    const { email, password,first_name,last_name} = req.body
     const data = await UserModel.find({ email })
     if (data.length > 0) {
       try {
         bcrypt.hash(password, 5, async (err, hash) => {
           if (err) res.send({ msg: "Something went wrong", error: err.message });
           else {
-            await UserModel.findOneAndUpdate({ email }, { password:hash })
-            res.status(201).send({ msg: "Password is Updated" })
-           
+            await UserModel.findOneAndUpdate({ email }, { password:hash,first_name,last_name})
+            res.status(201).send({ msg: "Users details has been Updated" }) 
           }
         });
       } catch (error) {
