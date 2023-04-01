@@ -12,6 +12,7 @@ import SingleProduct from './frontend/Pages/Products_Component/NewProduct/Single
 
 
 
+
 function App() {
 function handleClick(){
   window.open("http://localhost:3000/admin","_blank","noreferrer")
@@ -24,7 +25,8 @@ let param = url.includes("admin");
   return (
     <div className="App">
 
-   {!param&& <Navbar/>}
+
+   {!param && <Navbar/>}
     
    <AllRoutes/>
    

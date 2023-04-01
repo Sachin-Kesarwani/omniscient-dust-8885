@@ -1,10 +1,12 @@
-import { error, getdata, loading } from "./type";
+import { error, getdata, loading, pageChange } from "./type";
 
 
 let inidata={
     data:[],
     loading:false,
-    error:false
+    error:false,
+    activepage:1,
+    totalPage:0
 }
 
 export function reducer(state=inidata,action){
@@ -16,7 +18,7 @@ export function reducer(state=inidata,action){
         }
         case(getdata):{
             return{
-                ...state,data:action.payload,loading:false
+                ...state,data:action.payload.products,loading:false,totalPage:action.payload.Totalpage
             }
         }
           case(error) :{
@@ -24,6 +26,11 @@ export function reducer(state=inidata,action){
                 ...state,loading:false,error:true
             }
           } 
+          case(pageChange):{
+            return{
+              ...state,activepage:action.payload
+            }
+          }
            
         default:{
            return state
