@@ -48,7 +48,7 @@ const NewProduct = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://harlequin-fawn-tutu.cyclic.app/product?sort=${sort}&productRefLink=${productRef}&productType=${types}&gender=${gender}&page=${page}`
+        `https://shiny-gray-gear.cyclic.app/products?sort=${sort}&productRefLink=${productRef}&productType=${types}&gender=${gender}&page=${page}`
       );
       const postData = await response.json();
       setProducts(postData);
@@ -323,7 +323,7 @@ const NewProduct = () => {
           </Box>
 
           <Box
-            overflow="scroll"
+            overflow="scroll"           
             w="82%"
             borderLeft="1px solid"
             borderColor="gray.300"
@@ -409,6 +409,7 @@ const NewProduct = () => {
               </h2>
             )}
             <Grid
+           
               m="20px 10px"
               templateColumns="repeat(3, 1fr)"
               height="100vh"
@@ -419,7 +420,8 @@ const NewProduct = () => {
                 <GridItem key ={ele.id}>
                   <Link to={`/newproducts/${ele._id}`}>
                     <Box
-                      position="relative"
+                    
+                       position="relative"
                       border="1px solid"
                       borderColor="gray.200"
                       borderRadius="3%"
@@ -433,7 +435,7 @@ const NewProduct = () => {
                         <Image
                           m="auto"
                           width="80%"
-                          src={ele.imageTsrc}
+                          src={ele.image}
                           alt="image"
                         />
                         <br />
@@ -483,7 +485,7 @@ const NewProduct = () => {
                             color="gray.400"
                             fontSize="14px"
                           >
-                            {ele.name}{" "}
+                            {ele.title}{" "}
                           </Text>
                           <Text
                             mt="5px"
@@ -491,7 +493,7 @@ const NewProduct = () => {
                             color="#000042"
                             fontSize="14px"
                           >
-                            Shape : {ele.shape}
+                            Shape : {ele.frame_type}
                           </Text>
                           <Text
                             mt="5px"

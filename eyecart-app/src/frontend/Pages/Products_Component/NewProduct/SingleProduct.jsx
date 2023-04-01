@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/CartPage/action";
-import { addToWishlist } from "../../redux/wishlist/wishlist.actions";
+// import { addToCart } from "../../redux/CartPage/action";
+// import { addToWishlist } from "../../redux/wishlist/wishlist.actions";
 
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -20,35 +20,32 @@ import {
 
 const SingleProduct = () => {
   const { id } = useParams();
+  console.log("hi",id)
   const [data, setData] = useState({});
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const { cart } = useSelector((state) => state.CartReducer);
+  // const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const { cart } = useSelector((state) => state.CartReducer);
 
   const handleAddToCart = () => {
-    const existingItem = cart.findIndex((item) => item._id === data._id);
-    if (existingItem === -1) {
-      data.quantity = 1;
-      dispatch(addToCart(data));
-      console.log(data);
-      setTimeout(() => {
-        navigate("/cartpage");
-      }, 1000);
-    } else {
-      alert("Product Already Add in Cart");
-    }
+    axios.post("https://shiny-gray-gear.cyclic.app/addtocart",data).then((response) => {
+      console.log(response);
+    }, (error) => {
+      console.log(error);
+    });
   };
 
-  const handleAddToWishlist = () => {
-    dispatch(addToWishlist(data));
-    setTimeout(() => {
-      navigate("/wishlist");
-    }, 1000);
-  };
+  // const handleAddToWishlist = () => {
+  //   dispatch(addToWishlist(data));
+  //   setTimeout(() => {
+  //     navigate("/wishlist");
+  //   }, 1000);
+  // };
 
   const fetchSingleProduct = () => {
-    axios(`https://harlequin-fawn-tutu.cyclic.app/product/${id}`)
-      .then((res) => setData(res.data.product))
+    axios(`https://shiny-gray-gear.cyclic.app/products/${id}`)
+      .then((res) => {setData(res.data[0])
+       
+      })
       .catch((err) => console.log(err));
   };
   useEffect(() => {
@@ -70,7 +67,7 @@ const SingleProduct = () => {
           border="1px solid"
           borderColor="gray.300"
         >
-          <Image src={data.imageTsrc} />
+          <Image src={data.image} />
         </GridItem>
         <GridItem
           borderRadius={10}
@@ -78,10 +75,10 @@ const SingleProduct = () => {
           border="1px solid"
           borderColor="gray.300"
         >
-          <Image src={data.imageTsrc} /> *
+          <Image src={data.image} /> 
         </GridItem>
         <GridItem position="relative" p={5} colSpan={1} rowSpan={10}>
-          <Text color="gray.500">{data.name}</Text>
+          <Text color="gray.500">{data.title}</Text>
           <Text
             my="10px"
             fontWeight={"bold"}
@@ -105,7 +102,7 @@ const SingleProduct = () => {
                 marginRight: "2%"
               }}
             >
-              {"  "}₹{data.mPrice}{" "}
+              {"  "}₹{data.price}{" "}
             </span>
             <span
               style={{
@@ -114,7 +111,7 @@ const SingleProduct = () => {
                 color: "black"
               }}
             >
-              {"  "}(₹{+data.mPrice - +data.price} with GST)
+              {"  "}(₹{+data.price - +data.price} with GST)
             </span>
           </Text>
           <Text mt="-4">Frame + Lens</Text>
@@ -126,7 +123,7 @@ const SingleProduct = () => {
             w="90%"
             color="white"
             bgColor="#00bac6"
-            onClick={handleAddToCart}
+           onClick={handleAddToCart}
           >
             <Flex flexWrap="wrap" justifyContent="center">
               <Text textAlign="center">BUY 1 GET 1 WITH GOLD MEMBERSHIP</Text>
@@ -142,7 +139,7 @@ const SingleProduct = () => {
             w="90%"
             color="white"
             bgColor="#00bac6"
-            onClick={handleAddToWishlist}
+            //onClick={handleAddToWishlist}
             fontSize="18px"
           >
             Add to Wishlist
