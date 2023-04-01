@@ -28,7 +28,6 @@ let param = url.includes("admin");
     
    <AllRoutes/>
    
-   
      {!param&&<button onClick={handleClick}>Clickme</button>}
      
 

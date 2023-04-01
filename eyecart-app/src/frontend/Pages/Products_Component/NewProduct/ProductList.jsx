@@ -21,7 +21,7 @@ const NewProduct = () => {
   const [products, setProducts] = useState([]);
   const [isLoding, setIsLoading] = useState(false);
   const [types, setTypes] = useState("");
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const [sort, setSort] = useState("");
   const [gender, setGender] = useState("");
   const [productRef, setProductRef] = useState("");
@@ -48,10 +48,11 @@ const NewProduct = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://shiny-gray-gear.cyclic.app/products?sort=${sort}&productRefLink=${productRef}&productType=${types}&gender=${gender}&page=${page}`
+        `https://shiny-gray-gear.cyclic.app/products/page/${page}`
       );
       const postData = await response.json();
-      setProducts(postData);
+      console.log(postData,"54")
+      setProducts(postData.products);
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
@@ -65,7 +66,7 @@ const NewProduct = () => {
   }, [page, sort, gender, types, productRef]);
 
   const handleClick = (value) => {
-   
+   console.log(value)
     setProductRef(value);
   };
 
@@ -77,7 +78,7 @@ const NewProduct = () => {
   const handleClick4 = (value) => {
     setProductRef(value);
   };
-
+console.log(loader,products)
   return (
     <>
       {/* <Navbar /> */}
@@ -98,14 +99,14 @@ const NewProduct = () => {
               <Grid templateColumns="repeat(3, 1fr)">
                 <FrameType
                   src="https://static.lenskart.com/images/cust_mailer/Eyeglass/FullRim.png"
-                  type="Full Rim"
-                  name="Full Rim"
+                  type="full rim"
+                  name="full rim"
                   stylefilter={handleClick}
                 />
                 <FrameType
                   src="https://static.lenskart.com/images/cust_mailer/Eyeglass/HalfRim.png"
-                  type="Half Rim"
-                  name="Half Rim"
+                  type="half rim"
+                  name="half rim"
                   stylefilter={handleClick}
                 />
                 <FrameType
@@ -377,7 +378,7 @@ const NewProduct = () => {
                 </Select>
               </Flex>
             </Flex>
-            {products.length !== 0 && (
+            {products?.length !== 0 && (
               <Text mt="5px" textAlign="center" fontSize="15px">
                 Showing {products.length} of 50 Results
               </Text>
@@ -416,7 +417,7 @@ const NewProduct = () => {
               gap={6}
             >
       {/* Mapping the products */}
-              {products.map((ele) => (
+              {products?.map((ele) => (
                 <GridItem key ={ele.id}>
                   <Link to={`/newproducts/${ele._id}`}>
                     <Box

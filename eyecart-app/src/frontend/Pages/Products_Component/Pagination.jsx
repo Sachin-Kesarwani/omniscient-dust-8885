@@ -9,14 +9,14 @@ function Pagination({ current, onChange }) {
     };
     const prev = (
       <button
-        disabled={current === 0}
+        disabled={current === 1}
         onClick={() => onChange(current - 1)}
         style={style}
       >
         PREV
       </button>
     );
-    const currentPage = <button style={style}>{current + 1}</button>;
+    const currentPage = <button style={style}>{current}</button>;
   
     const next = (
       <button onClick={() => onChange(current + 1)} style={style}>
