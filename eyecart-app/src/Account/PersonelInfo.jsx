@@ -10,7 +10,10 @@ import {
 import axios from "axios";
 import React, { useState } from "react";
 
-let accountdata = JSON.parse(localStorage.getItem("accountdata"));
+let accountdata = {
+  id:1,name:"user",email:"user@gmail.com",phone:"123842131354",password:"wqebdl",
+}
+// JSON.parse(localStorage.getItem("accountdata"));
 const PersonelInfo = () => {
   let [edit, setEdit] = useState(false);
   let [data, setData] = useState({
@@ -32,11 +35,11 @@ const PersonelInfo = () => {
       setEdit(false);
     });
   }
-  accountdata = JSON.parse(localStorage.getItem("accountdata")) || { id: 1 };
+  // accountdata = JSON.parse(localStorage.getItem("accountdata")) || { id: 1 };
 
   return (
-    <>
-      <Heading marginLeft={"20px"}>Personel Information </Heading>
+    <Box color={"black"}>
+      <Heading marginLeft={"20px"}>Personal Information </Heading>
 
       {edit ? (
         <div style={{ width: "100px", marginLeft: "20px", padding: "5px" }}>
@@ -138,7 +141,7 @@ const PersonelInfo = () => {
           </Flex>
         </div>
       )}
-    </>
+    </Box>
   );
 };
 

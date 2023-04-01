@@ -9,6 +9,8 @@ import Cart from '../fw22_0314_pages/Cart'
 import Payments from '../fw22_0314_pages/Payment'
 import Shipping_page from '../fw22_0314_pages/Shipping_page'
 import { Navbar } from '../Navbar/Navbar'
+import PrivateRoute from './PrivateRoute'
+import Account from '../../Account/Account'
 
 
 const AllRoutes = () => {
@@ -18,14 +20,35 @@ const AllRoutes = () => {
 
       <Route path='/' element={<Home />} />
         <Route path='/admin'  element={<AdminHome/>} />
+        <Route path='/userinfo'  element={
+          <PrivateRoute>
+
+        <Account/>
+          </PrivateRoute>
+        } />
 
      
         
 
         {/* <Route path='/navbar' element={<Navbar/>} /> */}
-        <Route path='/cart' element={<Cart/>} />
-        <Route path='/shipping' element={<Shipping_page/>} />
-        <Route path='/payments' element={<Payments/>} />
+        <Route path='/cart' element={
+          <PrivateRoute>
+          <Cart/>
+
+          </PrivateRoute>
+        } />
+        <Route path='/shipping' element={
+          <PrivateRoute>
+
+            <Shipping_page/>
+          </PrivateRoute>
+        } />
+        <Route path='/payments' element={
+           <PrivateRoute>
+
+        <Payments/>
+           </PrivateRoute>
+        } />
 
       </Routes>
   

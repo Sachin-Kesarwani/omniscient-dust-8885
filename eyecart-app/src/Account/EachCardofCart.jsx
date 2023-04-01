@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { GetCartData } from "../Redux/CartRedux/action";
+ import { GetCartData } from "./Redux/CartRedux/action";
 
 export default function EachcardOfCart({ item }) {
   console.log(item);

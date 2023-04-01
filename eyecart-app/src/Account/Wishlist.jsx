@@ -1,7 +1,7 @@
 import { Heading } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GetwishListdatafromjson } from "../Redux/CartRedux/action";
+import { GetwishListdatafromjson } from "./Redux/CartRedux/action";
 import WishlistCard from "./wishlistCart";
 
 const Wishlist = () => {

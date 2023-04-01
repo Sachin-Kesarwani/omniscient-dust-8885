@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GetOrderdatafromjson } from "../Redux/CartRedux/action";
+import { GetOrderdatafromjson } from "./Redux/CartRedux/action";
 import OrderCard from "./OrderCard";
 import { Heading, Text } from "@chakra-ui/react";
 const Myorders = () => {

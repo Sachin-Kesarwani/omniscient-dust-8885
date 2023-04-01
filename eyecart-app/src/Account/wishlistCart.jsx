@@ -5,7 +5,7 @@ import {
   GetwishListdatafromjson,
   PostdataIncart,
   PostdataInWishList,
-} from "../Redux/CartRedux/action";
+} from "./Redux/CartRedux/action";
 import { Badge, Button, Heading, Text, useToast } from "@chakra-ui/react";
 const WishlistCard = ({ item }) => {
   let [loading, setLoading] = useState(false);

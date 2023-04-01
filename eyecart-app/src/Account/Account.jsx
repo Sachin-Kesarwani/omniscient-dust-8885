@@ -2,7 +2,7 @@ import { Box, Flex, FormControl, Heading, Input, Text, useToast } from "@chakra-
 import React, { useState } from "react";
 import { useDisclosure } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import Cart from "../Pages/Cart";
+import Cartfun from "./Cartfun";
 import EachcardOfCart from "./EachCardofCart";
 import Logoutpage from "./Logoutpage";
 import Myorders from "./Myorders";
@@ -153,7 +153,7 @@ const Account = () => {
             {active == 0 ? (
               <PersonelInfo />
             ) : active == 1 ? (
-              <Cart />
+              <Cartfun />
             ) : active == 2 ? (
               <Wishlist />
             ) : active == 4 ? (
@@ -184,12 +184,12 @@ const Account = () => {
             <ModalBody pb={6}>
               <FormControl>
                 <FormLabel>Username</FormLabel>
-                <Input ref={initialRef} name="username" onChange={(e)=>setAdmin({...admin,[e.target.name]:e.target.value})} placeholder='Enter Your username' />
+                {/* <Input ref={initialRef} name="username" onChange={(e)=>setAdmin({...admin,[e.target.name]:e.target.value})} placeholder='Enter Your username' /> */}
               </FormControl>
   
               <FormControl mt={4}>
                 <FormLabel>Password</FormLabel>
-                <Input placeholder='Enter your Password ...'name="password" onChange={(e)=>setAdmin({...admin,[e.target.name]:e.target.value})} />
+                {/* <Input placeholder='Enter your Password ...'name="password" onChange={(e)=>setAdmin({...admin,[e.target.name]:e.target.value})} /> */}
               </FormControl>
             </ModalBody>
   
