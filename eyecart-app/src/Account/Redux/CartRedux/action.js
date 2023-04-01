@@ -16,9 +16,12 @@ let accountdata = JSON.parse(localStorage.getItem("accountdata")) || { id: 17 };
 export function GetCartData(dispatch) {
   dispatch({ type: Loading });
   axios
-    .get(`https://helpful-free-baroness.glitch.me/Users/${accountdata.id}`)
+    .get(`https://shiny-gray-gear.cyclic.app/carts`,{headers: {
+      Authorization : `${localStorage.getItem("eyekartToken")}`
+      }})
     .then((res) => {
-      dispatch({ type: GetCart, payload: res.data.cart });
+      console.log(res)
+      dispatch({ type: GetCart, payload: res.data });
     });
 }
 
@@ -27,7 +30,7 @@ export const PostdataIncart = (data) => async (dispatch) => {
   dispatch({ type: Loading });
 
   return await axios({
-    url: `https://helpful-free-baroness.glitch.me/Users/${accountdata.id}`,
+    url: `https://shiny-gray-gear.cyclic.app//Users/${accountdata.id}`,
     method: "patch",
     data: {
       cart: data,
@@ -45,7 +48,7 @@ export const PostdataInWishList = (data) => async (dispatch) => {
   dispatch({ type: Loading });
   console.log(data, "wish in redux");
   return await axios({
-    url: `https://helpful-free-baroness.glitch.me/Users/${accountdata.id}`,
+    url: `https://shiny-gray-gear.cyclic.app/carts/${accountdata.id}`,
     method: "patch",
     data: {
       wishlist: data,
@@ -57,7 +60,7 @@ export const DeldatafromWishlist = (id) => async (dispatch) => {
   console.log("dellllll", id);
   dispatch({ type: Loading });
   await axios({
-    url: `http://localhost:8080/wishlist/${id}`,
+    url: `https://shiny-gray-gear.cyclic.app/wishlist/${id}`,
     method: "delete",
   })
     .then((res) => {
@@ -71,9 +74,9 @@ export const DeldatafromWishlist = (id) => async (dispatch) => {
 
 export const GetwishListdatafromjson = (dispatch) => {
   dispatch({ type: Loading });
-  axios(`https://helpful-free-baroness.glitch.me/Users/${accountdata.id}`)
+  axios(`https://shiny-gray-gear.cyclic.app/wishlist`)
     .then((res) => {
-      dispatch({ type: GetwishlistData, payload: res.data.wishlist });
+      dispatch({ type: GetwishlistData, payload: res.data});
     })
     .catch((er) => {
       dispatch({ type: Error });
@@ -94,9 +97,9 @@ export const PostdataInOrder = (data) => async (dispatch) => {
 
 export const GetOrderdatafromjson = (dispatch) => {
   dispatch({ type: Loading });
-  axios(`https://helpful-free-baroness.glitch.me/Users/${accountdata.id}`)
+  axios(`https://shiny-gray-gear.cyclic.app/orders`)
     .then((res) => {
-      dispatch({ type: GetorderData, payload: res.data.order });
+      dispatch({ type: GetorderData, payload: res.data });
     })
     .catch((er) => {
       dispatch({ type: Error });
