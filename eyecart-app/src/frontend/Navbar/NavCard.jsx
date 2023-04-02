@@ -72,7 +72,7 @@ const Navinfo1 = [
 //nav bar-I
 export const NavCard1 = () => {
     return (
-      <Box cursor="pointer" >
+      <Box cursor="pointer" minW={"100%"}>
         <Flex gap={2} pl={5} pt={2}>
           {Navinfo1.map((i, index) => (
             <Box key={index}>
@@ -95,15 +95,16 @@ export const NavbarCard2 = () => {
 
    let usertdata=JSON.parse(localStorage.getItem("eyekartuser"))
   console.log(usertdata)
+  let usertoken=localStorage.getItem("eyekartToken")
 
   function redirectToprofile(){
 navigate("/userinfo")
   }
   
     return (
-      <Box cursor="pointer" >
+      <Box cursor="pointer"  minW={"100%"} >
           
-        <HStack m="auto">
+        <HStack m="auto" border={"2px solid red"} minW={"100%"} >
 
           {/* logo icon */}
           <Box w="20%">
@@ -111,9 +112,9 @@ navigate("/userinfo")
               <Image src="https://i.postimg.cc/x1JsJcRj/eyekart.jpg" alt="logo" w="75%" />
             </Link>
           </Box>
-          <HStack w="85%" m="auto">
+          <HStack w="100%" m="auto">
           {/* //caller num */}
-            <Box w="15%">
+            <Box w="15%" display={{base:"none",sm:"none",md:"flex",xl:"flex"}}>
               <HStack fontSize="18px" fontWeight="bold">
                 <FiPhoneCall />
                 <Text>1800-111-111</Text>
@@ -121,7 +122,7 @@ navigate("/userinfo")
             </Box>
 
               {/* //search bar */}
-            <Box w="55%">
+            <Box w="55%" display={{base:"none",sm:"none",md:"flex",xl:"flex"}}>
               {/* <Input
                 placeholder="What are you looking for"
                 border="1px solid black"
@@ -138,6 +139,7 @@ navigate("/userinfo")
 
             {/* //order button */}
               <Button
+              gap={{base:"20px",sm:"40px",md:"10px",xl:"10px"}}
                 size="lg"
                 bg="whiteAlpha.900"
                 fontSize="15px"
@@ -148,7 +150,7 @@ navigate("/userinfo")
               </Button>
 
            {
-  usertdata?.email?<Icon fontSize={"30px"} onClick={redirectToprofile} as={BsPersonCircle}/> :  <Box display={"flex"}>{<Signup/>} | {<Login/>}
+  usertoken?<Icon fontSize={"30px"} onClick={redirectToprofile} as={BsPersonCircle}/> :  <Box display={"flex"}>{<Signup/>} | {<Login/>}
                
   </Box>
 }

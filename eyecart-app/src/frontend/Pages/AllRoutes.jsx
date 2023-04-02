@@ -49,10 +49,12 @@ const AllRoutes = () => {
 
         {/* <Route path='/navbar' element={<Navbar/>} /> */}
         <Route path='/cart' element={
-          <PrivateRoute>
-          <Cart/>
+         <PrivateRoute>
 
-          </PrivateRoute>
+          <Cart/>
+         </PrivateRoute>
+
+        
         } />
         <Route path='/shipping' element={
           <PrivateRoute>

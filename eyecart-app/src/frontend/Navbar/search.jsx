@@ -124,7 +124,7 @@ import {
                       paddingLeft: "10px",
                     }}
                   >
-                    <Link to={`/product/${el._id}`}>
+                    <Link to={`/products/${el._id}`}>
                       <Heading
                         noOfLines={"1"}
                         color="#30363C"

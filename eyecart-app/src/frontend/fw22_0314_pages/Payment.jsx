@@ -13,7 +13,7 @@ const Payments = () => {
 
 
   return (
-    <Box color={"black"} bgColor={"#ffffff"} fontSize={"14px"}>
+    <Box color={"black"} bgColor={"#ffffff"} fontSize={"14px"} style={{padding:"120px"}}>
 <Box className={"shipping_cont"} margin={"auto"}  flexDirection={{base:'column',sm:"column",md:"column",xl:"row"}} display={"flex"} gap={"40px"} width={"60%"} fontSize={"14px"}>
     
 <Box className={"shipping_add"} width={"70%"} height={"auto"} padding={"10px"} fontSize={"12px"} >

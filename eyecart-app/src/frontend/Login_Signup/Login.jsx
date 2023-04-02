@@ -59,9 +59,11 @@ logindata()
   }).then((res)=>{
 console.log(res)
     if(res.data.token){
-      console.log(res.data)
+      
       localStorage.setItem("eyekartToken",res.data.token)
+      console.log(res)
       localStorage.setItem("eyekartuser",JSON.stringify(res.data.data))
+
       setdata(inidata)
      setLoading(false)
      toast({

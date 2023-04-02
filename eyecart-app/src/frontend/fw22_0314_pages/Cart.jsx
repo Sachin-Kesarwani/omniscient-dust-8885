@@ -26,8 +26,9 @@ const Cart = () => {
         useEffect(() => {
            async function myfun(){
     
-                let data=await dispatch(GetCartData)
+                let data=dispatch(GetCartData)
                 // setdata(order)
+                console.log("data",data)
             }
           myfun()
         }, []);
