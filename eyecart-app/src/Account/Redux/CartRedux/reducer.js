@@ -30,7 +30,7 @@ export function reducer(state = inistate, action) {
       return {
         ...state,
         isLoading: false,
-        cart: [...state.cart, action.payload],
+        cart: [...state, action.payload],
       };
     }
     case Error: {
@@ -62,9 +62,18 @@ export function reducer(state = inistate, action) {
     }
 
     case GetCart: {
+
+
+      console.log("action",action.payload)
+    let arr=[]
+    for(let i=0;i<action.payload.length;i++){
+      arr.push(action.payload[i].productId)
+      action.payload[i].productId.count=action.payload[i].qty
+    }
+
       return {
         ...state,
-        cart: action.payload,
+        cart: arr,
         isLoading:false,isError:false
       };
     }

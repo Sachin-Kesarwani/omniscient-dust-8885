@@ -1,35 +1,36 @@
 import { Box, Button, Image, Text, Toast, useToast } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import '../fw22_0314_pages/cart.css'
-const Cart_pro_card = ({img,title,price,id,count,handlecount}) => {
+import { useDispatch } from 'react-redux'
+import { GetCartData } from '../../Account/Redux/CartRedux/action'
+import axios from 'axios'
+const Cart_pro_card = ({image,item,title,price,_id,count,updateQty,removeItem,qty}) => {
   const [countnum,setcountnum]=useState(1)
   const toast=useToast()
-useEffect(()=>{
+
+
+const dispatch=useDispatch()
+
   
-  handlecount(countnum,id)
-},[countnum])
 
-const handeldelete=(id)=>{
 
-  // axios.delete(`https://shiny-gray-gear.cyclic.app/carts/${id}`).then((res)=>{
-      
-  // })
-console.log(id)
-  toast({
-      title: "Product Removed", 
-      position: "top-right",
-      status:"error",
-      isClosable: true
-    })
+const handelcount=(val,item)=>{
+  setcountnum(countnum+val)
+  updateQty(_id,countnum,item)
+
 
 }
+
+
+
+
   return (
     <Box mb={"5px"} height={"auto"}>
     
 <Box className="cart_card" height={"auto"}>
 
 <Box >
-    <Image width={"150px"} height={"90px"} src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//v/i/black-full-rim-wayfarer-vincent-chase-glam-slam-vc-s15040-c1-sunglasses_g_8753_01_09_2022.jpg" alt="" />
+    <Image width={"150px"} height={"90px"} src={image} alt="" />
 </Box>
 <Box >
   <Text mb={"10px"}>
@@ -42,15 +43,15 @@ console.log(id)
    </Text>
 <hr style={{color:"grey",border: "2px dotted",borderStyle: "none none dotted"}} />
 <Box height={"30px"}>
-<Button height={"30px"} width={"30px"} m={"5px"} disabled={()=>count==1} onClick={()=>setcountnum(countnum-1)} bgColor={"#00bbc6"}>-</Button>
-<Button height={"30px"} width={"30px"} m={"5px"} bgColor={"#00bbc6"}>{count}</Button>
-<Button height={"30px"} width={"30px"} m={"5px"}  disabled={count==3} onClick={()=>setcountnum(countnum+1)} bgColor={"#00bbc6"}>+</Button>
+<Button height={"30px"} width={"30px"} m={"5px"} disabled={()=>count==1} onClick={()=>handelcount(-1,item)} bgColor={"#00bbc6"}>-</Button>
+<Button height={"30px"} width={"30px"} m={"5px"} bgColor={"#00bbc6"}>{qty}</Button>
+<Button height={"30px"} width={"30px"} m={"5px"}  disabled={count==3} onClick={()=>handelcount(1,item)} bgColor={"#00bbc6"}>+</Button>
   </Box>
 
 
 
   <Text mt={"10px"}>
- <Text cursor={"pointer"} style={{color:"red",fontSize:"15px"}} onClick={()=>handeldelete(id)}>
+ <Text cursor={"pointer"} style={{color:"red",fontSize:"15px"}} onClick={()=>removeItem(_id)}>
      Remove 
     </Text>
     

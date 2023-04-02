@@ -10,76 +10,128 @@ import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { GetCartData } from '../../Account/Redux/CartRedux/action'
 import { Loading } from '../Components/Loading'
+
+
+
+
+
+
+
 const Cart = () => {
     const [arr,setarr]=useState([])
     const toast=useToast()
     const [total,settotal]=useState(0)
     const [ar,setar]=useState(0)
     const store = useSelector((store)=>store)
+    console.log("store",store)
     let dispatch = useDispatch();
-    const [data,setdata]=useState([
-        {id:1,price:1500,count:1,title:"hello",img:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//v/i/black-full-rim-wayfarer-vincent-chase-glam-slam-vc-s15040-c1-sunglasses_g_8753_01_09_2022.jpg"},
-        {id:2,price:1200,count:1,title:"hello",img:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//v/i/black-full-rim-wayfarer-vincent-chase-glam-slam-vc-s15040-c1-sunglasses_g_8753_01_09_2022.jpg"},
-        {id:3,price:1900,count:1,title:"hello",img:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//v/i/black-full-rim-wayfarer-vincent-chase-glam-slam-vc-s15040-c1-sunglasses_g_8753_01_09_2022.jpg"},
-    ])
-        let {order,isLoading,isError} = useSelector((store) => store?.CartReducer);
+    // let {cart,isLoading,isError} = useSelector((store) => store?.CartReducer);
+    const [data,setdata]=useState([])
+   async function getcartdat(){
+    let token=localStorage.getItem("eyekartToken")
+await axios({
+    method:"get",
+    url:"https://shiny-gray-gear.cyclic.app/carts",
+    headers:{
+        Authorization:token
+    }
+}).then((res)=>{
+    setdata(res.data)
+   console.log(res.data)
+})
+    }
+ 
         useEffect(() => {
-           async function myfun(){
-    
-                let data=dispatch(GetCartData)
-                // setdata(order)
-                console.log("data",data)
-            }
-          myfun()
+           
+          getcartdat()
+console.log("s",data)
+        
         }, []);
-
-
-
+        // console.log("cart",cart,isLoading,isError)
+        
+        
+        
     const navigate=useNavigate()
 
-const handlecount=(count,id)=>{
-    console.log("data",count,id)
-let ndata=data.map((el)=>{
-if(el.id==id){
-    el.count=count
-}
-return el
-})
-setarr([...ndata])
-setar(ar+1)
-}
-      useEffect(()=>{
-          setarr(data)
-        let totalprice=arr.reduce((acc,el)=>{
-            acc+=el.price*el.count
-            return acc
-        },0)  
-        settotal(totalprice)
-        sessionStorage.setItem("total",JSON.stringify(totalprice))
-      },[ar])
+
+useEffect(()=>{
+    let totalprice=data.reduce((acc,el)=>{
+        acc+=el.productId.price
+        return acc
+   },0)
+
+   settotal(totalprice)
+  
+},[])
+
+  async function updateQty(_id, payload,item) {
+    let data = {
+     ...item,
+  qty: payload
+    };
+   
+    await axios.patch(`https://shiny-gray-gear.cyclic.app/carts/update/${_id}`, {
+      headers: {
+        "Content-type": "application/json",
+        Authorization: localStorage.getItem("eyekartToken")
+      },
+      data:{
+        ...item,
+        qty:payload
+      },
+    });
+   getcartdat()
+  }
+
+  
+
 
 const handlenavigate=()=>{
     navigate("/shipping")
 }
 
+async function removeItem(_id) {
+    console.log(_id)
+    await axios.delete(`https://shiny-gray-gear.cyclic.app/carts/delete/${_id}`, {headers: {
+      Authorization: localStorage.getItem("eyekartToken")
+    }}).then((res)=>{
+      console.log("res",res)
+      getcartdat()
+      // toast({
+      //   title: "Product Removed", 
+      //   position:  dispatch(GetCartData); "top-right",
+      //   status:"Success",
+      //   isClosable: true
+      // })
+      alert("ok")
+      setar(ar+1)
+    }).catch(()=>{
+      // toast({
+      //   title: "Error", 
+      //   position: "top-right",
+      //   status:"error",
+      //   isClosable: true
+      // })
+    })
+    
+  
 
 
+}
 
-  return isLoading?<Loading />:isError?<div width={"100%"} style={{margin:"auto"}}>
-    <img src="https://www.desicomments.com/user/2008/02/5418/error.gif" alt="" />
-  </div>:(
+  return (
     <Box style={{fontFamily: 'Poppins'}} mt={"50px"} bgColor={"#f8f8f8"} width={"100%"} height={"100vh"}>
 
    <Box className="cart_container"  flexDirection={{base:'column',sm:"column",md:"column",xl:"row"}} gap={"50px"}  style={{display:"flex",width:"70%",margin:"auto",marginTop:"50px"}} >
   <Box className="first_box" maxH={"400px"} overflowY={"auto"} overflowX={"hidden"} minW={{base:"170%",sm:"100%",md:"70%",xl:"70%"}} >
   <Text color={"black"} textAlign={"center"} mb={"10px"}>
-Cart({arr.length} items)
+Cart({data?.length} items)
 
     </Text>
-    {arr.length>0?arr.map((el,i)=>{
+    {data?.length>0?data?.map((el,i)=>{
 
     return   <Box height={"auto"}>
-    <Cart_pro_card key={i} id={el.id} count={el.count} img={el.img} title={el.img} price={el.price} handlecount={handlecount}  />
+    <Cart_pro_card key={i} qty={el.qty} item={el} _id={el._id} count={el.productId.count} image={el.productId.image} title={el.productId.title} price={el.productId.price} updateQty={updateQty} removeItem={removeItem}  />
     </Box>
     
 

@@ -4,16 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { GetCartData } from './Redux/CartRedux/action';
 import { Loading } from '../frontend/Components/Loading';
 
-const Cartfun = () => {
+    const Cartfun = () => {
     let dispatch = useDispatch();
-const [data,setdata]=useState([])
-    let {order,isLoading,isError} = useSelector((store) => store?.CartReducer);
-  const store=useSelector((store)=>store)
+   const [data,setdata]=useState([])
+    let {cart,isLoading,isError} = useSelector((store) => store?.CartReducer);
+    const store=useSelector((store)=>store)
+
     useEffect(() => {
        async function myfun(){
 
             let data=await dispatch(GetCartData)
-            setdata(order)
+            setdata(cart)
         }
       myfun()
     }, []);

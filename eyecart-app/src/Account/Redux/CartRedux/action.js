@@ -20,8 +20,8 @@ export function GetCartData(dispatch) {
       Authorization : `${localStorage.getItem("eyekartToken")}`
       }})
     .then((res) => {
-      console.log(res)
-      dispatch({ type: GetCart, payload: res.data });
+     console.log("res",res)
+      dispatch({ type: GetCart, payload: res.data});
     }).catch((err)=>{
       dispatch({ type:Error });
 
