@@ -11,11 +11,11 @@ const Span7 = () => {
       pt={9}
       pl={9}
     >
-      <Box fontSize="35px" w="97%" margin="auto">
+      <Box fontSize="35px" w="97%" margin="auto" textAlign="left">
         Buy The Best Eyewear From Lenskart
       </Box>
       <br />
-      <Box fontSize="15px" w="97%" margin="auto" pb="5" textAlign="justify">
+      <Box fontSize="16px" w="97%" margin="auto" pb="5" textAlign="justify">
         <Box w="95%">
           Lenskart Is The Leading E-Commerce Portal For Eyewear In India. It Has
           Revolutionised The Eyewear Industry In The Country With Its

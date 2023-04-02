@@ -38,12 +38,12 @@ function CategoryMenubar() {
           p="5"
         >
           <Link to="/productPage">
-            <Box>
+            <Box backgroundColor="white">
               <Grid gridTemplateColumns="repeat(5, 1fr)" w="100%">
                 <Flex direction="column" justifyContent="space-evenly" mt="20">
                   <Flex gap="5" fontSize="15px">
                     <Avatar
-                      name="Dan Abrahmov"
+                      name="axc"
                       src="https://static.lenskart.com/media/desktop/img/men_pic.png"
                       alt="men"
                       size="md"
@@ -203,98 +203,7 @@ function CategoryMenubar() {
           COMPUTER GLASSES
         </MenuButton>
 
-        <MenuList
-          color="blackAlpha.900"
-          h="400px"
-          bg="whiteAlpha.800"
-          w="100%"
-          p="5"
-        >
-          <Link to="/newproducts">
-            <Box>
-              <Grid gridTemplateColumns="repeat(5, 1fr)" w="100%">
-                <Flex
-                  direction="column"
-                  gap="4"
-                  justifyContent="space-evenly"
-                  mt="20"
-                >
-                  <Flex gap="5">
-                    <Avatar
-                      name="Dan Abrahmov"
-                      src="https://static.lenskart.com/media/desktop/img/men_pic.png"
-                      alt="men"
-                      size="md"
-                    />
-                    <Box
-                      _hover={{ textDecoration: "underline" }}
-                      fontSize="md"
-                      fontWeight="bold"
-                    >
-                      Men
-                    </Box>
-                  </Flex>
-
-                  <Flex gap="5">
-                    <Avatar
-                      name="Kola Tioluwani"
-                      src="https://static.lenskart.com/media/desktop/img/women_pic.png"
-                      alt="women"
-                      size="md"
-                    />
-                    <Box
-                      _hover={{ textDecoration: "underline" }}
-                      fontSize="md"
-                      fontWeight="bold"
-                    >
-                      Women
-                    </Box>
-                  </Flex>
-
-                  <Flex gap="5">
-                    <Avatar
-                      name="Kent Dodds"
-                      src="https://static.lenskart.com/media/desktop/img/kid_pic.png"
-                      alt="kid"
-                      size="md"
-                    />
-                    <Box
-                      _hover={{ textDecoration: "underline" }}
-                      fontSize="md"
-                      fontWeight="bold"
-                    >
-                      Kids
-                    </Box>
-                  </Flex>
-                </Flex>
-
-                <Flex direction="column" gap="6">
-                  <Box
-                    fontSize="md"
-                    fontWeight="bold"
-                    borderBottom="1px solid black"
-                    p="1"
-                  >
-                    SELECT CATEGORY
-                  </Box>
-
-                  <Box _hover={{ bg: "blackAlpha.200" }} fontSize="md">
-                    Blu 0 Computer Glasses
-                    <p>
-                      Starting From ₹ <span>1299</span>
-                    </p>
-                  </Box>
-                  <Box _hover={{ bg: "blackAlpha.200" }} fontSize="md">
-                    PREMIUM RANGE
-                    <p>
-                      Starting From ₹ <span>3000</span>
-                    </p>
-                  </Box>
-                </Flex>
-              </Grid>
-            </Box>
-          </Link>
-        </MenuList>
+       
       </Menu>
 
       <Menu>
@@ -317,7 +226,7 @@ function CategoryMenubar() {
           p="2"
         >
           <Link to="/ProductPage">
-            <Box>
+            <Box backgroundColor="white">
               <Grid
                 gridTemplateColumns="repeat(3, 1fr)"
                 justifyContent="center"
@@ -379,7 +288,7 @@ function CategoryMenubar() {
           w="100%"
         >
           <Link to="/productPage">
-            <Box>
+            <Box backgroundColor="white">
               <Grid gridTemplateColumns="repeat(5, 1fr)" p="1" w="100%">
                 <Flex direction="column" gap="6">
                   <Box
@@ -498,7 +407,7 @@ function CategoryMenubar() {
           p="5"
         >
           <Link to="/productPage">
-            <Box>
+            <Box backgroundColor="white">
               <Grid gridTemplateColumns="repeat(6, 1fr)">
                 <Flex direction="column" justifyContent="space-evenly">
                   <Flex gap="5">
@@ -651,7 +560,7 @@ function CategoryMenubar() {
         </MenuButton>
 
         <MenuList color="blackAlpha.900" h="400px" bg="whiteAlpha.800" w="100%">
-          <Box>
+          <Box backgroundColor="white">
             <Grid gridTemplateColumns="repeat(2, 1fr)">
               <Box>
                 <Image
@@ -731,7 +640,7 @@ function CategoryMenubar() {
           p="5"
         >
           <Grid gridTemplateColumns="repeat(2, 1fr)">
-            <Box>
+            <Box backgroundColor="white">
               <Heading
                 color="black"
                 fontWeight=""
