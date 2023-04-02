@@ -136,9 +136,9 @@ const Account = () => {
                   margin: "1px",
                 }}
               >
-                <Text fontSize="md">
+                <Text fontSize="md" color="black">
                   {" "}
-                  <i style={{ fontSize: "20px" }}></i>Go To Admin{" "}
+                  <i style={{ fontSize: "20px" ,color:"black"}}></i>Go To Admin{" "}
                 </Text>
               </div>
             {/* </Link> */}
@@ -184,12 +184,12 @@ const Account = () => {
             <ModalBody pb={6}>
               <FormControl>
                 <FormLabel>Username</FormLabel>
-                {/* <Input ref={initialRef} name="username" onChange={(e)=>setAdmin({...admin,[e.target.name]:e.target.value})} placeholder='Enter Your username' /> */}
+                <Input ref={initialRef} name="username" onChange={(e)=>setAdmin({...admin,[e.target.name]:e.target.value})} placeholder='Enter Your username' />
               </FormControl>
   
               <FormControl mt={4}>
                 <FormLabel>Password</FormLabel>
-                {/* <Input placeholder='Enter your Password ...'name="password" onChange={(e)=>setAdmin({...admin,[e.target.name]:e.target.value})} /> */}
+                <Input placeholder='Enter your Password ...'name="password" onChange={(e)=>setAdmin({...admin,[e.target.name]:e.target.value})} />
               </FormControl>
             </ModalBody>
   

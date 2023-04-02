@@ -57,7 +57,8 @@ logindata()
     method:"post",
     data:data
   }).then((res)=>{
-    console.log(res.data)
+    console.log(res)
+    localStorage.setItem("userdata",JSON.stringify(res.data))
     localStorage.setItem("eyekartToken",res.data.token)
     setdata(inidata)
    setLoading(false)

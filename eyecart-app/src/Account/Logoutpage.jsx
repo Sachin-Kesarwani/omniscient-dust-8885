@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Logoutpage = () => {
   let navigate = useNavigate();
   function handleLogout() {
-    localStorage.setItem("isAuth", false);
+    localStorage.setItem("eyekartToken","");
     navigate("/");
   }
 

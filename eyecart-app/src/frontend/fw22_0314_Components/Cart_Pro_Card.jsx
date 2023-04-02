@@ -1,16 +1,28 @@
-import { Box, Button, Image, Text } from '@chakra-ui/react'
+import { Box, Button, Image, Text, Toast, useToast } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import '../fw22_0314_pages/cart.css'
 const Cart_pro_card = ({img,title,price,id,count,handlecount}) => {
   const [countnum,setcountnum]=useState(1)
+  const toast=useToast()
 useEffect(()=>{
   
   handlecount(countnum,id)
 },[countnum])
 
-  const handleremove=()=>{
-    alert("rrmove")
-  }
+const handeldelete=(id)=>{
+
+  // axios.delete(`https://shiny-gray-gear.cyclic.app/carts/${id}`).then((res)=>{
+      
+  // })
+console.log(id)
+  toast({
+      title: "Product Removed", 
+      position: "top-right",
+      status:"error",
+      isClosable: true
+    })
+
+}
   return (
     <Box mb={"5px"} height={"auto"}>
     
@@ -38,7 +50,7 @@ useEffect(()=>{
 
 
   <Text mt={"10px"}>
- <Text cursor={"pointer"} style={{color:"red",fontSize:"15px"}} onClick={handleremove}>
+ <Text cursor={"pointer"} style={{color:"red",fontSize:"15px"}} onClick={()=>handeldelete(id)}>
      Remove 
     </Text>
     

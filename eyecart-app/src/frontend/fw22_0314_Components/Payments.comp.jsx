@@ -12,7 +12,7 @@ import {
 import { useToast } from '@chakra-ui/react'
 import Pay_btn from './Pay_btn'
 import { useNavigate } from 'react-router-dom'
-const Paymentsfun= () => {
+const Paymentsfun= ({ordertotal}) => {
 const navigate = useNavigate()
 const toast = useToast()
 const handledelivery=()=>{
@@ -63,7 +63,7 @@ navigate("/")
       <AccordionPanel pb={4}>
       <Text mb={"10px"}>You will be redirect to Payment gateway upon placing the order</Text>
 
-      <Pay_btn />
+      <Pay_btn ordertotal={ordertotal} />
       </AccordionPanel>
     </AccordionItem>
   </Accordion>
