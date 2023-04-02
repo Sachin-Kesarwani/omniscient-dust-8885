@@ -102,9 +102,9 @@ navigate("/userinfo")
   }
   
     return (
-      <Box cursor="pointer"  minW={"100%"} >
+      <Box cursor="pointer" >
           
-        <HStack m="auto" border={"2px solid red"} minW={"100%"} >
+        <HStack m="auto"  >
 
           {/* logo icon */}
           <Box w="20%">
@@ -139,7 +139,7 @@ navigate("/userinfo")
 
             {/* //order button */}
               <Button
-              gap={{base:"20px",sm:"40px",md:"10px",xl:"10px"}}
+            
                 size="lg"
                 bg="whiteAlpha.900"
                 fontSize="15px"

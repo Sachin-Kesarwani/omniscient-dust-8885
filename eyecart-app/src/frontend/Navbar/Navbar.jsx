@@ -16,7 +16,7 @@ import {
 
 export const Navbar = () => {
   return (
-    <Box position="fixed" zIndex="100" minW={{base:"30%",sm:"50%",md:"70%",xl:"100%"}} color={"black"}  backgroundColor="white" top={0} >
+    <Box position="fixed" zIndex="100" color={"black"}  backgroundColor="white" top={0} >
       <NavCard1 />
      <NavbarCard2/>
      <NavbarCard3/>
