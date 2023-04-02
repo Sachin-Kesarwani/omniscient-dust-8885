@@ -5,7 +5,8 @@ let inidata={
     data:[],
     loading:false,
     error:false,
-    activepage:1
+    activepage:1,
+    totalPage:0
 }
 
 export function reducer(state=inidata,action){
