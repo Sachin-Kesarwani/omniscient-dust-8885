@@ -23,7 +23,10 @@ let param = url.includes("admin");
 
    {!param && <Navbar/>}
     
+    <div style={{padding:"120px"}}>
+
    <AllRoutes/>
+    </div>
    
      {!param&&<button onClick={handleClick}>Clickme</button>}
      

@@ -11,9 +11,10 @@ import { background } from "@chakra-ui/styled-system";
 import axios from "axios";
 import React, { useState } from "react";
 
-let userdata=JSON.parse(localStorage.getItem("userdata"));
-let accountdata =userdata.data
-
+let userdata=JSON.parse(localStorage.getItem("eyekartuser"));
+let accountdata =userdata
+console.log(accountdata)
+console.log(accountdata)
 const PersonelInfo = () => {
   let [edit, setEdit] = useState(false);
   let [data, setData] = useState(accountdata);

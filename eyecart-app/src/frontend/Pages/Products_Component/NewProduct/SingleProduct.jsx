@@ -22,9 +22,10 @@ import {
 const SingleProduct = () => {
   const toast = useToast()
   const { id } = useParams();
-  let token =(localStorage.getItem("eyekartToken"))
-   let user = JSON.parse(localStorage.getItem("eyekartUser"))
-  console.log(token)
+  console.log(id)
+  let usertoken =(localStorage.getItem("eyekartToken"))
+   let user = JSON.parse(localStorage.getItem("eyekartuser"))
+  // console.log(token)
   const [data, setData] = useState({});
   // const navigate = useNavigate();
   // const dispatch = useDispatch();
@@ -32,28 +33,38 @@ const SingleProduct = () => {
 
   const handleAddToCart = async () => {
     try {
-      let d=await fetch(`https://shiny-gray-gear.cyclic.app/carts/add`,{
-        method:"POST",
-        body:JSON.stringify({
-          user:user,
-          productId:id,
-          qty:1
-        }),
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-          'Authorization':token
-      }
-      })
-      let r=await d.json()
-      toast({
-        title:"Added to the wishlist",
-        status:"success",
-        duration:5000,
-        isClosable:true,
-        description:"Thankyou",
-        position:"top"
-      })
+      // let d=await fetch(`https://shiny-gray-gear.cyclic.app/carts/add`,{
+      //   method:"POST",
+      //   body:{
+      //     _id:id
+      //   },
+      //   
+      // })
+      // let r=await d.json()
+// let obj={
+//   ...user,
+//   _id:id
+// }
+
+        axios.post("https://shiny-gray-gear.cyclic.app/carts/add",{_id:id},{
+          headers: {
+                'Content-Type': 'application/json',
+                'Authorization':usertoken
+            }
+        }).then((res)=>{
+console.log(res)
+          toast({
+            title:"Added to the Cart",
+            status:"success",
+            duration:5000,
+            isClosable:true,
+            description:"Thankyou",
+            position:"top"
+          })
+        })
+
+
+
      
     } catch (error) {
       console.log(error)
@@ -103,7 +114,7 @@ const SingleProduct = () => {
   }, [id]);
 
   return (
-    <>
+    <Box style={{padding:"120px"}}>
       
       <Grid
         m={5}
@@ -326,7 +337,7 @@ const SingleProduct = () => {
         </GridItem>
       </Grid>
       
-    </>
+    </Box>
   );
 };
 
