@@ -22,7 +22,10 @@ export function GetCartData(dispatch) {
     .then((res) => {
       console.log(res)
       dispatch({ type: GetCart, payload: res.data });
-    });
+    }).catch((err)=>{
+      dispatch({ type:Error });
+
+    })
 }
 
 export const PostdataIncart = (data) => async (dispatch) => {
@@ -30,7 +33,7 @@ export const PostdataIncart = (data) => async (dispatch) => {
   dispatch({ type: Loading });
 
   return await axios({
-    url: `https://shiny-gray-gear.cyclic.app//Users/${accountdata.id}`,
+    url: `https://shiny-gray-gear.cyclic.app/carts/add`,
     method: "patch",
     data: {
       cart: data,

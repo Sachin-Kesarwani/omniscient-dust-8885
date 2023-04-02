@@ -21,6 +21,7 @@ import {
 import { Radio, RadioGroup,Stack } from '@chakra-ui/react'
 import { useToast } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 // import { MdArrowDropDown} from '@chakra-ui/icons'
 const Form1 = () => {
     const [value, setValue] = React.useState('')
@@ -43,18 +44,31 @@ const navigate=useNavigate()
     let address_line_1=dref.current['address-line-1'].value
     let address_line_2=dref.current['address-line-2'].value
 if(first_name && last_name && email && gender && mob && city && postalcode && country && state_province && address_line_1 && address_line_2 ){
-  toast({
-    title: "Address Added Successfully", 
-    position: "top-right",
-    status:"success",
-    isClosable: true
-  })
+  
   let obj={
     first_name,last_name,email,gender,mob,city,postalcode,country,state_province,address_line_1,address_line_2
 }
 
-console.log(obj)
-navigate("/payments")
+axios.post("https://shiny-gray-gear.cyclic.app/shipping",{headers: {
+  Authorization : `${localStorage.getItem("eyekartToken")}`
+  }},obj).then((res)=>{
+    console.log("res",res)
+    toast({
+      title: "Address Added Successfully", 
+      position: "top-right",
+      status:"success",
+      isClosable: true
+    })
+  }).catch((err)=>{
+    console.log(err)
+    toast({
+      title: "Some error found! Please again fill the form", 
+      position: "top-right",
+      status:"error",
+      isClosable: true
+    })
+    navigate("/payments")
+  })
 
 }else{
   toast({
@@ -116,6 +130,8 @@ navigate("/payments")
           <Input display={"flex"}
           ref={e=>dref.current['mob']=e}
           fontSize={"13px"}
+          type={"number"}
+
   justifyContent={"start"}
   border={"1px solid grey"}
     _placeholder={{ color: 'inherit' }} id="mobileno" placeholder="Mobile no" />
@@ -167,7 +183,7 @@ navigate("/payments")
           </FormLabel>
           <Input display={"flex"}
           ref={e=>dref.current['postal-code']=e}
-
+type={"number"}
           fontSize={"13px"}
   justifyContent={"start"}
   border={"1px solid grey"}
@@ -192,9 +208,10 @@ navigate("/payments")
           <FormLabel htmlFor="first-name" fontWeight={'normal'} fontSize={"12px"}>
           Country
           </FormLabel>
-          <Select  border={"1px solid grey"}  ref={e=>dref.current['country']=e} placeholder='Select your Country'
+          <Select color={"gray.400"}  border={"1px solid grey"}  ref={e=>dref.current['country']=e} placeholder='Select your Country'
      >      
          
+    <option value="select your country">Afghanistan</option>
     <option value="Afghanistan">Afghanistan</option>
     <option value="Aland Islands">Aland Islands</option>
     <option value="Albania">Albania</option>
