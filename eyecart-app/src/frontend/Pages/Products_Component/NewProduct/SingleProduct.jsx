@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-// import { addToCart } from "../../redux/CartPage/action";
-// import { addToWishlist } from "../../redux/wishlist/wishlist.actions";
+
+// let x = localStorage.getItem("eyeKartToken")
+
 
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -15,31 +15,81 @@ import {
   Image,
   Select,
   Text,
-  Flex
+  Flex,
+  useToast
 } from "@chakra-ui/react";
 
 const SingleProduct = () => {
+  const toast = useToast()
   const { id } = useParams();
-  console.log("hi",id)
+  let token =(localStorage.getItem("eyekartToken"))
+   let user = JSON.parse(localStorage.getItem("eyekartUser"))
+  console.log(token)
   const [data, setData] = useState({});
   // const navigate = useNavigate();
   // const dispatch = useDispatch();
   // const { cart } = useSelector((state) => state.CartReducer);
 
-  const handleAddToCart = () => {
-    axios.post("https://shiny-gray-gear.cyclic.app/addtocart",data).then((response) => {
-      console.log(response);
-    }, (error) => {
-      console.log(error);
-    });
+  const handleAddToCart = async () => {
+    try {
+      let d=await fetch(`https://shiny-gray-gear.cyclic.app/carts/add`,{
+        method:"POST",
+        body:JSON.stringify({
+          user:user,
+          productId:id,
+          qty:1
+        }),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization':token
+      }
+      })
+      let r=await d.json()
+      toast({
+        title:"Added to the wishlist",
+        status:"success",
+        duration:5000,
+        isClosable:true,
+        description:"Thankyou",
+        position:"top"
+      })
+     
+    } catch (error) {
+      console.log(error)
+      
+    }
   };
-
-  // const handleAddToWishlist = () => {
-  //   dispatch(addToWishlist(data));
-  //   setTimeout(() => {
-  //     navigate("/wishlist");
-  //   }, 1000);
-  // };
+  
+  const handleAddToWishlist = async () => {
+    toast({
+      title:"Added to the wishlist",
+      status:"success",
+      duration:5000,
+      isClosable:true,
+      description:"Thankyou",
+      position:"top"
+    })
+    // try {
+    //   let d=await fetch(`https://shiny-gray-gear.cyclic.app/wishlist`,{
+    //     method:"POST",
+    //     body:JSON.stringify({
+    //       user:"xx",
+    //       productId:id,
+    //       qty:1
+    //     }),
+    //     headers: {
+    //       Accept: 'application/json',
+    //       'Content-Type': 'application/json',
+    //       'Authorization':token
+    //   }
+    //   })
+    //   let r=await d.json()
+    //   console.log(r)
+    // } catch (error) {
+    //   console.log(error)
+    // }
+  };
 
   const fetchSingleProduct = () => {
     axios(`https://shiny-gray-gear.cyclic.app/products/${id}`)
@@ -139,7 +189,7 @@ const SingleProduct = () => {
             w="90%"
             color="white"
             bgColor="#00bac6"
-            //onClick={handleAddToWishlist}
+            onClick={handleAddToWishlist}
             fontSize="18px"
           >
             Add to Wishlist

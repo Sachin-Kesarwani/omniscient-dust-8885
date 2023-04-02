@@ -7,21 +7,17 @@ import {
   Text,
   BeatLoader,
 } from "@chakra-ui/react";
+import { background } from "@chakra-ui/styled-system";
 import axios from "axios";
 import React, { useState } from "react";
 
-let accountdata = {
-  id:1,name:"user",email:"user@gmail.com",phone:"123842131354",password:"wqebdl",
-}
-// JSON.parse(localStorage.getItem("accountdata"));
+let userdata=JSON.parse(localStorage.getItem("userdata"));
+let accountdata =userdata.data
+
 const PersonelInfo = () => {
   let [edit, setEdit] = useState(false);
-  let [data, setData] = useState({
-    name: accountdata.name,
-    email: accountdata.email,
-    phone: accountdata.phone,
-    password: accountdata.password,
-  });
+  let [data, setData] = useState(accountdata);
+  console.log(data)
   let [loading, setLoading] = useState(false);
   async function handleEdit() {
     setLoading(true);
@@ -42,7 +38,7 @@ const PersonelInfo = () => {
       <Heading marginLeft={"20px"}>Personal Information </Heading>
 
       {edit ? (
-        <div style={{ width: "100px", marginLeft: "20px", padding: "5px" }}>
+        <div style={{ width: "100px", marginLeft: "20px", padding: "5px" ,color:"black" }}>
           <label>
             Name :
             <input
@@ -56,7 +52,7 @@ const PersonelInfo = () => {
             />
           </label>
           <label>
-            Eaml :
+            Email :
             <input
               name="email"
               type="text"
@@ -66,14 +62,15 @@ const PersonelInfo = () => {
                 setData({ ...data, [e.target.name]: e.target.value })
               }
             />
+            
           </label>
           <label>
-            Password :
+            City :
             <input
-              name="password"
+              name="city"
               type="text"
               style={{ border: "1px solid teal", padding: "2px 15px" }}
-              value={data.password}
+              value={data._id}
               onChange={(e) =>
                 setData({ ...data, [e.target.name]: e.target.value })
               }
@@ -119,17 +116,20 @@ const PersonelInfo = () => {
             height: "160px",
             marginLeft: "20px",
             padding: "5px",
+            color:"black",
+            borderRadius:"20px",
+            backgroundColor:"#00bbc6"
           }}
         >
-          <Flex>
+          <Flex justifyContent={"start"}>
             <Box margin={"5px"}>
-              <Avatar name={accountdata.name} />
+              <Avatar name={"https://t4.ftcdn.net/jpg/01/97/15/87/360_F_197158744_1NBB1dEAHV2j9xETSUClYqZo7SEadToU.jpg"} />
             </Box>
-            <Box p={2}>
-              <Text fontWeight={"bold"}>{accountdata.name}</Text>
-              <Text>{accountdata.email}</Text>
-              <Text>{accountdata.phone}</Text>
-              <Text>{accountdata.password}</Text>
+            <Box p={2} display={"flex"} justifyContent={"start"} flexDirection={"column"}>
+              <Text fontWeight={"bold"}>Name : {accountdata.first_name}</Text>
+              <Text>Email : {data.email}</Text>
+              <Text>Mobile : {data.mobile}</Text>
+              <Text>City : {data.city}</Text>
               <Button
                 onClick={() => {
                   setEdit(true);

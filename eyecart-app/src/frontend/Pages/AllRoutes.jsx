@@ -19,6 +19,8 @@ import NewProduct from './Products_Component/NewProduct/ProductList'
 
 
 
+
+
 const AllRoutes = () => {
   return (
     <div>
@@ -26,14 +28,26 @@ const AllRoutes = () => {
 
       <Route path='/' element={<Home />} />
         <Route path='/admin'  element={<AdminHome/>} />
+
+        <Route path='/products' element={<NewProduct />} />
+        <Route path='/navbar' element={<Navbar/>} />
+        <Route path="/newproducts/:id" element={<SingleProduct />}/>
+
         <Route path='/products'  element={<NewProduct/>} />
 
         <Route path='/navbar' element={<Navbar/>} />
-        <Route path="/newproducts/:id" element={<SingleProduct />} />
+
+
+        <Route path="/products/:id" element={<SingleProduct />} />
+
+        <Route path="/newproducts/:id" element={<SingleProduct />}/>
+
+
+
         <Route path='/userinfo'  element={
           <PrivateRoute>
 
-        <Account/>
+  <Account/>
           </PrivateRoute>
         } />
 

@@ -18,6 +18,7 @@ import Pagination from "../Pagination";
 import Footer from "../../../Footer/Footer";
 
 
+
 const NewProduct = () => {
   const [products, setProducts] = useState([]);
   const [isLoding, setIsLoading] = useState(false);
@@ -49,7 +50,7 @@ const NewProduct = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://shiny-gray-gear.cyclic.app/products/page/${page}`
+        `https://shiny-gray-gear.cyclic.app/products/page/${page}?frame_type=${types}`
       );
       const postData = await response.json();
       console.log(postData,"54")
@@ -79,11 +80,12 @@ const NewProduct = () => {
   const handleClick4 = (value) => {
     setProductRef(value);
   };
-console.log(loader,products)
+
   return (
     <>
-      {/* <Navbar /> */}
+
       <Box mt={"200px"}>
+      
         <Image
           src="https://static1.lenskart.com/media/desktop/img/Mar23/spring/home/PLP%20Camapaign%20-%20WEB_1.jpg"
           alt="img"
@@ -112,8 +114,8 @@ console.log(loader,products)
                 />
                 <FrameType
                   src="https://static.lenskart.com/images/cust_mailer/Eyeglass/Rimless.png"
-                  type="Rimless"
-                  name="Rimless"
+                  type="half rim"
+                  name="half rim"
                   stylefilter={handleClick}
                 />
               </Grid>
@@ -374,8 +376,8 @@ console.log(loader,products)
                   bg="whiteAlpha.900"
                 >
                   <option value="">Select</option>
-                  <option value="lowtohigh">Price : low to high</option>
-                  <option value="hightolow">Price : high to low</option>
+                  <option value= "1">Price : low to high</option>
+                  <option value="-1">Price : high to low</option>
                 </Select>
               </Flex>
             </Flex>
@@ -545,7 +547,9 @@ console.log(loader,products)
         </Flex>
         <Pagination current={page} onChange={(value) => setPage(value)} /> 
       </Box>
+
       <Footer />
+
     </>
   );
 };

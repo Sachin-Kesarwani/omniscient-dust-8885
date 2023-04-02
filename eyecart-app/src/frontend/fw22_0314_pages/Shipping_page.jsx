@@ -3,7 +3,9 @@ import React, { useRef } from 'react'
 import Form1 from '../fw22_0314_Components/Formfun2'
 import './shipping.css'
 const Shipping_page = () => {
-
+    let total=sessionStorage.getItem("total")
+    let discount=Math.floor(total/10)
+    let tax=Math.floor(total/15)
   return (
     <Box color={"black"} bgColor={"#ffffff"} fontSize={"14px"}>
 <Box className={"shipping_cont"}   margin={"auto"} flexDirection={{base:'column',sm:"column",md:"column",xl:"row"}} display={"flex"} gap={"40px"} width={"60%"} fontSize={"14px"}>
@@ -33,27 +35,27 @@ const Shipping_page = () => {
     <hr  style={{color:"grey",border: "2px dotted",borderStyle: "none none dotted"}} />
     <Box display={'flex'} justifyContent={"space-between"} mb={"8px"} mt={"5px"}>
         <Text>SUBTOTAL</Text>
-        <Text>2700</Text>
+        <Text>₹ {total}</Text>
     </Box>
     <hr  style={{color:"grey",border: "2px dotted",borderStyle: "none none dotted"}} />
 
     <Box display={'flex'} justifyContent={"space-between"} mb={"8px"} mt={"5px"}>
 
         <Text>EXTRAA DISCOUNT</Text>
-        <Text>2700</Text>
+        <Text>₹ {discount}</Text>
     </Box>
     <hr  style={{color:"grey",border: "2px dotted",borderStyle: "none none dotted"}} />
 
     <Box display={'flex'} justifyContent={"space-between"} mb={"8px"} mt={"5px"}>
 
         <Text>NET AMOUNT</Text>
-        <Text>2700</Text>
+        <Text>₹ {total-discount}</Text>
     </Box>
     <hr  style={{color:"grey",border: "2px dotted",borderStyle: "none none dotted"}} />
 
     <Box display={'flex'} justifyContent={"space-between"} mb={"8px"} mt={"5px"}>
         <Text>TAX COLLECTED</Text>
-        <Text>2700</Text>
+        <Text>₹ {tax}</Text>
 
     </Box>
     <hr  style={{color:"grey",border: "2px dotted",borderStyle: "none none dotted"}} />
@@ -61,7 +63,7 @@ const Shipping_page = () => {
     <Box display={'flex'} justifyContent={"space-between"} mb={"8px"} mt={"5px"}>
 
         <Text fontWeight={"800"}>ORDER TOTAL</Text>
-        <Text>2700</Text>
+        <Text>₹ {total>0?total-discount+tax:0}</Text>
     </Box>
     <hr  style={{color:"grey",border: "2px dotted",borderStyle: "none none dotted"}} />
 

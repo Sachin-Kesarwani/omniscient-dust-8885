@@ -5,7 +5,7 @@ import {
     Flex,
     Spacer,
     Image,
-   
+    Input,
     Button,
     HStack,
  
@@ -77,7 +77,6 @@ export const NavCard1 = () => {
                 {i.labels}
               </Text>
               <Spacer />
-             
             </Box>
           ))}
         </Flex>
@@ -88,6 +87,16 @@ export const NavCard1 = () => {
 //nav bar-II search,logo, auth, cart
 export const NavbarCard2 = () => {
     const navigate = useNavigate();
+
+  
+
+   let usertdata=JSON.parse(localStorage.getItem("eyekartuser"))
+  console.log(usertdata)
+
+  function redirectToprofile(){
+navigate("/userinfo")
+  }
+  
     return (
       <Box cursor="pointer" >
           
@@ -134,13 +143,12 @@ export const NavbarCard2 = () => {
               >
                 Track Order
               </Button>
-              
 
-              {/* //login signup */}
-              <Box  display={"flex"}>{<Signup/>} | {<Login/>}
-                 {/* Login | Signup */}
-              </Box>
-               {/* Wishlist button */}
+           {
+  usertdata?.email?<Icon fontSize={"30px"} onClick={redirectToprofile} as={BsPersonCircle}/> :  <Box display={"flex"}>{<Signup/>} | {<Login/>}
+               
+  </Box>
+}
               <Button
                 leftIcon={<CiHeart />}
                 size="lg"
@@ -151,11 +159,19 @@ export const NavbarCard2 = () => {
               >
                 Wishlist
               </Button>
-               
-               
+              <Button
+                
+                size="lg"
+                bg="whiteAlpha.900"
+                fontSize="15px"
+                fontWeight="400"
+                onClick={() => navigate("/userinfo")}
+              >
+                UserInfo
+              </Button>
 
               {/* Cart button */}
-              <Link to="/cartpage">
+              <Link to="/cart">
                 <Button
                   leftIcon={<CgShoppingCart />}
                   size="lg"

@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 
-const Pay_btn = () => {
+const Pay_btn = ({ordertotal}) => {
 const navigate=useNavigate()
 const [amt,setamt]=useState("")
 
@@ -36,7 +36,7 @@ const [amt,setamt]=useState("")
     }
   
     // creating a new order
-    let amt=50000
+    let amt=ordertotal
     let obj={
       amt
     }
@@ -51,7 +51,7 @@ const [amt,setamt]=useState("")
     const { amount, id: order_id, currency } = result.data;
   let logo ="https://static.lenskart.com/media/desktop/img/site-images/main_logo.svg"
     const options = {
-        key: "", // Enter the Key ID generated from the Dashboard
+        key: "rzp_test_3LDKbnCBXc067o", // Enter the Key ID generated from the Dashboard
         amount: amount.toString(),
         currency: currency,
         name: "eyekart Corp.",

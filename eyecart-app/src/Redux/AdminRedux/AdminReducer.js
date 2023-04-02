@@ -21,7 +21,7 @@ export function reducer(state=inidata,action){
         }
         case(getdata):{
             return{
-                ...state,data:action.payload.products,loading:false,totalPage:action.payload.Totalpage
+                ...state,data:action.payload.products,loading:false
             }
         }
           case(error) :{

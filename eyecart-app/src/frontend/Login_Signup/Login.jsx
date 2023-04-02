@@ -57,21 +57,38 @@ logindata()
     method:"post",
     data:data
   }).then((res)=>{
-    console.log(res.data)
-    localStorage.setItem("eyekartToken",res.data.token)
-    setdata(inidata)
-   setLoading(false)
-   toast({
-    position: 'top-left',
-    
-    render: () => (
-      <Box color='white'borderRadius={"10px"} textAlign={"center"} p={3} bg='green.500'>
-    <Icon color={"white"} as={CheckCircleIcon} /> <b>Succesfully Login</b>  
-      </Box>
-    ),
-  })
+console.log(res)
+    if(res.data.token){
+      console.log(res.data)
+      localStorage.setItem("eyekartToken",res.data.token)
+      localStorage.setItem("eyekartuser",JSON.stringify(res.data.data))
+      setdata(inidata)
+     setLoading(false)
+     toast({
+      position: 'top-left',
+      
+      render: () => (
+        <Box color='white'borderRadius={"10px"} textAlign={"center"} p={3} bg='green.500'>
+      <Icon color={"white"} as={CheckCircleIcon} /> <b>Succesfully Login</b>  
+        </Box>
+      ),
+    })
+      
   onClose()
   navigate("/")
+    }else{
+      setLoading(false)
+      toast({
+        position: 'top-left',
+        
+        render: () => (
+          <Box color='white'borderRadius={"10px"} textAlign={"center"} p={3} bg='orange.400'>
+        <Icon color={"white"} as={InfoOutlineIcon} /> <b>Wrong Credentials</b>  
+          </Box>
+        ),
+      })
+    }
+  
   }).catch((err)=>{
     setLoading(false)
     toast({

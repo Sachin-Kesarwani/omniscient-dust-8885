@@ -1,3 +1,4 @@
+
 import { Button, Heading } from "@chakra-ui/react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -5,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Logoutpage = () => {
   let navigate = useNavigate();
   function handleLogout() {
-    localStorage.setItem("isAuth", false);
+    localStorage.setItem("eyekartToken","");
     navigate("/");
   }
 
@@ -26,3 +27,4 @@ const Logoutpage = () => {
 };
 
 export default Logoutpage;
+
