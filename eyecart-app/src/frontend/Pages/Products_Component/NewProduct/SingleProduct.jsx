@@ -26,14 +26,27 @@ const SingleProduct = () => {
   // const dispatch = useDispatch();
   // const { cart } = useSelector((state) => state.CartReducer);
 
-  const handleAddToCart = () => {
-    axios.post("https://shiny-gray-gear.cyclic.app/addtocart",data).then((response) => {
-      console.log(response);
-    }, (error) => {
-      console.log(error);
-    });
+  const handleAddToCart = async () => {
+    try {
+      let d=await fetch(`https://mock11-dse0.onrender.com/user`,{
+        method:"POST",
+        body:JSON.stringify({
+          user:"xx",
+          productId:id,
+          qty:1
+        }),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+      }
+      })
+      let r=await d.json()
+      console.log(r)
+    } catch (error) {
+      console.log(error)
+    }
   };
-
+  
   // const handleAddToWishlist = () => {
   //   dispatch(addToWishlist(data));
   //   setTimeout(() => {
