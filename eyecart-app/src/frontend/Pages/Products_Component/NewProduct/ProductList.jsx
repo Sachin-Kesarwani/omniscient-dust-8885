@@ -17,6 +17,7 @@ import {
 import Pagination from "../Pagination";
 
 
+
 const NewProduct = () => {
   const [products, setProducts] = useState([]);
   const [isLoding, setIsLoading] = useState(false);
@@ -43,7 +44,7 @@ const NewProduct = () => {
       </Box>
     );
   };
-console.log(types)
+
   const fetchproduct = async () => {
     setIsLoading(true);
     try {
@@ -78,10 +79,10 @@ console.log(types)
   const handleClick4 = (value) => {
     setProductRef(value);
   };
-console.log(loader,products)
+
   return (
     <>
-      {/* <Navbar /> */}
+      
       <Box>
         <Image
           src="https://static1.lenskart.com/media/desktop/img/Mar23/spring/home/PLP%20Camapaign%20-%20WEB_1.jpg"
@@ -544,7 +545,7 @@ console.log(loader,products)
         </Flex>
         <Pagination current={page} onChange={(value) => setPage(value)} /> 
       </Box>
-      {/* <Footer /> */}
+      
     </>
   );
 };
