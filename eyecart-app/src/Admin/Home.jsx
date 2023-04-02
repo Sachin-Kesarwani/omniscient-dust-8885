@@ -8,15 +8,16 @@ import {
   StatNumber,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { BsPerson } from 'react-icons/bs';
 import { FiServer, FiUser } from 'react-icons/fi';
 import { GoLocation } from 'react-icons/go';
 import {useDispatch, useSelector} from "react-redux"
-import { GetAllproducts, GetAllproductswithoutPage, getAllusers } from '../Redux/AdminRedux/Action';
+import { GetallAdmins, GetAllproducts, GetAllproductswithoutPage, getAllusers } from '../Redux/AdminRedux/Action';
 import { FiUsers } from 'react-icons/fi';
 import { Icon } from '@chakra-ui/react';
 import { IoIosGlasses } from "react-icons/io";
+import { Loading } from '../frontend/Components/Loading';
 
 
 function StatsCard(props) {
@@ -52,14 +53,26 @@ function StatsCard(props) {
 
 export default function Home() {
 let dispatch=useDispatch()
+let [loading,setLoading]=useState(false)
 let allusers=useSelector((store)=>store?.adminReducer?.users)
 let allproduct=useSelector((store)=>store?.adminReducer?.allproducts)
+let alladmin=useSelector((store=>store?.adminReducer?.alladmin))
   useEffect(()=>{
+    setLoading(true)
    dispatch(getAllusers())
-   dispatch(GetAllproductswithoutPage())
+   dispatch(GetallAdmins())
+  
+   dispatch(GetAllproductswithoutPage()).then((res)=>{
+    setLoading(false)
+   })
 
   },[])
-  return (
+  function closegif(){
+    setLoading(false)
+  }
+  
+  
+    return  loading?<Loading message={"Getting Latest Data..."} open={loading} close={closegif}/>: (
     <Box  w={{
       base:"260pxpx",
       sm: '520px', // 480px
@@ -105,7 +118,7 @@ let allproduct=useSelector((store)=>store?.adminReducer?.allproducts)
         <StatsCard
        
           title={'Admins'}
-          stat={'7'}
+          stat={alladmin?.length}
           icon={<FiUser  color={"white"} size={'3em'} />}
         />
       </SimpleGrid>

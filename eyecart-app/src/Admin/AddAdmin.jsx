@@ -5,6 +5,8 @@ import { Icon } from '@chakra-ui/react'
 import axios from 'axios'
 import { CheckCircleIcon, InfoOutlineIcon } from '@chakra-ui/icons'
 import { Loading } from '../frontend/Components/Loading'
+import { GetallAdmins } from '../Redux/AdminRedux/Action'
+import { useDispatch } from 'react-redux'
 let inidata={
    name:"",
     email:"",
@@ -13,11 +15,12 @@ let inidata={
 const AddAdmin = () => {
     let [data,setData]=useState(inidata)
 let [loading,setLoading]=useState(false)
+let dispatch=useDispatch()
 let toast=useToast()
     function handleChange(e){
     setData({...data,[e.target.name]:e.target.value})
     }
-    console.log(data)
+  
 
     function handleClick(e){
 e.preventDefault()
@@ -25,12 +28,18 @@ postadmin()
     }
 async function postadmin(){
     setLoading(true)
+    console.log(data,process.env.REACT_APP_url)
+    let token=localStorage.getItem("admintoken")
 await axios({
     method:"post",
-    url:`${process.env.url}/admin/register`,
-    data:data
+    url:`${process.env.REACT_APP_url}/admin/register`,
+    data:data,
+    headers:{
+      Authorization:token
+    }
 }).then((res)=>{
     setLoading(false)
+    dispatch(GetallAdmins())
     toast({
         position: 'top-left',
         
@@ -75,7 +84,7 @@ await axios({
           <Container maxW='md' boxShadow={"rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;"}  bg={"white"} color='black'>
             <Heading>Add Admins</Heading>
           <FormLabel>Full Name</FormLabel>
-  <Input placeholder='Enter Admin First Name' name="name" value={data.name} onChange={handleChange} />
+  <Input placeholder='Enter Admin Full Name' name="name" value={data.name} onChange={handleChange} />
   
   <FormLabel>Email </FormLabel>
   <Input placeholder='Enter Admin Email' name="email" value={data.email} onChange={handleChange} />

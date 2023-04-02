@@ -7,6 +7,7 @@ import { pageChange } from '../Redux/AdminRedux/type'
 const Pagination = () => {
     let activepage=useSelector((store)=>store?.adminReducer?.activepage)
     let totalpage=useSelector((store)=>store?.adminReducer.totalPage)
+    let data=useSelector((store)=>console.log(store))
     let [active,setactive]=useState(activepage)
     let dispatch=useDispatch()
     useEffect(()=>{
