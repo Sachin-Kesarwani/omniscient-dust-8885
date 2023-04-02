@@ -1,11 +1,10 @@
 import React from 'react'
-import { Navbar } from '../../Navbar/Navbar'
+
+import Footer from '../../Footer/Footer';
 import { 
   Box ,
   Image,
-  Divider,
-  Text,
-  Stack,
+ 
 } 
 from "@chakra-ui/react";
 import {
@@ -35,9 +34,14 @@ import Span7 from "./Span7";
 
 export const Home = () => {
   return (
+    // //stiky navbar
     <Box>
+      {/* <Box >
 
         <Navbar />
+
+      </Box> */}
+        {/* //middle part */}
         <Span type={HomeData} />
         <Span1 type={HomeData1} />
 
@@ -232,7 +236,13 @@ export const Home = () => {
       <br />
       <br />
       <Span5c type={HomeData14} heading="MEET OUR HAPPY CUSTOMERS" />
-      <Span7 />
+
+      {/* //Footer part */}
+      {/* text info */}
+      <Span7 /> 
+
+      {/* footer navigation    */}
+      <Footer />
 
     </Box>
   )

@@ -19,6 +19,7 @@ import CategoryMenubar from "./CategoryMenubar";
 import { useNavigate } from "react-router-dom";
 import Signup from '../Login_Signup/Signup';
 import Login from '../Login_Signup/Login';
+import Search from './search';
 
 const Navinfo1 = [
     {
@@ -86,6 +87,8 @@ export const NavCard1 = () => {
 //nav bar-II search,logo, auth, cart
 export const NavbarCard2 = () => {
     const navigate = useNavigate();
+
+   
   
     return (
       <Box cursor="pointer">
@@ -109,13 +112,16 @@ export const NavbarCard2 = () => {
 
               {/* //search bar */}
             <Box w="55%">
-              <Input
+              {/* <Input
                 placeholder="What are you looking for"
                 border="1px solid black"
                 w="95%"
                 fontSize="17px"
                 h="45px"
-              />
+                type='search'
+               
+              /> */}
+              <Search />
             </Box>
 
             <HStack w="35%">

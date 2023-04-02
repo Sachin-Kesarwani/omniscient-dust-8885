@@ -9,6 +9,7 @@ import Cart from '../fw22_0314_pages/Cart'
 import Payments from '../fw22_0314_pages/Payment'
 import Shipping_page from '../fw22_0314_pages/Shipping_page'
 import { Navbar } from '../Navbar/Navbar'
+import Search from '../Navbar/search'
 
 
 const AllRoutes = () => {
@@ -26,6 +27,8 @@ const AllRoutes = () => {
         <Route path='/cart' element={<Cart/>} />
         <Route path='/shipping' element={<Shipping_page/>} />
         <Route path='/payments' element={<Payments/>} />
+        <Route path='/search' element={<Search />} />
+
 
       </Routes>
   
