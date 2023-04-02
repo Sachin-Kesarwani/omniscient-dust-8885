@@ -58,7 +58,7 @@ close()
             <ModalBody>
               {/* <Text>Custom backdrop filters!</Text> */}
               <Image width="150px" margin={"auto"} src="https://i.gifer.com/87Hq.gif"/>
-              <Heading color={"#680ae7"} textAlign={"center"}>{message}</Heading>
+              <Heading color={"#680ae7"} as="h2" textAlign={"center"}>{message}</Heading>
             </ModalBody>
             <ModalFooter>
               {/* <Button onClick={onClose}>Close</Button> */}

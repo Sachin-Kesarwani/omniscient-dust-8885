@@ -17,19 +17,19 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
 
+<ChakraProvider>
   <ContextProvider>
      <Provider store={store}>
-<ChakraProvider>
   <BrowserRouter>
   
   <App />
 
       </BrowserRouter>
-      </ChakraProvider>
 
   </Provider>
   
   </ContextProvider>
+      </ChakraProvider>
  
  
 );

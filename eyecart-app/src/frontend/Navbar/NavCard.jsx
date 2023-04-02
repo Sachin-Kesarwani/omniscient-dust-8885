@@ -8,10 +8,12 @@ import {
     Input,
     Button,
     HStack,
+    Heading,
+    Icon,
  
 
 } from "@chakra-ui/react";
-import { FiPhoneCall } from "react-icons/fi";
+import { FiPhoneCall, FiUser } from "react-icons/fi";
 import { CiHeart } from "react-icons/ci";
 import { CgShoppingCart } from "react-icons/cg";
 import { Link, Navigate } from "react-router-dom";
@@ -19,6 +21,8 @@ import CategoryMenubar from "./CategoryMenubar";
 import { useNavigate } from "react-router-dom";
 import Signup from '../Login_Signup/Signup';
 import Login from '../Login_Signup/Login';
+import Search from './search';
+import { BsPersonCircle } from 'react-icons/bs';
 
 const Navinfo1 = [
     {
@@ -86,7 +90,13 @@ export const NavCard1 = () => {
 //nav bar-II search,logo, auth, cart
 export const NavbarCard2 = () => {
     const navigate = useNavigate();
-  
+
+   let usertdata=JSON.parse(localStorage.getItem("eyekartuser"))
+  console.log(usertdata)
+
+  function redirectToprofile(){
+navigate("/userinfo")
+  }
     return (
       <Box cursor="pointer">
           
@@ -109,13 +119,16 @@ export const NavbarCard2 = () => {
 
               {/* //search bar */}
             <Box w="55%">
-              <Input
+              {/* <Input
                 placeholder="What are you looking for"
                 border="1px solid black"
                 w="95%"
                 fontSize="17px"
                 h="45px"
-              />
+                type='search'
+               
+              /> */}
+              <Search />
             </Box>
 
             <HStack w="35%">
@@ -130,11 +143,13 @@ export const NavbarCard2 = () => {
               >
                 Track Order
               </Button>
-
-              {/* //login signup */}
-              <Box display={"flex"}>{<Signup/>} | {<Login/>}
-                 {/* Login | Signup */}
-              </Box>
+{
+  usertdata?.email?<Icon fontSize={"30px"} onClick={redirectToprofile} as={BsPersonCircle}/> :  <Box display={"flex"}>{<Signup/>} | {<Login/>}
+               
+  </Box>
+}
+     
+            
                {/* Wishlist button */}
               <Button
                 leftIcon={<CiHeart />}

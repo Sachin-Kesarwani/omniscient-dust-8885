@@ -72,6 +72,9 @@ import Users from './Users';
 import AddProducts from './AddProducts';
 import Home from './Home';
 import { useNavigate } from 'react-router-dom';
+import { getAllusers } from '../Redux/AdminRedux/Action';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 
 const LinkItems= [
@@ -116,9 +119,6 @@ export default function AdminHome({children,}) {
 active==1?<Home/>:active==2?<AllProducts/>:active==3?<AdminsPage/>:active==4?<Users/>:<AddProducts/>
       }
     
-      {/* <Signup/>
-      <Login/> */}
-      <h1>sjshshsh</h1>
     
     </Box>
   );
