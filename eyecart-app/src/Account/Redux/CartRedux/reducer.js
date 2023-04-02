@@ -43,7 +43,6 @@ export function reducer(state = inistate, action) {
     case AddInWishList: {
       return {
         ...state,
-
         isLoading: false,
       };
     }
@@ -51,12 +50,14 @@ export function reducer(state = inistate, action) {
       return {
         ...state,
         wishlist: state.wishlist?.map((e) => e.Position !== action.payload),
+        isLoading:false,isError:false
       };
     }
     case GetwishlistData: {
       return {
         ...state,
         wishlist: action.payload,
+        isLoading:false,isError:false
       };
     }
 
@@ -64,12 +65,14 @@ export function reducer(state = inistate, action) {
       return {
         ...state,
         cart: action.payload,
+        isLoading:false,isError:false
       };
     }
     case GetorderData: {
       return {
         ...state,
         order: action.payload,
+        isLoading:false,isError:false
       };
     }
     default: {

@@ -72,6 +72,9 @@ import Users from './Users';
 import AddProducts from './AddProducts';
 import Home from './Home';
 import { useNavigate } from 'react-router-dom';
+import { getAllusers } from '../Redux/AdminRedux/Action';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 
 const LinkItems= [
