@@ -39,26 +39,7 @@ let arr = [
   { id: 4, page: "logout", title: "Logout", icon: "fas fa-sign-in-alt" },
 ];
 
-let admindata=[
-  {
-    "id": 1,
-    "name": "Sachin Kesarwani",
-    "username": "sachin5454",
-    "password": "sachin@5454"
-  },
-  {
-    "id": 2,
-    "name": "Shivam Kumar",
-    "username": "shivam4321",
-    "password": "shivam@4321"
-  },
-  {
-    "id": 3,
-    "name": "Malikrehan Meeranaik",
-    "username": "malik9911",
-    "password": "malik@9911"
-  }
-]
+
 const Account = () => {
   let [active, setactive] = useState(0);
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -66,14 +47,15 @@ const Account = () => {
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
     let toast=useToast()
-    function handleAdmin(e){
+   async function handleAdmin(e){
       let obj={
         email:admin.username,password:admin.password
       }
       e.preventDefault()
   //  
 
-axios.post("https://shiny-gray-gear.cyclic.app/admin/login",obj).then((res)=>{
+await axios.post(`${process.env.REACT_APP_url}/admin/login`,obj).then((res)=>{
+  console.log(res.data)
   localStorage.setItem("admintoken",res.data.token)
   
   toast({
@@ -82,7 +64,8 @@ axios.post("https://shiny-gray-gear.cyclic.app/admin/login",obj).then((res)=>{
     isClosable: true,
   })
  onClose()
- window.location.href="http://localhost:3000/admin"
+ window.open("http://localhost:3000/admin","_blank","noreferrer")
+
 }).catch(()=>{
     
   toast({

@@ -127,10 +127,10 @@ const PersonelInfo = () => {
               <Avatar name={"https://t4.ftcdn.net/jpg/01/97/15/87/360_F_197158744_1NBB1dEAHV2j9xETSUClYqZo7SEadToU.jpg"} />
             </Box>
             <Box p={2} display={"flex"} justifyContent={"start"} flexDirection={"column"}>
-              <Text fontWeight={"bold"}>Name : {accountdata.first_name}</Text>
-              <Text>Email : {data.email}</Text>
-              <Text>Mobile : {data.mobile}</Text>
-              <Text>City : {data.city}</Text>
+              <Text fontWeight={"bold"}>Name : {accountdata?.first_name}</Text>
+              <Text>Email : {data?.email}</Text>
+              <Text>Mobile : {data?.mobile}</Text>
+              <Text>City : {data?.city}</Text>
               <Button
                 onClick={() => {
                   setEdit(true);

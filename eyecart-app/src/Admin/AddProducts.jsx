@@ -4,6 +4,7 @@ import { Loading } from '../frontend/Components/Loading'
 import {CheckCircleIcon, InfoOutlineIcon} from  '@chakra-ui/icons'
 import { Icon } from '@chakra-ui/react'
 import { useDispatch } from 'react-redux'
+import { postdataproductInApi } from '../Redux/AdminRedux/Action'
 let inidata={
   image:"",
   title:"",
@@ -43,11 +44,11 @@ e.preventDefault()
 
   }
 
-
+console.log(data)
   function postdatainapi(){
 
     setLoading(true)
-    dispatch(postdatainapi()).then((res)=>{
+    dispatch(postdataproductInApi(data)).then((res)=>{
       setLoading(false)
       toast({
         position: 'top-left',
@@ -65,6 +66,8 @@ e.preventDefault()
   function closegif(){
     setLoading(false)
 }
+
+console.log(data)
   return loading?<Loading message={"Adding data..."} open={loading} close={closegif}/>: (
     <>
     <Box w={{

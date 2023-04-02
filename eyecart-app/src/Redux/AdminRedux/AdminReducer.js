@@ -1,4 +1,4 @@
-import { allproducts, error, getdata, getuser, loading, pageChange } from "./type";
+import { allproducts, error, getalladmin, getdata, getuser, loading, pageChange } from "./type";
 
 
 let inidata={
@@ -8,7 +8,8 @@ let inidata={
     error:false,
     activepage:1,
     totalPage:0,
-    users:[]
+    users:[],
+    alladmin:[]
 }
 
 export function reducer(state=inidata,action){
@@ -43,6 +44,11 @@ export function reducer(state=inidata,action){
            case(allproducts):{
             return {
               ...state,allproducts:action.payload
+            }
+           }
+           case(getalladmin):{
+            return {
+              ...state, alladmin:action.payload
             }
            }
         default:{

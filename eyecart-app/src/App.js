@@ -23,10 +23,10 @@ let param = url.includes("admin");
 
    {!param && <Navbar/>}
     
-    <div style={{padding:"120px"}}>
+    {/* <div style={{padding:"120px"}}> */}
 
    <AllRoutes/>
-    </div>
+    {/* </div> */}
    
      {!param&&<button onClick={handleClick}>Clickme</button>}
      
