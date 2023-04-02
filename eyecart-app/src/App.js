@@ -1,8 +1,4 @@
-
 import './App.css';
-
-
-import Home from './Admin/Home';
 import AllRoutes from './frontend/Pages/AllRoutes';
 import { Navbar } from './frontend/Navbar/Navbar';
 import NewProduct from './frontend/Pages/Products_Component/NewProduct/ProductList';
