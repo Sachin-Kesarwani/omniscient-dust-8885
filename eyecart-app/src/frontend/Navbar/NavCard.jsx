@@ -12,7 +12,7 @@ import {
  
 
 } from "@chakra-ui/react";
-import { FiPhoneCall } from "react-icons/fi";
+import { FiPhoneCall, FiUser } from "react-icons/fi";
 import { CiHeart } from "react-icons/ci";
 import { CgShoppingCart } from "react-icons/cg";
 import { BsPersonCircle } from "react-icons/bs";
@@ -22,6 +22,7 @@ import { useNavigate } from "react-router-dom";
 import Signup from '../Login_Signup/Signup';
 import Login from '../Login_Signup/Login';
 import Search from './search';
+
 
 const Navinfo1 = [
     {

@@ -23,6 +23,7 @@ import React, { useState } from 'react'
 import { Loading } from '../Components/Loading'
 import Login from './Login'
 import logSin from "./logSin.css"
+import TermsCondition from '../../Admin/TermsCondition'
 let inidata={
     first_name:"",
     last_name:"",
@@ -140,7 +141,7 @@ function closegif(){
               <Input placeholder='Password'  type={"text"} id="inputfield" value={data.password} name="password" onChange={handleChange} required />
             </FormControl>
             <Checkbox m={3} onChange={handleChange} isChecked={data.terms_condition} name="terms_condition" colorScheme='green' defaultChecked>
-              Accept Terms & conditions
+              Accept Terms & conditions <span style={{textDecoration:"underline"}} >{<TermsCondition/>}</span>
             </Checkbox>
             <Button onClick={handleSubmit} color="#680ae7" bg={"#02bdae" }_hover={{bg:"#dfdfd9"}} marginTop="10px" borderRadius="20px"  w="100%">
             Create an Account

@@ -119,9 +119,6 @@ export default function AdminHome({children,}) {
 active==1?<Home/>:active==2?<AllProducts/>:active==3?<AdminsPage/>:active==4?<Users/>:<AddProducts/>
       }
     
-      {/* <Signup/>
-      <Login/> */}
-      <h1>sjshshsh</h1>
     
     </Box>
   );
