@@ -82,7 +82,7 @@ axios.post("https://shiny-gray-gear.cyclic.app/admin/login",obj).then((res)=>{
     isClosable: true,
   })
  onClose()
- window.location.href="http://localhost:3000/admin"
+ window.open("http://localhost:3000/admin","_blank","noreferrer")
 }).catch(()=>{
     
   toast({
