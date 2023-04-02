@@ -72,6 +72,9 @@ import Users from './Users';
 import AddProducts from './AddProducts';
 import Home from './Home';
 import { useNavigate } from 'react-router-dom';
+import { getAllusers } from '../Redux/AdminRedux/Action';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 const LinkItems= [
   { id:1 ,name: 'Home', icon:FiUser },
@@ -263,19 +266,19 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   </Text>
                 </VStack>
                 <Box display={{ base: 'none', md: 'flex' }}>
-                  <FiChevronDown />
+                  {/* <FiChevronDown /> */}
                 </Box>
               </HStack>
             </MenuButton>
-            <MenuList
+            {/* <MenuList
               bg={useColorModeValue('white', 'gray.900')}
               borderColor={useColorModeValue('gray.200', 'gray.700')}>
-              {/* <MenuItem>Profile</MenuItem>
+              <MenuItem>Profile</MenuItem>
               <MenuItem>Settings</MenuItem>
-              <MenuItem>Billing</MenuItem> */}
+              <MenuItem>Billing</MenuItem>
               <MenuDivider />
               <MenuItem onClick={sendtoHome}>Sign out</MenuItem>
-            </MenuList>
+            </MenuList> */}
           </Menu>
         </Flex>
       </HStack>

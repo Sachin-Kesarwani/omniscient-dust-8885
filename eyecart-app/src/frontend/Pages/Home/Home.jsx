@@ -36,12 +36,9 @@ export const Home = () => {
   return (
     // //stiky navbar
     <Box>
-      {/* <Box >
-
-        <Navbar />
-
-      </Box> */}
+     
         {/* //middle part */}
+
         <Span type={HomeData} />
         <Span1 type={HomeData1} />
 

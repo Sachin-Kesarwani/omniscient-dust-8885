@@ -2,9 +2,9 @@ import React from "react";
 import { Box, Image, Square, Link } from "@chakra-ui/react";
 import { Navigation, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/autoplay";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/autoplay";
 
 const Span6 = ({ type, heading }) => {
   return (
@@ -50,7 +50,7 @@ const Span6 = ({ type, heading }) => {
         >
           {type.map((i) => (
             <Box key={i}>
-              <SwiperSlide>
+              {/* <SwiperSlide>
                 <Link to={i.linked}>
                   <Square m="auto">
                     <Image
@@ -61,7 +61,7 @@ const Span6 = ({ type, heading }) => {
                     />
                   </Square>
                 </Link>
-              </SwiperSlide>
+              </SwiperSlide> */}
             </Box>
           ))}
         </Swiper>

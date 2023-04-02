@@ -18,6 +18,7 @@ const AddProducts = () => {
 
   let [data,setdata]=useState(inidata)
 let [loading,setLoading]=useState(false)
+
 const toast = useToast()
   function handleInputChange(e){
    setdata({...data,[e.target.name]:e.target.value})

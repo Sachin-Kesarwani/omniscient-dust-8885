@@ -6,10 +6,23 @@ import logo from '../assets/logo.jpg'
 import Cart_pro_card from '../fw22_0314_Components/Cart_Pro_Card'
 import './cart.css'
 import { useToast } from '@chakra-ui/react'
+import axios from 'axios'
 const Cart = () => {
     const [arr,setarr]=useState([])
     const [total,settotal]=useState(0)
     const [ar,setar]=useState(0)
+    const [loading,setloading]=useState(true)
+    useEffect(()=>{
+ 
+axios.get("https://shiny-gray-gear.cyclic.app/carts",{headers: {
+    Authorization : `${localStorage.getItem("eyekartToken")}`
+    }}).then((res)=>{
+        console.log(res)
+    setarr(res.data)
+})
+
+
+    },[])
     const navigate=useNavigate()
     let data=[
         {id:1,price:1500,count:1,title:"hello",img:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//v/i/black-full-rim-wayfarer-vincent-chase-glam-slam-vc-s15040-c1-sunglasses_g_8753_01_09_2022.jpg"},
@@ -52,10 +65,10 @@ const handlenavigate=()=>{
 Cart({arr.length} items)
 
     </Text>
-    {arr.map((el)=>{
+    {arr.map((el,i)=>{
 
     return   <Box height={"auto"}>
-    <Cart_pro_card key={el.id} id={el.id} count={el.count} img={el.img} title={el.img} price={el.price} handlecount={handlecount}  />
+    <Cart_pro_card key={i} id={el.id} count={el.count} img={el.img} title={el.img} price={el.price} handlecount={handlecount}  />
     </Box>
     
 

@@ -152,9 +152,19 @@ export const NavbarCard2 = () => {
               >
                 Wishlist
               </Button>
+              <Button
+                
+                size="lg"
+                bg="whiteAlpha.900"
+                fontSize="15px"
+                fontWeight="400"
+                onClick={() => navigate("/userinfo")}
+              >
+                UserInfo
+              </Button>
 
               {/* Cart button */}
-              <Link to="/cartpage">
+              <Link to="/cart">
                 <Button
                   leftIcon={<CgShoppingCart />}
                   size="lg"
