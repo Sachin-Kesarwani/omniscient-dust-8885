@@ -39,6 +39,7 @@ export const Home = () => {
      
         {/* //middle part */}
 
+        {/* <Span type={HomeData} /> */}
         <Span type={HomeData} />
         <Span1 type={HomeData1} />
 
