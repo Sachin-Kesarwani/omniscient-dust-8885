@@ -8,21 +8,21 @@ import {
     Input,
     Button,
     HStack,
-    Heading,
-    Icon,
+    Icon
  
 
 } from "@chakra-ui/react";
 import { FiPhoneCall, FiUser } from "react-icons/fi";
 import { CiHeart } from "react-icons/ci";
 import { CgShoppingCart } from "react-icons/cg";
+import { BsPersonCircle } from "react-icons/bs";
 import { Link, Navigate } from "react-router-dom";
 import CategoryMenubar from "./CategoryMenubar";
 import { useNavigate } from "react-router-dom";
 import Signup from '../Login_Signup/Signup';
 import Login from '../Login_Signup/Login';
 import Search from './search';
-import { BsPersonCircle } from 'react-icons/bs';
+
 
 const Navinfo1 = [
     {
@@ -72,7 +72,7 @@ const Navinfo1 = [
 //nav bar-I
 export const NavCard1 = () => {
     return (
-      <Box cursor="pointer">
+      <Box cursor="pointer" >
         <Flex gap={2} pl={5} pt={2}>
           {Navinfo1.map((i, index) => (
             <Box key={index}>
@@ -91,14 +91,17 @@ export const NavCard1 = () => {
 export const NavbarCard2 = () => {
     const navigate = useNavigate();
 
+  
+
    let usertdata=JSON.parse(localStorage.getItem("eyekartuser"))
   console.log(usertdata)
 
   function redirectToprofile(){
 navigate("/userinfo")
   }
+  
     return (
-      <Box cursor="pointer">
+      <Box cursor="pointer" >
           
         <HStack m="auto">
 
@@ -143,14 +146,12 @@ navigate("/userinfo")
               >
                 Track Order
               </Button>
-{
+
+           {
   usertdata?.email?<Icon fontSize={"30px"} onClick={redirectToprofile} as={BsPersonCircle}/> :  <Box display={"flex"}>{<Signup/>} | {<Login/>}
                
   </Box>
 }
-     
-            
-               {/* Wishlist button */}
               <Button
                 leftIcon={<CiHeart />}
                 size="lg"
@@ -193,7 +194,7 @@ navigate("/userinfo")
   
   export const NavbarCard3 = () => {
     return (
-      <Box cursor="pointer" bg="#fbf9f7" p={2.5}>
+      <Box cursor="pointer" bg="#fbf9f7" p={2.5}  >
         <Flex gap={4} pl={5} pt={2} justifyContent="space-between">
 
           {/* // CATEGORY menu bar */}

@@ -35,10 +35,11 @@ import Span7 from "./Span7";
 export const Home = () => {
   return (
     // //stiky navbar
-    <Box>
+    <Box scrollBehavior={"smooth"}>
      
         {/* //middle part */}
 
+        {/* <Span type={HomeData} /> */}
         <Span type={HomeData} />
         <Span1 type={HomeData1} />
 
@@ -236,7 +237,7 @@ export const Home = () => {
 
       {/* //Footer part */}
       {/* text info */}
-      <Span7 /> 
+      {/* <Span7 />  */}
 
       {/* footer navigation    */}
       <Footer />

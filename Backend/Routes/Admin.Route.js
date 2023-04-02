@@ -63,6 +63,17 @@ AdminRouter.post("/login", async (req, res) => {
   }
 });
 
+AdminRouter.get("/alladmin",authentication,async (req, res) => {
+  try {
+    const admin = await AdminModel.find();
+    res.status(200).send({ msg: "Admin Details", admins: admin });
+  } catch (e) {
+    res
+      .status(200)
+      .send({ msg: "Admin is not authenticated,Please login first" });
+  }
+});
+
 AdminRouter.get("/allusers", authentication, async (req, res) => {
   try {
     const user = await UserModel.find();

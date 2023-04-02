@@ -64,7 +64,7 @@ import {
               <Input
                 boxShadow="rgba(149, 157, 165, 0.2) 0px 3px 20px"
                 border="1px solid black"
-                w="95%"
+                w="90%"
                 fontSize="17px"
                 h="45px"
                 type='search'

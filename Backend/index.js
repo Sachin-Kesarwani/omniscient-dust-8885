@@ -8,6 +8,8 @@ const { AdminRouter } = require("./Routes/Admin.Route");
 
 const {paymentrouter} =require("./Routes/payments");
 const { cartRoute } = require("./Routes/Cart.Route");
+const { wishlistRoute } = require("./Routes/Wishlist.Route");
+const { shippingRoute } = require("./Routes/Shipping.Route");
 
 
 const app = express();
@@ -23,6 +25,9 @@ app.use("/users", userRouter);
 
 app.use("/products", productRoute);
 app.use("/carts", cartRoute);
+app.use("/wishlist", wishlistRoute);
+app.use("/shipping", shippingRoute );
+
 app.use("/payments",paymentrouter)
 
 
