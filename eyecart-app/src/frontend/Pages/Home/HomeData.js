@@ -33,6 +33,10 @@ export const HomeData = [
 
 export const HomeData1 = [
   {
+    img: "https://static1.lenskart.com/media/desktop/img/Mar23/ipl/home/1920x520-(EXTRA-60).gif",
+    caption: "Slider 1",
+  },
+  {
     img: "https://static5.lenskart.com/media/uploads/WhatsApp_Image_2023-03-15_at_02.21.40.jpeg",
     caption: "Slider 1",
   },

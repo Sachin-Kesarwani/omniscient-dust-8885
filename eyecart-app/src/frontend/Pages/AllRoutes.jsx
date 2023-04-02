@@ -9,6 +9,7 @@ import Cart from '../fw22_0314_pages/Cart'
 import Payments from '../fw22_0314_pages/Payment'
 import Shipping_page from '../fw22_0314_pages/Shipping_page'
 import { Navbar } from '../Navbar/Navbar'
+import Search from '../Navbar/search'
 
 import SingleProduct from './Products_Component/NewProduct/SingleProduct'
 
@@ -25,10 +26,17 @@ const AllRoutes = () => {
 
       <Route path='/' element={<Home />} />
         <Route path='/admin'  element={<AdminHome/>} />
+
+        <Route path='/products' element={<NewProduct />} />
+        <Route path='/navbar' element={<Navbar/>} />
+        <Route path="/newproducts/:id" element={<SingleProduct />}/>
+
         <Route path='/products'  element={<NewProduct/>} />
 
         <Route path='/navbar' element={<Navbar/>} />
+
         <Route path="/products/:id" element={<SingleProduct />} />
+
         <Route path='/userinfo'  element={
           <PrivateRoute>
 
@@ -58,6 +66,7 @@ const AllRoutes = () => {
         <Payments/>
            </PrivateRoute>
         } />
+
 
 
       </Routes>

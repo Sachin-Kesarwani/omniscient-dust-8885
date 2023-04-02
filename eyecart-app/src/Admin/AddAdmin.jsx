@@ -1,4 +1,4 @@
-import { Container ,Box, Input, FormLabel, Button, useToast} from '@chakra-ui/react'
+import { Container ,Box, Input, FormLabel, Button, useToast, Heading} from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { FiUserPlus } from 'react-icons/fi'
 import { Icon } from '@chakra-ui/react'
@@ -6,8 +6,7 @@ import axios from 'axios'
 import { CheckCircleIcon, InfoOutlineIcon } from '@chakra-ui/icons'
 import { Loading } from '../frontend/Components/Loading'
 let inidata={
-    fname:"",
-    lname:"",
+   name:"",
     email:"",
     password:""
 }
@@ -70,12 +69,14 @@ await axios({
         lg: '10%', // 992px
         xl: '10%', // 1280px
         '2xl': '10%', // 1536px
-      }}>
-          <Container maxW='md' boxShadow={"rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;"} bg='white.600' color='black'>
-          <FormLabel>First Name </FormLabel>
-  <Input placeholder='Enter Admin First Name' name="fname" value={data.fname} onChange={handleChange} />
-  <FormLabel>Last Name </FormLabel>
-  <Input placeholder='Enter Admin Last Name' name="lname" value={data.lname} onChange={handleChange} />
+      }}
+     
+      >
+          <Container maxW='md' boxShadow={"rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;"}  bg={"white"} color='black'>
+            <Heading>Add Admins</Heading>
+          <FormLabel>Full Name</FormLabel>
+  <Input placeholder='Enter Admin First Name' name="name" value={data.name} onChange={handleChange} />
+  
   <FormLabel>Email </FormLabel>
   <Input placeholder='Enter Admin Email' name="email" value={data.email} onChange={handleChange} />
   <FormLabel>Password</FormLabel>
