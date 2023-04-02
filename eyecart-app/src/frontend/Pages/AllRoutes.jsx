@@ -19,6 +19,8 @@ import NewProduct from './Products_Component/NewProduct/ProductList'
 
 
 
+
+
 const AllRoutes = () => {
   return (
     <div>
@@ -35,12 +37,17 @@ const AllRoutes = () => {
 
         <Route path='/navbar' element={<Navbar/>} />
 
+
         <Route path="/products/:id" element={<SingleProduct />} />
+
+        <Route path="/newproducts/:id" element={<SingleProduct />}/>
+
+
 
         <Route path='/userinfo'  element={
           <PrivateRoute>
 
-        <Account/>
+  <Account/>
           </PrivateRoute>
         } />
 

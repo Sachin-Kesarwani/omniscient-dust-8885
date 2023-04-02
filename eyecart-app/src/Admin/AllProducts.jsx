@@ -30,8 +30,8 @@ let [loading,setLoading]=useState(load)
       })
      
     },[active])
-    console.log(allproducts)
-  return loading?<Loading message={"Loading..."} open={loading} close={closegif}/>:error?<Heading>Somethin Went wrong !</Heading>:(
+    console.log(data)
+  return loading?<Loading message={"Loading..."} open={loading} close={closegif}/>:(
     <>
        <Heading>All Products</Heading>
      <Box
