@@ -69,7 +69,7 @@ const Navinfo1 = [
 //nav bar-I
 export const NavCard1 = () => {
     return (
-      <Box cursor="pointer">
+      <Box cursor="pointer" >
         <Flex gap={2} pl={5} pt={2}>
           {Navinfo1.map((i, index) => (
             <Box key={index}>
@@ -89,7 +89,7 @@ export const NavCard1 = () => {
 export const NavbarCard2 = () => {
     const navigate = useNavigate();
     return (
-      <Box cursor="pointer">
+      <Box cursor="pointer" >
           
         <HStack m="auto">
 
@@ -175,7 +175,7 @@ export const NavbarCard2 = () => {
   
   export const NavbarCard3 = () => {
     return (
-      <Box cursor="pointer" bg="#fbf9f7" p={2.5}>
+      <Box cursor="pointer" bg="#fbf9f7" p={2.5}  >
         <Flex gap={4} pl={5} pt={2} justifyContent="space-between">
 
           {/* // CATEGORY menu bar */}
