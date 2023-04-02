@@ -37,7 +37,7 @@ function CategoryMenubar() {
           w="100%"
           p="5"
         >
-          <Link to="/productPage">
+          <Link to="/products">
             <Box backgroundColor="white">
               <Grid gridTemplateColumns="repeat(5, 1fr)" w="100%">
                 <Flex direction="column" justifyContent="space-evenly" mt="20">
@@ -225,7 +225,7 @@ function CategoryMenubar() {
           w="100%"
           p="2"
         >
-          <Link to="/ProductPage">
+          <Link to="/products">
             <Box backgroundColor="white">
               <Grid
                 gridTemplateColumns="repeat(3, 1fr)"
@@ -287,7 +287,7 @@ function CategoryMenubar() {
           p="5"
           w="100%"
         >
-          <Link to="/productPage">
+          <Link to="/products">
             <Box backgroundColor="white">
               <Grid gridTemplateColumns="repeat(5, 1fr)" p="1" w="100%">
                 <Flex direction="column" gap="6">
@@ -406,7 +406,7 @@ function CategoryMenubar() {
           w="100%"
           p="5"
         >
-          <Link to="/productPage">
+          <Link to="/products">
             <Box backgroundColor="white">
               <Grid gridTemplateColumns="repeat(6, 1fr)">
                 <Flex direction="column" justifyContent="space-evenly">

@@ -67,7 +67,7 @@ const handlenavigate=()=>{
   return isLoading?<Loading />:isError?<div width={"100%"} style={{margin:"auto"}}>
     <img src="https://www.desicomments.com/user/2008/02/5418/error.gif" alt="" />
   </div>:(
-    <Box style={{fontFamily: 'Poppins'}} bgColor={"#f8f8f8"} width={"100%"} height={"100vh"}>
+    <Box style={{fontFamily: 'Poppins'}} mt={"50px"} bgColor={"#f8f8f8"} width={"100%"} height={"100vh"}>
 
    <Box className="cart_container"  flexDirection={{base:'column',sm:"column",md:"column",xl:"row"}} gap={"50px"}  style={{display:"flex",width:"70%",margin:"auto",marginTop:"50px"}} >
   <Box className="first_box" maxH={"400px"} overflowY={"auto"} overflowX={"hidden"} minW={{base:"170%",sm:"100%",md:"70%",xl:"70%"}} >

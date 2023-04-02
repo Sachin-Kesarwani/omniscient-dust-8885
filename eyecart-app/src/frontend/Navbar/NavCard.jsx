@@ -8,12 +8,14 @@ import {
     Input,
     Button,
     HStack,
+    Icon
  
 
 } from "@chakra-ui/react";
 import { FiPhoneCall } from "react-icons/fi";
 import { CiHeart } from "react-icons/ci";
 import { CgShoppingCart } from "react-icons/cg";
+import { BsPersonCircle } from "react-icons/bs";
 import { Link, Navigate } from "react-router-dom";
 import CategoryMenubar from "./CategoryMenubar";
 import { useNavigate } from "react-router-dom";
