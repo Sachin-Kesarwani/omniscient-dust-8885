@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid, Center } from "@chakra-ui/react";
 import { FooterCard1, FooterCard2, FooterCard } from "./FooterCard";
+import Span7 from "../Pages/Home/Span7";
 
  const services = [
   {
@@ -41,6 +42,8 @@ const about = [
 
 const Footer = () => {
   return (
+    <>
+     <Span7 />
     <Box bgColor="#000042" color="whiteAlpha.900">
       <Grid
         templateColumns={{
@@ -74,7 +77,10 @@ const Footer = () => {
       </Grid>
       <hr />
       <FooterCard />
+     
     </Box>
+    </>
+    
   );
 };
 

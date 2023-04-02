@@ -15,6 +15,7 @@ import {
   Image
 } from "@chakra-ui/react";
 import Pagination from "../Pagination";
+import Footer from "../../../Footer/Footer";
 
 
 
@@ -82,8 +83,9 @@ const NewProduct = () => {
 
   return (
     <>
+
+      <Box mt={"200px"}>
       
-      <Box>
         <Image
           src="https://static1.lenskart.com/media/desktop/img/Mar23/spring/home/PLP%20Camapaign%20-%20WEB_1.jpg"
           alt="img"
@@ -545,7 +547,9 @@ const NewProduct = () => {
         </Flex>
         <Pagination current={page} onChange={(value) => setPage(value)} /> 
       </Box>
-      
+
+      <Footer />
+
     </>
   );
 };
