@@ -19,6 +19,7 @@ import {
   ModalCloseButton,
 } from '@chakra-ui/react'
 import { Button,FormLabel } from "@chakra-ui/react";
+import axios from "axios";
 let arr = [
   {
     id: 0,
@@ -66,27 +67,33 @@ const Account = () => {
     const finalRef = React.useRef(null)
     let toast=useToast()
     function handleAdmin(e){
-      e.preventDefault()
-   
-      for(let i=0;i<admindata.length;i++){
-        if(admindata[i].username==admin.username&&admindata[i].password==admin.password){
-          console.log(admin)
-          window.open("https://fit-factory.vercel.app/admin","_blank","noreferrer")
-          onClose()
-          toast({
-            title: `Welcome to Admin Page`,
-            status: "success",
-            isClosable: true,
-          })
-          return 
-        }
+      let obj={
+        email:admin.username,password:admin.password
       }
-      toast({
-        title: `Somethin went wrong`,
-        status: "warning",
-        isClosable: true,
-      })
-     onClose()
+      e.preventDefault()
+  //  
+
+axios.post("https://shiny-gray-gear.cyclic.app/admin/login",obj).then((res)=>{
+  localStorage.setItem("admintoken",res.data.token)
+  
+  toast({
+    title: `Successfully logged in`,
+    status: "success",
+    isClosable: true,
+  })
+ onClose()
+ window.location.href="http://localhost:3000/admin"
+}).catch(()=>{
+    
+  toast({
+    title: `Something went wrong`,
+    status: "warning",
+    isClosable: true,
+  })
+ onClose()
+})
+
+
 
     }
   return (

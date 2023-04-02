@@ -7,11 +7,11 @@ const Shipping_page = () => {
     let discount=Math.floor(total/10)
     let tax=Math.floor(total/15)
   return (
-    <Box color={"black"} bgColor={"#ffffff"} fontSize={"14px"}>
+    <Box color={"black"} bgColor={"#ffffff"} fontSize={"14px"} style={{padding:"120px"}}>
 <Box className={"shipping_cont"}   margin={"auto"} flexDirection={{base:'column',sm:"column",md:"column",xl:"row"}} display={"flex"} gap={"40px"} width={"60%"} fontSize={"14px"}>
     
-<Box className={"shipping_add"} minW={{base:"135%",sm:"100%",md:"100%",xl:"70%"}} width={"70%"} height={"auto"} padding={"10px"} fontSize={"12px"} >
-<Box display={'flex'} justifyContent={"space-between"} margin={"auto"} mb={"10px"} fontSize={"14px"} gap={"20px"} flexWrap={"wrap"} >
+<Box className={"shipping_add"} minW={{base:"135%",sm:"100%",md:"100%",xl:"80%"}} width={"70%"} height={"auto"} padding={"10px"} fontSize={"12px"} >
+<Box display={'flex'} justifyContent={"space-between"} margin={"auto"} mb={"10px"} fontSize={"14px"} gap={"10px"} flexWrap={"wrap"} >
 <Box fontSize={"14px"} border={"1px solid grey"} bgColor={"grey"} color={"white"} padding={"5px 15px 5px 10px"} borderRadius={"20px"}>  <span style={{fontWeight:"500",marginRight:"5px"}} className='steps'>1</span>Mobile</Box>
 <Box  fontSize={"14px"}border={"1px solid grey"} bgColor={"black"}  color={"white"} padding={"5px 15px 5px 10px"} borderRadius={"20px"}>  <span style={{fontWeight:"500",marginRight:"5px"}} className='steps'>2</span>Shipping Address</Box>
 <Box fontSize={"14px"} border={"1px solid grey"} bgColor={"grey"}  color={"white"} padding={"5px 15px 5px 10px"} borderRadius={"20px"}>
