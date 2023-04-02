@@ -23,8 +23,9 @@ const SingleProduct = () => {
   const toast = useToast()
   const { id } = useParams();
   let token =(localStorage.getItem("eyekartToken"))
-   let user = JSON.parse(localStorage.getItem("eyekartUser"))
-  console.log(token)
+   let user = (localStorage.getItem("userdata"))
+   console.log(user)
+  
   const [data, setData] = useState({});
   // const navigate = useNavigate();
   // const dispatch = useDispatch();
@@ -47,7 +48,7 @@ const SingleProduct = () => {
       })
       let r=await d.json()
       toast({
-        title:"Added to the wishlist",
+        title:"Added to the Cart",
         status:"success",
         duration:5000,
         isClosable:true,
