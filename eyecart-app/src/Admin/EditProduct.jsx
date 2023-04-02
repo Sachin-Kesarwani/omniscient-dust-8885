@@ -19,7 +19,7 @@ import axios from "axios";
 
 import React, { useState } from "react";
 import { Icon } from "@chakra-ui/react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { GetAllproducts } from "../Redux/AdminRedux/Action";
 export default function EditProduct({ data }) {
   let inidata = data;
@@ -30,6 +30,7 @@ let toast=useToast()
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
   let dispatch=useDispatch()
+  let activePage=useSelector((store)=>store?.adminReducer?.activepage  )
   function handleEdit(e) {
     seteachData({ ...eachdata, [e.target.name]: e.target.value });
   }
@@ -41,7 +42,8 @@ let toast=useToast()
   }
 
   const editinAPI = async (eachdata) => {
-    console.log(eachdata);
+    // console.log(activePage,"editpGE")
+    // console.log(eachdata);
     setLoading(true);
     let token =
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklEIjoiNjQyNWJlNDllNDAxOGI5NjRiNDVjYjFhIiwibmFtZSI6IlNhY2hpbiBLZXNhcndhbmkiLCJpYXQiOjE2ODAxOTUyMDJ9.d-_wTiIKR72n0jhF0jzu6ThppTlH01x8O2f-1heDyD8";
@@ -64,8 +66,8 @@ let toast=useToast()
               </Box>
             ),
           })
-        console.log(res.data);
-        dispatch(GetAllproducts())
+       
+        dispatch(GetAllproducts(activePage))
         onClose();
       })
       .catch((err) => {
