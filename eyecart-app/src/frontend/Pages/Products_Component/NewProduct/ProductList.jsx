@@ -43,12 +43,12 @@ const NewProduct = () => {
       </Box>
     );
   };
-
+console.log(types)
   const fetchproduct = async () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://shiny-gray-gear.cyclic.app/products/page/${page}`
+        `https://shiny-gray-gear.cyclic.app/products/page/${page}?frame_type=${types}`
       );
       const postData = await response.json();
       console.log(postData,"54")
@@ -111,8 +111,8 @@ console.log(loader,products)
                 />
                 <FrameType
                   src="https://static.lenskart.com/images/cust_mailer/Eyeglass/Rimless.png"
-                  type="Rimless"
-                  name="Rimless"
+                  type="half rim"
+                  name="half rim"
                   stylefilter={handleClick}
                 />
               </Grid>
@@ -373,8 +373,8 @@ console.log(loader,products)
                   bg="whiteAlpha.900"
                 >
                   <option value="">Select</option>
-                  <option value="lowtohigh">Price : low to high</option>
-                  <option value="hightolow">Price : high to low</option>
+                  <option value= "1">Price : low to high</option>
+                  <option value="-1">Price : high to low</option>
                 </Select>
               </Flex>
             </Flex>
