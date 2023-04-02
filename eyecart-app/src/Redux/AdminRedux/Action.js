@@ -114,10 +114,10 @@ export  const getAllusers=()=>async(dispatch)=>{
     }
   }
 
-  export const GetallAdmins=()=>(dispatch)=>{
+  export const GetallAdmins=()=>async(dispatch)=>{
     let token =localStorage.getItem("admintoken")
        dispatch(getloading())
-       axios({
+     return await  axios({
         url :`${process.env.REACT_APP_url}/admin/alladmin`,
         method:"get",
          headers:{

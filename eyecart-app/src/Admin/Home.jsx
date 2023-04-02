@@ -59,13 +59,17 @@ let allproduct=useSelector((store)=>store?.adminReducer?.allproducts)
 let alladmin=useSelector((store=>store?.adminReducer?.alladmin))
   useEffect(()=>{
     setLoading(true)
-   dispatch(getAllusers())
-   dispatch(GetallAdmins())
-  
-   dispatch(GetAllproductswithoutPage()).then((res)=>{
-    setLoading(false)
-   })
+   dispatch(getAllusers()).then((res)=>{
+    dispatch(GetallAdmins()).then((res)=>{
 
+      dispatch(GetAllproductswithoutPage()).then((res)=>{
+        setLoading(false)
+       })
+    
+    })
+   })
+  
+  
   },[])
   function closegif(){
     setLoading(false)

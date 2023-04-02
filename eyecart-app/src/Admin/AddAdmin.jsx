@@ -23,8 +23,22 @@ let toast=useToast()
   
 
     function handleClick(e){
-e.preventDefault()
-postadmin()
+      if(data.name!==""&&data.email!==""&&data.password!==""){
+        e.preventDefault()
+        postadmin()
+      }else{
+        toast({
+          position: 'top-left',
+          
+          render: () => (
+            <Box color='white'borderRadius={"10px"} textAlign={"center"} p={3} bg='green.500'>
+          <Icon color={"white"} as={CheckCircleIcon} /> <b>Pleae fill all Input</b>  
+            </Box>
+          ),
+        })
+      }
+
+
     }
 async function postadmin(){
     setLoading(true)
