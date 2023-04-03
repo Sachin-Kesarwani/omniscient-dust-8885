@@ -64,23 +64,28 @@ useEffect(()=>{
   
 },[])
 
-  async function updateQty(_id, payload,item) {
-    let data = {
-     ...item,
-  qty: payload
-    };
-   
-    await axios.patch(`https://shiny-gray-gear.cyclic.app/carts/update/${_id}`, {
+  async function updateQty(payload,id,qty) {
+   console.log(payload,"payload")
+   console.log(id,"id")
+  //  console.log(item)
+    await axios({
+      method:"patch",
+      url:`https://shiny-gray-gear.cyclic.app/carts/update/${id}`, 
       headers: {
-        "Content-type": "application/json",
+      
         Authorization: localStorage.getItem("eyekartToken")
       },
       data:{
-        ...item,
-        qty:payload
-      },
-    });
-   getcartdat()
+      
+        qty:payload+qty
+      }
+    }).then((res)=>{
+      console.log("updated")
+      getcartdat()
+    }).catch((er)=>{
+      console.log(er)
+    })
+
   }
 
   

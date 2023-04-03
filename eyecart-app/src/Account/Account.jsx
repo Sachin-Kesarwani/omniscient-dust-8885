@@ -64,7 +64,7 @@ await axios.post(`${process.env.REACT_APP_url}/admin/login`,obj).then((res)=>{
     isClosable: true,
   })
  onClose()
- window.open("http://localhost:3000/admin","_blank","noreferrer")
+ window.open("https://eyekart-theta.vercel.app/admin","_blank","noreferrer")
 
 }).catch(()=>{
     

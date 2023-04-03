@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { GetCartData } from '../../Account/Redux/CartRedux/action'
 import axios from 'axios'
 const Cart_pro_card = ({image,item,title,price,_id,count,updateQty,removeItem,qty}) => {
-  const [countnum,setcountnum]=useState(1)
+  const [countnum,setcountnum]=useState(count)
   const toast=useToast()
 
 
@@ -14,12 +14,12 @@ const dispatch=useDispatch()
   
 
 
-const handelcount=(val,item)=>{
-  setcountnum(countnum+val)
-  updateQty(_id,countnum,item)
+// const handelcount=(val,item)=>{
+//   setcountnum(countnum+val)
+//   updateQty(_id,countnum,item)
 
 
-}
+// }
 
 
 
@@ -43,9 +43,9 @@ const handelcount=(val,item)=>{
    </Text>
 <hr style={{color:"grey",border: "2px dotted",borderStyle: "none none dotted"}} />
 <Box height={"30px"}>
-<Button height={"30px"} width={"30px"} m={"5px"} disabled={()=>count==1} onClick={()=>handelcount(-1,item)} bgColor={"#00bbc6"}>-</Button>
+<Button height={"30px"} width={"30px"} m={"5px"} isDisabled={qty==1} onClick={()=>updateQty(-1,_id,qty)} bgColor={"#00bbc6"}>-</Button>
 <Button height={"30px"} width={"30px"} m={"5px"} bgColor={"#00bbc6"}>{qty}</Button>
-<Button height={"30px"} width={"30px"} m={"5px"}  disabled={count==3} onClick={()=>handelcount(1,item)} bgColor={"#00bbc6"}>+</Button>
+<Button height={"30px"} width={"30px"} m={"5px"}  isDisabled={qty==3} onClick={()=>updateQty(1,_id,qty)} bgColor={"#00bbc6"}>+</Button>
   </Box>
 
 
