@@ -65,7 +65,7 @@ const dispatch=useDispatch()
 <Text mb={"40px"}>₹{price}
 
 </Text>
-<Text mb={"50px"}>₹{price*count}
+<Text mb={"50px"}>₹{Number(price)*Number(qty)}
 
 </Text>
 

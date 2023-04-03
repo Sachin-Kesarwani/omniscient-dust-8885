@@ -80,8 +80,8 @@ await axios.post(`${process.env.REACT_APP_url}/admin/login`,obj).then((res)=>{
 
     }
   return (
-    <div style={{ alignContent: "center", paddingTop: "120px" }}>
-      <div style={{ width: "100%", height: "auto" }}>
+    <div style={{ alignContent: "center", }}>
+      <div style={{ width: "100%", height: "auto",paddingTop:"220px" }}>
         <Flex w={"90%"} gap={"2%"} margin={"auto"}>
           <Box w={"20%"} h={"400px"}>
             {arr.map((e) => {

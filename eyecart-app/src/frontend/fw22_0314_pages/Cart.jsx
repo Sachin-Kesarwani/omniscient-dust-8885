@@ -23,11 +23,14 @@ const Cart = () => {
     const [total,settotal]=useState(0)
     const [ar,setar]=useState(0)
     const store = useSelector((store)=>store)
+    let [loading,setLoading]=useState(false)
     console.log("store",store)
     let dispatch = useDispatch();
+    let [refresh,setRefresh]=useState(1)
     // let {cart,isLoading,isError} = useSelector((store) => store?.CartReducer);
     const [data,setdata]=useState([])
    async function getcartdat(){
+    setLoading(true)
     let token=localStorage.getItem("eyekartToken")
 await axios({
     method:"get",
@@ -37,6 +40,8 @@ await axios({
     }
 }).then((res)=>{
     setdata(res.data)
+    // totalpricefun()
+ setRefresh(refresh+1)
    console.log(res.data)
 })
     }
@@ -44,8 +49,7 @@ await axios({
         useEffect(() => {
            
           getcartdat()
-console.log("s",data)
-        
+      
         }, []);
         // console.log("cart",cart,isLoading,isError)
         
@@ -54,15 +58,15 @@ console.log("s",data)
     const navigate=useNavigate()
 
 
-useEffect(()=>{
-    let totalprice=data.reduce((acc,el)=>{
-        acc+=el.productId.price
-        return acc
-   },0)
+// useEffect(()=>{
+//     let totalprice=data.reduce((acc,el)=>{
+//         acc+=el.productId.price
+//         return acc
+//    },0)
 
-   settotal(totalprice)
+//    settotal(totalprice)
   
-},[])
+// },[])
 
   async function updateQty(payload,id,qty) {
    console.log(payload,"payload")
@@ -82,6 +86,7 @@ useEffect(()=>{
     }).then((res)=>{
       console.log("updated")
       getcartdat()
+      totalpricefun()
     }).catch((er)=>{
       console.log(er)
     })
@@ -102,21 +107,22 @@ async function removeItem(_id) {
     }}).then((res)=>{
       console.log("res",res)
       getcartdat()
-      // toast({
-      //   title: "Product Removed", 
-      //   position:  dispatch(GetCartData); "top-right",
-      //   status:"Success",
-      //   isClosable: true
-      // })
+     
+      toast({
+        title: "Product Removed", 
+        position:   "top-right",
+        status:"Success",
+        isClosable: true
+      })
       alert("ok")
       setar(ar+1)
     }).catch(()=>{
-      // toast({
-      //   title: "Error", 
-      //   position: "top-right",
-      //   status:"error",
-      //   isClosable: true
-      // })
+      toast({
+        title: "Error", 
+        position: "top-right",
+        status:"error",
+        isClosable: true
+      })
     })
     
   
@@ -124,8 +130,28 @@ async function removeItem(_id) {
 
 }
 
-  return (
-    <Box style={{fontFamily: 'Poppins'}} padding={"100px"} mt={"50px"} bgColor={"#f8f8f8"} width={"100%"} height={"100vh"}>
+function totalpricefun(){
+  let sum=0
+if (data.length>=1){
+    for(let i=0;i<data.length;i++){
+      sum+=data[i].qty*data[i].productId.price
+        }
+  }
+
+  settotal(sum)
+  setLoading(false)
+}
+useEffect(()=>{
+  totalpricefun()
+},[refresh])
+console.log(total,"total")
+function closegif(){
+  setLoading(false)
+}
+
+
+  return  loading?<Loading message={"Loading..."} open={loading} close={closegif}/>:(
+    <Box style={{fontFamily: 'Poppins'}} padding={"120px"} mt={"50px"} bgColor={"#f8f8f8"} width={"100%"} height={"100vh"}>
 
    <Box className="cart_container"  flexDirection={{base:'column',sm:"column",md:"column",xl:"row"}} gap={"50px"}  style={{display:"flex",width:"70%",margin:"auto",marginTop:"50px"}} >
   <Box className="first_box" maxH={"400px"} overflowY={"auto"} overflowX={"hidden"} minW={{base:"170%",sm:"100%",md:"70%",xl:"70%"}} >
