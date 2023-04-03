@@ -114,7 +114,7 @@ navigate("/userinfo")
           </Box>
           <HStack w="100%" m="auto">
           {/* //caller num */}
-            <Box w="15%" display={{base:"none",sm:"none",md:"flex",xl:"flex"}}>
+            <Box w="15%" >
               <HStack fontSize="18px" fontWeight="bold">
                 <FiPhoneCall />
                 <Text>1800-111-111</Text>
@@ -138,7 +138,7 @@ navigate("/userinfo")
             <HStack w="35%">
 
             {/* //order button */}
-              <Button
+              {/* <Button
             
                 size="lg"
                 bg="whiteAlpha.900"
@@ -147,7 +147,7 @@ navigate("/userinfo")
                 onClick={() => navigate("/orderHistory")}
               >
                 Track Order
-              </Button>
+              </Button> */}
 
            {
   usertoken?<Icon fontSize={"30px"} onClick={redirectToprofile} as={BsPersonCircle}/> :  <Box display={"flex"}>{<Signup/>} | {<Login/>}
