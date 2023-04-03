@@ -122,7 +122,7 @@ navigate("/userinfo")
             </Box>
 
               {/* //search bar */}
-            <Box w="55%" display={{base:"none",sm:"none",md:"flex",xl:"flex"}}>
+            <Box w="55%" >
               {/* <Input
                 placeholder="What are you looking for"
                 border="1px solid black"
