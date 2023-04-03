@@ -114,7 +114,7 @@ navigate("/userinfo")
           </Box>
           <HStack w="100%" m="auto">
           {/* //caller num */}
-            <Box w="15%" display={{base:"none",sm:"none",md:"flex",xl:"flex"}}>
+            <Box w="15%" >
               <HStack fontSize="18px" fontWeight="bold">
                 <FiPhoneCall />
                 <Text>1800-111-111</Text>
