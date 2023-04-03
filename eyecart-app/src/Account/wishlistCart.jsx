@@ -101,34 +101,29 @@ const WishlistCard = ({ item }) => {
       >
         <img
           src={
-            item.image ||
-            item.Image ||
-            "https://img9.hkrtcdn.com/24443/prd_2444208-MuscleBlaze-Whey-Protein-4-lb-Rich-Milk-Chocolate_c_s.jpg"
+            item.image
           }
         />
         <Text fontWeight={"bold"}>
-          {item.title || item.Name || item.Title}...
+          {item.title }...
         </Text>
         <Text>
           MRP :{" "}
           <Badge>
             <del>
-              ₹{item.oldprice || item.price2 || item.price3 || item.price3}
+              ₹{item.offer}
             </del>
           </Badge>
         </Text>
         <Text>
-          Price : <Badge>₹{item.newprice || item.price}</Badge>
+          Price : <Badge>₹{item.price}</Badge>
           <Text fontWeight={"bold"} fontSize="sm" color={"green.600"}>
             Discount{" "}
-            {(
-              ((item.oldprice - item.newprice) * 100) /
-              item.oldprice
-            ).toFixed() || "40"}
+          {30}
             % OFF
           </Text>
         </Text>
-        {loading ? (
+        {/* {loading ? (
           <Button
             isLoading
             loadingText="Remving"
@@ -165,7 +160,7 @@ const WishlistCard = ({ item }) => {
           >
             Add to cart
           </Button>
-        )}
+        )} */}
       </div>
     </div>
   );

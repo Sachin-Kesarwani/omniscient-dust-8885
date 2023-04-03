@@ -18,14 +18,13 @@ import { Loading } from '../Components/Loading'
 
 
 const Cart = () => {
-    const [arr,setarr]=useState([])
+
     const toast=useToast()
     const [total,settotal]=useState(0)
-    const [ar,setar]=useState(0)
-    const store = useSelector((store)=>store)
+   
+    // const store = useSelector((store)=>store)
     let [loading,setLoading]=useState(false)
-    console.log("store",store)
-    let dispatch = useDispatch();
+ 
     let [refresh,setRefresh]=useState(1)
     // let {cart,isLoading,isError} = useSelector((store) => store?.CartReducer);
     const [data,setdata]=useState([])
@@ -114,8 +113,8 @@ async function removeItem(_id) {
         status:"Success",
         isClosable: true
       })
-      alert("ok")
-      setar(ar+1)
+  
+      // setar(ar+1)
     }).catch(()=>{
       toast({
         title: "Error", 
@@ -136,8 +135,10 @@ if (data.length>=1){
     for(let i=0;i<data.length;i++){
       sum+=data[i].qty*data[i].productId.price
         }
+
   }
 
+  localStorage.setItem("total",JSON.stringify(sum))
   settotal(sum)
   setLoading(false)
 }
@@ -161,7 +162,7 @@ Cart({data?.length} items)
     </Text>
     {data?.length>0?data?.map((el,i)=>{
 
-    return   <Box height={"auto"}>
+    return   <Box height={"auto"} key={i}>
     <Cart_pro_card key={i} qty={el.qty} item={el} _id={el._id} count={el.productId.count} image={el.productId.image} title={el.productId.title} price={el.productId.price} updateQty={updateQty} removeItem={removeItem}  />
     </Box>
     
@@ -199,7 +200,7 @@ Bill Details
     </Text>
    
     <Text mt={"10px"} mb={"10px"}>
-{arr.length} Sunglases for ₹{total}+(tax)
+{data?.length} Sunglases for ₹{total}+(tax)
 
     </Text>
 
@@ -227,9 +228,12 @@ Bill Details
     </Box>
 </Box>
 {/* <ButtonComp /> */}
-<Button border={"1px solid green"} bgColor={"#11daac"} padding={"20px"} borderRadius={"20px"} className={"checkout_butt"} onClick={handlenavigate}>
-    Proceed To Checkout
+{
+  data?.length>0&&<Button border={"1px solid green"} bgColor={"#11daac"} padding={"20px"} borderRadius={"20px"} className={"checkout_butt"} onClick={handlenavigate}>
+  Proceed To Checkout
 </Button>
+}
+
 </Box>
 
    </Box>

@@ -5,21 +5,8 @@ import { useDispatch } from 'react-redux'
 import { GetCartData } from '../../Account/Redux/CartRedux/action'
 import axios from 'axios'
 const Cart_pro_card = ({image,item,title,price,_id,count,updateQty,removeItem,qty}) => {
-  const [countnum,setcountnum]=useState(count)
-  const toast=useToast()
 
-
-const dispatch=useDispatch()
-
-  
-
-
-// const handelcount=(val,item)=>{
-//   setcountnum(countnum+val)
-//   updateQty(_id,countnum,item)
-
-
-// }
+ 
 
 
 

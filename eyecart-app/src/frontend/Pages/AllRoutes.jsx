@@ -17,6 +17,7 @@ import PrivateRoute from './PrivateRoute'
 import Account from '../../Account/Account'
 import NewProduct from './Products_Component/NewProduct/ProductList'
 import AdminPrivateRoute from './AdminPrivate'
+import Wishlist from '../../Account/Wishlist'
 
 
 
@@ -39,7 +40,7 @@ const AllRoutes = () => {
         <Route path='/navbar' element={<Navbar/>} />
         <Route path="/newproducts/:id" element={<SingleProduct />}/>
         <Route path="/products/:id" element={<SingleProduct />}/>
-
+<Route path='/wishlist' element={<Wishlist/>}/>
         <Route path='/products'  element={<NewProduct/>} />
 
         <Route path='/navbar' element={<Navbar/>} />

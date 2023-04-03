@@ -72,34 +72,37 @@ console.log(res)
     }
   };
   
-  const handleAddToWishlist = async () => {
-    toast({
-      title:"Added to the wishlist",
-      status:"success",
-      duration:5000,
-      isClosable:true,
-      description:"Thankyou",
-      position:"top"
+  const handleAddToWishlist = async (data) => {
+
+
+    axios({
+      url:`${process.env.REACT_APP_url}/wishlist/add`,
+      method:"post",
+      headers:{
+        Authorization:localStorage.getItem("eyekartToken")
+      },
+      data:{_id:id}
+    }).then((res)=>{
+      toast({
+        title:"Added to the wishlist",
+        status:"success",
+        duration:5000,
+        isClosable:true,
+        description:"Thankyou",
+        position:"top"
+      })
+    }).catch((er)=>{
+      toast({
+        title:"Something went wrong",
+        status:"warning",
+        duration:5000,
+        isClosable:true,
+        description:"Thankyou",
+        position:"top"
+      })
     })
-    // try {
-    //   let d=await fetch(`https://shiny-gray-gear.cyclic.app/wishlist`,{
-    //     method:"POST",
-    //     body:JSON.stringify({
-    //       user:"xx",
-    //       productId:id,
-    //       qty:1
-    //     }),
-    //     headers: {
-    //       Accept: 'application/json',
-    //       'Content-Type': 'application/json',
-    //       'Authorization':token
-    //   }
-    //   })
-    //   let r=await d.json()
-    //   console.log(r)
-    // } catch (error) {
-    //   console.log(error)
-    // }
+   
+    
   };
 
   const fetchSingleProduct = () => {
@@ -200,7 +203,7 @@ console.log(res)
             w="90%"
             color="white"
             bgColor="#00bac6"
-            onClick={handleAddToWishlist}
+            onClick={()=>handleAddToWishlist(id)}
             fontSize="18px"
           >
             Add to Wishlist
