@@ -114,7 +114,7 @@ console.log(res)
   }, [id]);
 
   return (
-    <Box style={{padding:"120px"}}>
+    <Box style={{paddingTop:"220px"}}>
       
       <Grid
         m={5}
