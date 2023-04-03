@@ -25,6 +25,10 @@ https://eyekart-sachin-kesarwani.vercel.app/
 
 ![sss](https://i.ibb.co/3NQgzMz/Logotype-Boutique-Fashion-Neon.jpg)
 
+<h1>Admin Page</h1>
+
+![Admin Page](https://user-images.githubusercontent.com/110049484/229407018-ffca8d50-7cda-4ed8-aee2-b7fd3413e433.PNG)
+
 
 <h1>Home Page</h1>
 
