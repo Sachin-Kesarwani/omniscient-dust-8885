@@ -29,7 +29,9 @@ https://eyekart-sachin-kesarwani.vercel.app/
 
 <h1>Home Page</h1>
 
-![Home Page](https://user-images.githubusercontent.com/110049484/221607896-5be7bcbf-4dfc-483a-be75-8f2042876b71.PNG)
+![Home page](https://user-images.githubusercontent.com/110049484/229404310-0800d380-05ee-4fe4-a2d4-e5a280bf466d.PNG)
+
+
 
 
 <h1>SignUp Page</h1>
