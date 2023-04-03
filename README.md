@@ -23,7 +23,6 @@ https://eyekart-sachin-kesarwani.vercel.app/
 
 <h1>Logo</h1>
 
-
 ![sss](https://i.ibb.co/3NQgzMz/Logotype-Boutique-Fashion-Neon.jpg)
 
 
@@ -37,18 +36,21 @@ https://eyekart-sachin-kesarwani.vercel.app/
 <h1>SignUp Page</h1>
 
 
-![Signup](https://user-images.githubusercontent.com/110049484/221609783-76412a0d-7d09-4980-847c-a3fb3af1130f.PNG)
+![Singup Page](https://user-images.githubusercontent.com/110049484/229405064-5baeb879-3969-4790-aad4-42ef64a15067.PNG)
+
 
 
 
 <h1>Login Page</h1>
 
-![Login Page](https://user-images.githubusercontent.com/110049484/221609576-a114c587-b5d9-42f7-b409-6d3809d16855.PNG)
+![SignIn page](https://user-images.githubusercontent.com/110049484/229405118-9b0118e1-88c7-40b9-91fc-367fd06aba19.PNG)
+
 
 
 <h1>Products Page</h1>
 
-![Products page](https://user-images.githubusercontent.com/110049484/221613408-0da1e4b1-cc7b-4444-88f7-49311829c192.PNG)
+
+![Products Page](https://user-images.githubusercontent.com/110049484/229405142-59ab2b51-8c1f-4b9e-856e-916d7361d359.PNG)
 
 
 
