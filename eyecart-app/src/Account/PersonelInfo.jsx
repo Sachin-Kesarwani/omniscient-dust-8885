@@ -17,13 +17,14 @@ console.log(accountdata)
 console.log(accountdata)
 const PersonelInfo = () => {
   let [edit, setEdit] = useState(false);
-  let [data, setData] = useState(accountdata);
+  let [data, setData] = useState(userdata);
   console.log(data)
   let [loading, setLoading] = useState(false);
   async function handleEdit() {
     setLoading(true);
+    console.log(data)
     await axios({
-      url: `https://helpful-free-baroness.glitch.me/Users/${accountdata.id}`,
+      url: `${process.env.REACT_APP_url}/Users/updatedetails`,
       method: "patch",
       data: data,
     }).then((res) => {
@@ -33,7 +34,7 @@ const PersonelInfo = () => {
     });
   }
   // accountdata = JSON.parse(localStorage.getItem("accountdata")) || { id: 1 };
-
+console.log(data)
   return (
     <Box color={"black"}>
       <Heading marginLeft={"20px"}>Personal Information </Heading>
@@ -41,18 +42,30 @@ const PersonelInfo = () => {
       {edit ? (
         <div style={{ width: "100px", marginLeft: "20px", padding: "5px" ,color:"black" }}>
           <label>
-            Name :
+        First    Name :
             <input
-              name="name"
+              name="first_name"
               type="text"
               style={{ border: "1px solid teal", padding: "2px 15px" }}
-              value={data.name}
+              value={data?.first_name }
               onChange={(e) =>
                 setData({ ...data, [e.target.name]: e.target.value })
               }
             />
           </label>
           <label>
+          Last  Name :
+            <input
+              name="first_name"
+              type="text"
+              style={{ border: "1px solid teal", padding: "2px 15px" }}
+              value={ data?.last_name}
+              onChange={(e) =>
+                setData({ ...data, [e.target.name]: e.target.value })
+              }
+            />
+          </label>
+          {/* <label>
             Email :
             <input
               name="email"
@@ -64,14 +77,14 @@ const PersonelInfo = () => {
               }
             />
             
-          </label>
+          </label> */}
           <label>
             City :
             <input
               name="city"
               type="text"
               style={{ border: "1px solid teal", padding: "2px 15px" }}
-              value={data._id}
+              value={data?.city}
               onChange={(e) =>
                 setData({ ...data, [e.target.name]: e.target.value })
               }
@@ -80,10 +93,10 @@ const PersonelInfo = () => {
           <label>
             Phone :
             <input
-              name="phone"
+              name="mobile"
               type="text"
               style={{ border: "1px solid teal", padding: "2px 15px" }}
-              value={data.phone}
+              value={data?.mobile}
               onChange={(e) =>
                 setData({ ...data, [e.target.name]: e.target.value })
               }
@@ -127,7 +140,7 @@ const PersonelInfo = () => {
               <Avatar name={"https://t4.ftcdn.net/jpg/01/97/15/87/360_F_197158744_1NBB1dEAHV2j9xETSUClYqZo7SEadToU.jpg"} />
             </Box>
             <Box p={2} display={"flex"} justifyContent={"start"} flexDirection={"column"}>
-              <Text fontWeight={"bold"}>Name : {accountdata?.first_name}</Text>
+              <Text fontWeight={"bold"}>Name : {data?.first_name} {data?.first_name}</Text>
               <Text>Email : {data?.email}</Text>
               <Text>Mobile : {data?.mobile}</Text>
               <Text>City : {data?.city}</Text>
