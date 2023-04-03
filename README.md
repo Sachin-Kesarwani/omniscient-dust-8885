@@ -9,7 +9,7 @@
 
 <h1>Tech Stack For Backend :</h1> <h3>NodeJs, Mongoose, Express, Cors, Jwt , Bcrypt</h3>
 
-<h1>Features :</h1> <h3>Home Page,Login/Signup Page, Products Page, SingleProducts Page,Wishlist Page, Cart Page,Checkout Page  we added  to our website</h3>
+<h1>Features :</h1> <h3>Admin Page,Home Page,Login/Signup Page, Products Page, SingleProducts Page,Wishlist Page, Cart Page,Checkout Page  we added  to our website</h3>
 
 <h1>Backend Deployment Link </h1>
 
