@@ -56,7 +56,8 @@ https://eyekart-sachin-kesarwani.vercel.app/
 
 <h1>Single Products Page</h1>
 
-![Single Products Page](https://user-images.githubusercontent.com/110049484/221613627-48a56731-01dc-4d0e-9dcc-eb5b4e238f2a.PNG)
+![Single Products Page](https://user-images.githubusercontent.com/110049484/229406336-31002553-cc81-4f4c-9e4c-f26119e8735d.PNG)
+
 
 
 
@@ -68,15 +69,16 @@ https://eyekart-sachin-kesarwani.vercel.app/
 
 <h1>Cart Page</h1>
 
+![Cart Page](https://user-images.githubusercontent.com/110049484/229406361-f61c0368-7ce6-4f19-86ce-7c809223cecb.PNG)
 
-![bags](https://user-images.githubusercontent.com/110049484/221614176-7e6ab6c8-ffd3-4603-8308-854e35829813.PNG)
 
 
 
 
 <h1>Checkout Page</h1>
 
-![Checkout Page](https://user-images.githubusercontent.com/110049484/221614376-6c006498-f262-4134-a9ad-0892b17e3f79.PNG)
+
+![Checkout Page](https://user-images.githubusercontent.com/110049484/229406388-a1c7118e-1af7-45af-a460-45b1b2e158d2.PNG)
 
 
 
