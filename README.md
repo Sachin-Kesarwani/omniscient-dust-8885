@@ -23,7 +23,8 @@ https://eyekart-sachin-kesarwani.vercel.app/
 
 <h1>Logo</h1>
 
-![sss]https://i.ibb.co/3NQgzMz/Logotype-Boutique-Fashion-Neon.jpg
+
+https://i.ibb.co/3NQgzMz/Logotype-Boutique-Fashion-Neon.jpg
 
 
 <h1>Home Page</h1>
