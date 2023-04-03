@@ -1,6 +1,4 @@
-# omniscient-dust-8885
-
-<h1>Syntra clone of Myntra.com</h1>
+<h1>Eyecart clone of Lenskart.com</h1>
 
 <h1>About</h1>
 
@@ -15,12 +13,12 @@
 
 <h1>Backend Deployment Link </h1>
 
-https://calm-cyan-octopus-wear.cyclic.app
+https://shiny-gray-gear.cyclic.app/
 
 
 <h1>Frontend Deployment Link </h1>
 
-https://friendly-sorbet-912886.netlify.app/
+https://eyekart-sachin-kesarwani.vercel.app/
 
 
 <h1>Logo</h1>
