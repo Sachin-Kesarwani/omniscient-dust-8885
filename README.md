@@ -2,7 +2,7 @@
 
 <h1>About</h1>
 
-<h3>Syntra is a major Indian Fashion e-Commerce Company. Syntra launched an express delivery service on its app to offer one of a kind of experience by fashion & beauty platform. This service allow shoppers to receive their orders for products.</h3>
+<h3>Eyekart is an online retailer of eyewear that offers a wide range of glasses, contact lenses, and sunglasses for men, women, and kids.Overall,Eyekart's focus on providing high-quality eyewear products, exceptional customer service, and innovative technology has helped it become a leading online and offline retailer in the Indian eyewear market.</h3>
 
 
 <h1>Tech Stack For Frontend :</h1> <h3>React, React-Redux,Redux-thunk, Axios, Chakra UI</h3>
