@@ -138,7 +138,7 @@ navigate("/userinfo")
             <HStack w="35%">
 
             {/* //order button */}
-              <Button
+              {/* <Button
             
                 size="lg"
                 bg="whiteAlpha.900"
@@ -147,7 +147,7 @@ navigate("/userinfo")
                 onClick={() => navigate("/orderHistory")}
               >
                 Track Order
-              </Button>
+              </Button> */}
 
            {
   usertoken?<Icon fontSize={"30px"} onClick={redirectToprofile} as={BsPersonCircle}/> :  <Box display={"flex"}>{<Signup/>} | {<Login/>}
