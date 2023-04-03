@@ -5,11 +5,11 @@
 <h3>Syntra is a major Indian Fashion e-Commerce Company. Syntra launched an express delivery service on its app to offer one of a kind of experience by fashion & beauty platform. This service allow shoppers to receive their orders for products.</h3>
 
 
-<h1>Tech Stack For Frontend :</h1> <h3>React, Redux, Axios, Chakra UI</h3>
+<h1>Tech Stack For Frontend :</h1> <h3>React, React-Redux,Redux-thunk, Axios, Chakra UI</h3>
 
 <h1>Tech Stack For Backend :</h1> <h3>NodeJs, Mongoose, Express, Cors, Jwt , Bcrypt</h3>
 
-<h1>Features :</h1> <h3>Admin Page,Home Page,Login/Signup Page, Products Page, SingleProducts Page,Wishlist Page, Cart Page,Checkout Page  we added  to our website</h3>
+<h1>Features :</h1> <h3>Admin Page,Home Page,Login/Signup Page, Products Page, SingleProducts Page,Wishlist Page, Cart Page,Checkout Page,Payment Page,Shipping Page  we added to our website</h3>
 
 <h1>Backend Deployment Link </h1>
 
@@ -23,7 +23,7 @@ https://eyekart-sachin-kesarwani.vercel.app/
 
 <h1>Logo</h1>
 
-![sss](https://user-images.githubusercontent.com/110049484/221616098-49dc4b14-adb3-4276-a83a-435be3fdb5e9.png)
+![sss]https://i.ibb.co/3NQgzMz/Logotype-Boutique-Fashion-Neon.jpg
 
 
 <h1>Home Page</h1>
