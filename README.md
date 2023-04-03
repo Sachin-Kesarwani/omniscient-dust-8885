@@ -67,8 +67,9 @@ https://eyekart-sachin-kesarwani.vercel.app/
 
 <h1>Wishlist Page</h1>
 
-![wishlist Page](https://user-images.githubusercontent.com/110049484/221613776-575ab916-8872-491a-866f-0bb33aa1b268.PNG)
 
+
+![wishlist](https://user-images.githubusercontent.com/110049484/229419134-7a727d91-eef0-4806-aeec-1d98d1ad7d44.PNG)
 
 
 <h1>Cart Page</h1>
