@@ -5,7 +5,8 @@ import Paymentsfun from '../fw22_0314_Components/Payments.comp'
 import SidebarWithHeader from '../fw22_0314_Components/Payments.comp'
 import Pay_btn from '../fw22_0314_Components/Pay_btn'
 import './shipping.css'
-let total=sessionStorage.getItem("total")
+let total=localStorage.getItem("ordertotal")
+
 let discount=Math.floor(total/10)
 let tax=Math.floor(total/15)
 let ordertotal=total-discount+tax
@@ -13,7 +14,7 @@ const Payments = () => {
 
 
   return (
-    <Box color={"black"} bgColor={"#ffffff"} fontSize={"14px"} style={{padding:"120px"}}>
+    <Box color={"black"} bgColor={"#ffffff"} fontSize={"14px"} style={{paddingTop:"220px"}}>
 <Box className={"shipping_cont"} margin={"auto"}  flexDirection={{base:'column',sm:"column",md:"column",xl:"row"}} display={"flex"} gap={"40px"} width={"60%"} fontSize={"14px"}>
     
 <Box className={"shipping_add"} width={"70%"} height={"auto"} padding={"10px"} fontSize={"12px"} >

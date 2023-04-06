@@ -44,7 +44,7 @@ const Footer = () => {
   return (
     <>
      <Span7 />
-    <Box bgColor="#000042" color="whiteAlpha.900">
+    <Box bgColor="#000042" color="whiteAlpha.900" >
       <Grid
         templateColumns={{
           base: "repeat(1,1fr)",

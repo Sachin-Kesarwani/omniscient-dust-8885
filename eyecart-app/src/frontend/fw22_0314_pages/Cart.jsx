@@ -110,7 +110,7 @@ async function removeItem(_id) {
       toast({
         title: "Product Removed", 
         position:   "top-right",
-        status:"Success",
+        status:"success",
         isClosable: true
       })
   

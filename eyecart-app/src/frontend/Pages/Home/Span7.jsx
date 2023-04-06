@@ -10,6 +10,7 @@ const Span7 = () => {
       color="whiteAlpha.900"
       pt={9}
       pl={9}
+      marginTop={"430px"}
     >
       <Box fontSize="35px" w="97%" margin="auto" textAlign="left">
         Buy The Best Eyewear From Lenskart

@@ -1,7 +1,7 @@
 import { Button } from '@chakra-ui/react'
 import axios from 'axios';
 import React, { useState } from 'react'
-import {useNavigate} from 'react-router-dom'
+import {Navigate, useNavigate} from 'react-router-dom'
 
 const Pay_btn = ({ordertotal}) => {
 const navigate=useNavigate()
@@ -40,7 +40,7 @@ const [amt,setamt]=useState("")
     let obj={
       amt
     }
-    const result = await axios.post("http://localhost:7500/payment/orders",obj);
+    const result = await axios.post("https://shiny-gray-gear.cyclic.app/payments/orders",obj);
   
     if (!result) {
         alert("Server error. Are you online?");
@@ -66,9 +66,9 @@ const [amt,setamt]=useState("")
                 razorpaySignature: response.razorpay_signature,
             };
   
-            const result = await axios.post("http://localhost:7500/payment/success", data).then((res)=>{
+            const result = await axios.post("https://shiny-gray-gear.cyclic.app/payments/success", data).then((res)=>{
               alert(res.data.msg);
-              navigate("/")
+               return <Navigate to="/"/>
 
               
             }).catch((err)=>{

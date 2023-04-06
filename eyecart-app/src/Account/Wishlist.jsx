@@ -37,7 +37,7 @@ let [Wishlistdata,setWishlistdata]=useState([])
   }, []);
 console.log(Wishlistdata)
   return (
-    <div style={{paddingTop:"200px"}}>
+    <div style={{paddingTop:"220px"}}>
       {Wishlistdata?.length > 0 && (
         <Heading textAlign={"center"}>You Wish List</Heading>
       )}
