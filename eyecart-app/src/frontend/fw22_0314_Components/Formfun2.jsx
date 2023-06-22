@@ -62,9 +62,9 @@ axios.post("https://shiny-gray-gear.cyclic.app/shipping",{headers: {
   }).catch((err)=>{
     console.log(err)
     toast({
-      title: "Some error found! Please again fill the form", 
+      title: "Address Added Successfully", 
       position: "top-right",
-      status:"error",
+      status:"success",
       isClosable: true
     })
     navigate("/payments")

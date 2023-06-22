@@ -102,7 +102,7 @@ navigate("/userinfo")
   }
   
     return (
-      <Box cursor="pointer" >
+      <Box cursor="pointer"  >
           
         <HStack m="auto"  >
 

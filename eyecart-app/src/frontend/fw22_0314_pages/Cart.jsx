@@ -106,21 +106,21 @@ async function removeItem(_id) {
     }}).then((res)=>{
       console.log("res",res)
       getcartdat()
-     
       toast({
-        title: "Product Removed", 
-        position:   "top-right",
-        status:"Success",
-        isClosable: true
+        title: 'Item Removed',
+        description: "Item has been Removed",
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
       })
   
       // setar(ar+1)
-    }).catch(()=>{
+    }).catch((err)=>{
       toast({
-        title: "Error", 
-        position: "top-right",
-        status:"error",
-        isClosable: true
+        title: `Some error is there`,
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
       })
     })
     

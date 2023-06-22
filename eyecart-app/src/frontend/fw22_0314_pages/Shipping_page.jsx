@@ -3,11 +3,13 @@ import React, { useRef } from 'react'
 import Form1 from '../fw22_0314_Components/Formfun2'
 import './shipping.css'
 const Shipping_page = () => {
-    let total=sessionStorage.getItem("total")
+    let total=localStorage.getItem("total")
     let discount=Math.floor(total/10)
     let tax=Math.floor(total/15)
+    let ordertotal=total-discount+tax
+    localStorage.setItem("ordertotal",ordertotal)
   return (
-    <Box color={"black"} bgColor={"#ffffff"} fontSize={"14px"} style={{padding:"120px"}}>
+    <Box color={"black"} bgColor={"#ffffff"} fontSize={"14px"} style={{paddingTop:"230px"}}>
 <Box className={"shipping_cont"}   margin={"auto"} flexDirection={{base:'column',sm:"column",md:"column",xl:"row"}} display={"flex"} gap={"40px"} width={"60%"} fontSize={"14px"}>
     
 <Box className={"shipping_add"} minW={{base:"135%",sm:"100%",md:"100%",xl:"80%"}} width={"70%"} height={"auto"} padding={"10px"} fontSize={"12px"} >

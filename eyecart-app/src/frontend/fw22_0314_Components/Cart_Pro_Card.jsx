@@ -5,13 +5,7 @@ import { useDispatch } from 'react-redux'
 import { GetCartData } from '../../Account/Redux/CartRedux/action'
 import axios from 'axios'
 const Cart_pro_card = ({image,item,title,price,_id,count,updateQty,removeItem,qty}) => {
-
- 
-
-
-
-
-  return (
+ return (
     <Box mb={"5px"} height={"auto"}>
     
 <Box className="cart_card" height={"auto"}>
