@@ -40,11 +40,9 @@ const [amt,setamt]=useState("")
     let obj={
       amt
     }
-<<<<<<< HEAD
+    
     const result = await axios.post("https://shiny-gray-gear.cyclic.app/payments/orders",obj)
-=======
-    const result = await axios.post("https://shiny-gray-gear.cyclic.app/payments/orders",obj);
->>>>>>> 29e1fc1204f896a32e00cefcf33087e0042d6920
+
   
     if (!result) {
         alert("Server error. Are you online?");
