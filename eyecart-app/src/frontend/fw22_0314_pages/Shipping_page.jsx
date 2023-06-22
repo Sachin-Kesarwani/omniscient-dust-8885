@@ -9,7 +9,9 @@ const Shipping_page = () => {
     let ordertotal=total-discount+tax
     localStorage.setItem("ordertotal",ordertotal)
   return (
+
     <Box color={"black"} bgColor={"#ffffff"} fontSize={"14px"} style={{paddingTop:"230px"}}>
+
 <Box className={"shipping_cont"}   margin={"auto"} flexDirection={{base:'column',sm:"column",md:"column",xl:"row"}} display={"flex"} gap={"40px"} width={"60%"} fontSize={"14px"}>
     
 <Box className={"shipping_add"} minW={{base:"135%",sm:"100%",md:"100%",xl:"80%"}} width={"70%"} height={"auto"} padding={"10px"} fontSize={"12px"} >

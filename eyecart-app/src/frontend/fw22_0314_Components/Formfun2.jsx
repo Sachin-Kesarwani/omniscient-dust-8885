@@ -49,9 +49,9 @@ if(first_name && last_name && email && gender && mob && city && postalcode && co
     first_name,last_name,email,gender,mob,city,postalcode,country,state_province,address_line_1,address_line_2
 }
 
-axios.post("https://shiny-gray-gear.cyclic.app/shipping",{headers: {
+axios.post("https://shiny-gray-gear.cyclic.app/shipping",obj,{headers: {
   Authorization : `${localStorage.getItem("eyekartToken")}`
-  }},obj).then((res)=>{
+  }}).then((res)=>{
     console.log("res",res)
     toast({
       title: "Address Added Successfully", 

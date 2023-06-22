@@ -240,7 +240,7 @@ export const Home = () => {
       {/* <Span7 />  */}
 
       {/* footer navigation    */}
-      <Footer />
+      
 
     </Box>
   )

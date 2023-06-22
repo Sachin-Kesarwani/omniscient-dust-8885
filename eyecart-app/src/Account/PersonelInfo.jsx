@@ -56,7 +56,7 @@ console.log(data)
           <label>
           Last  Name :
             <input
-              name="first_name"
+              name="last_name"
               type="text"
               style={{ border: "1px solid teal", padding: "2px 15px" }}
               value={ data?.last_name}
@@ -137,10 +137,10 @@ console.log(data)
         >
           <Flex justifyContent={"start"}>
             <Box margin={"5px"}>
-              <Avatar name={"https://t4.ftcdn.net/jpg/01/97/15/87/360_F_197158744_1NBB1dEAHV2j9xETSUClYqZo7SEadToU.jpg"} />
+              <Avatar name={`${data?.first_name} ${data?.last_name}`}/>
             </Box>
             <Box p={2} display={"flex"} justifyContent={"start"} flexDirection={"column"}>
-              <Text fontWeight={"bold"}>Name : {data?.first_name} {data?.first_name}</Text>
+              <Text fontWeight={"bold"}>Name : {data?.first_name} {data?.last_name}</Text>
               <Text>Email : {data?.email}</Text>
               <Text>Mobile : {data?.mobile}</Text>
               <Text>City : {data?.city}</Text>

@@ -40,7 +40,11 @@ const [amt,setamt]=useState("")
     let obj={
       amt
     }
+<<<<<<< HEAD
     const result = await axios.post("https://shiny-gray-gear.cyclic.app/payments/orders",obj)
+=======
+    const result = await axios.post("https://shiny-gray-gear.cyclic.app/payments/orders",obj);
+>>>>>>> 29e1fc1204f896a32e00cefcf33087e0042d6920
   
     if (!result) {
         alert("Server error. Are you online?");
@@ -66,11 +70,12 @@ const [amt,setamt]=useState("")
                 razorpaySignature: response.razorpay_signature,
             };
   
-            const result2 = await axios.post("https://shiny-gray-gear.cyclic.app/payments/success", data).then((res)=>{
-              console.log("ok",res)
+
+
+            const result = await axios.post("https://shiny-gray-gear.cyclic.app/payments/success", data).then((res)=>{
               alert(res.data.msg);
-              return <Navigate to="/" />
-             
+               return <Navigate to="/"/>
+
               
             }).catch((err)=>{
               console.log("okerr")

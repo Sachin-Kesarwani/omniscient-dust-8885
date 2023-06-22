@@ -107,6 +107,7 @@ async function removeItem(_id) {
       console.log("res",res)
       getcartdat()
       toast({
+
         title: 'Item Removed',
         description: "Item has been Removed",
         status: 'success',

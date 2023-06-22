@@ -5,7 +5,9 @@ import Paymentsfun from '../fw22_0314_Components/Payments.comp'
 import SidebarWithHeader from '../fw22_0314_Components/Payments.comp'
 import Pay_btn from '../fw22_0314_Components/Pay_btn'
 import './shipping.css'
+
 let total=localStorage.getItem("total")
+
 let discount=Math.floor(total/10)
 let tax=Math.floor(total/15)
 let ordertotal=total-discount+tax

@@ -30,9 +30,9 @@ const AllRoutes = () => {
 
       <Route path='/' element={<Home />} />
         <Route path='/admin'  element={
-          <AdminPrivateRoute>
+        
            <AdminHome/>
-          </AdminPrivateRoute>
+     
       
         } />
 
